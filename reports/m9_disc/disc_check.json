@@ -1,0 +1,754 @@
+{
+  "summary": {
+    "images": 81,
+    "assumed_disc_to_fov": 0.16,
+    "true_disc_to_fov_median": 0.1611614237498394,
+    "true_disc_to_fov_iqr": [
+      0.15310616195202692,
+      0.17014125737450528
+    ],
+    "brightness": {
+      "images": 81,
+      "hit_rate": 0.9876543209876543,
+      "median_error_disc_diameters": 0.13100532364468567,
+      "worst_error_disc_diameters": 3.030392314656228
+    },
+    "brightness + vessels": {
+      "images": 81,
+      "hit_rate": 0.9753086419753086,
+      "median_error_disc_diameters": 0.06326905536971433,
+      "worst_error_disc_diameters": 2.1749377599479716
+    }
+  },
+  "per_image": [
+    {
+      "image_id": "IDRiD_01",
+      "split": "train",
+      "true_disc_to_fov": 0.16110696355706894,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.2664229272200658,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.1518335274190141
+    },
+    {
+      "image_id": "IDRiD_02",
+      "split": "train",
+      "true_disc_to_fov": 0.15743485916127067,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.11055534811307369,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.02998953618690182
+    },
+    {
+      "image_id": "IDRiD_03",
+      "split": "train",
+      "true_disc_to_fov": 0.17026638284336534,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.15853997513027757,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.041861564770070116
+    },
+    {
+      "image_id": "IDRiD_04",
+      "split": "train",
+      "true_disc_to_fov": 0.13974558408158658,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.07427493367353903,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.1959036542811055
+    },
+    {
+      "image_id": "IDRiD_05",
+      "split": "train",
+      "true_disc_to_fov": 0.16206456507160236,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.11941009033760243,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.04894035647132652
+    },
+    {
+      "image_id": "IDRiD_06",
+      "split": "train",
+      "true_disc_to_fov": 0.18152107434048628,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1816888622607908,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.14663037776839621
+    },
+    {
+      "image_id": "IDRiD_07",
+      "split": "train",
+      "true_disc_to_fov": 0.1581197604045307,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.08638144337107023,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.09711462977792262
+    },
+    {
+      "image_id": "IDRiD_08",
+      "split": "train",
+      "true_disc_to_fov": 0.15819369078723128,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.21483671171369056,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.13258171665977428
+    },
+    {
+      "image_id": "IDRiD_09",
+      "split": "train",
+      "true_disc_to_fov": 0.17742282744821364,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.10096265520749684,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.06323716595105486
+    },
+    {
+      "image_id": "IDRiD_10",
+      "split": "train",
+      "true_disc_to_fov": 0.16171585371089828,
+      "brightness: hit": false,
+      "brightness: error_dd": 3.030392314656228,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.05724132135080456
+    },
+    {
+      "image_id": "IDRiD_11",
+      "split": "train",
+      "true_disc_to_fov": 0.15706270948129358,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.14201168245774526,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.03533371570477346
+    },
+    {
+      "image_id": "IDRiD_12",
+      "split": "train",
+      "true_disc_to_fov": 0.1886385087374211,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.07556369273924671,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.027423371038847604
+    },
+    {
+      "image_id": "IDRiD_13",
+      "split": "train",
+      "true_disc_to_fov": 0.1620264369991448,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.23153658387166928,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.10117451887218266
+    },
+    {
+      "image_id": "IDRiD_14",
+      "split": "train",
+      "true_disc_to_fov": 0.1659730478807661,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.13100532364468567,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.0341880855802396
+    },
+    {
+      "image_id": "IDRiD_15",
+      "split": "train",
+      "true_disc_to_fov": 0.18418273002806412,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.17948842820019476,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.2278112731780105
+    },
+    {
+      "image_id": "IDRiD_16",
+      "split": "train",
+      "true_disc_to_fov": 0.18800949994159855,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1504270220601118,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.2617408371770011
+    },
+    {
+      "image_id": "IDRiD_17",
+      "split": "train",
+      "true_disc_to_fov": 0.1569717983324143,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.21727465532270646,
+      "brightness + vessels: hit": false,
+      "brightness + vessels: error_dd": 2.1749377599479716
+    },
+    {
+      "image_id": "IDRiD_18",
+      "split": "train",
+      "true_disc_to_fov": 0.16702783903316834,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.13184410027218457,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.10770762541268494
+    },
+    {
+      "image_id": "IDRiD_19",
+      "split": "train",
+      "true_disc_to_fov": 0.1643953966553599,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.14095285550493403,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.07282748134428471
+    },
+    {
+      "image_id": "IDRiD_20",
+      "split": "train",
+      "true_disc_to_fov": 0.18033855492129974,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.18492030998696127,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.09326500301842908
+    },
+    {
+      "image_id": "IDRiD_21",
+      "split": "train",
+      "true_disc_to_fov": 0.17846833272755608,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1432698246010812,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.13299412216151732
+    },
+    {
+      "image_id": "IDRiD_22",
+      "split": "train",
+      "true_disc_to_fov": 0.14998513340578362,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.14174280968310188,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.09981668289953938
+    },
+    {
+      "image_id": "IDRiD_23",
+      "split": "train",
+      "true_disc_to_fov": 0.16567237736713078,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.08998740058097768,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.11105354816860082
+    },
+    {
+      "image_id": "IDRiD_24",
+      "split": "train",
+      "true_disc_to_fov": 0.1599335269279974,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.08269088088118208,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.040270777052941686
+    },
+    {
+      "image_id": "IDRiD_25",
+      "split": "train",
+      "true_disc_to_fov": 0.15349182537955827,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.15667869611586507,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.45320587504728305
+    },
+    {
+      "image_id": "IDRiD_26",
+      "split": "train",
+      "true_disc_to_fov": 0.17100864284806794,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.07110361143550832,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.05980453978236753
+    },
+    {
+      "image_id": "IDRiD_27",
+      "split": "train",
+      "true_disc_to_fov": 0.15576115967970372,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.26671765751298726,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.08743515111681062
+    },
+    {
+      "image_id": "IDRiD_28",
+      "split": "train",
+      "true_disc_to_fov": 0.16445610103330993,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.09469180432347415,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.09381808755209799
+    },
+    {
+      "image_id": "IDRiD_29",
+      "split": "train",
+      "true_disc_to_fov": 0.17014125737450528,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.11513482913772771,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.006871854938039716
+    },
+    {
+      "image_id": "IDRiD_30",
+      "split": "train",
+      "true_disc_to_fov": 0.15304751382887294,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.08201527033919248,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.11014426869112003
+    },
+    {
+      "image_id": "IDRiD_31",
+      "split": "train",
+      "true_disc_to_fov": 0.1457172929978682,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.11204303519428108,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.09167494067411913
+    },
+    {
+      "image_id": "IDRiD_32",
+      "split": "train",
+      "true_disc_to_fov": 0.16128882859670843,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.10310046679494451,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.01462451018197412
+    },
+    {
+      "image_id": "IDRiD_33",
+      "split": "train",
+      "true_disc_to_fov": 0.1676560537051443,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.04848543327346071,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.03525101213523358
+    },
+    {
+      "image_id": "IDRiD_34",
+      "split": "train",
+      "true_disc_to_fov": 0.15079320736312193,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.14029415383724467,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.05041784727459464
+    },
+    {
+      "image_id": "IDRiD_35",
+      "split": "train",
+      "true_disc_to_fov": 0.1517404561277746,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.11406083364562256,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.06326905536971433
+    },
+    {
+      "image_id": "IDRiD_36",
+      "split": "train",
+      "true_disc_to_fov": 0.1634118437457664,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.09253508865610395,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.08250626827493476
+    },
+    {
+      "image_id": "IDRiD_37",
+      "split": "train",
+      "true_disc_to_fov": 0.16005361137557042,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.11219590898879843,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.04376379651736563
+    },
+    {
+      "image_id": "IDRiD_38",
+      "split": "train",
+      "true_disc_to_fov": 0.17424903958673743,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1737855526611051,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.011185936896521115
+    },
+    {
+      "image_id": "IDRiD_39",
+      "split": "train",
+      "true_disc_to_fov": 0.1741513155156886,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.06460604734150839,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.07607888197880197
+    },
+    {
+      "image_id": "IDRiD_40",
+      "split": "train",
+      "true_disc_to_fov": 0.184978405881805,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1590632154893744,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.053936025541282566
+    },
+    {
+      "image_id": "IDRiD_41",
+      "split": "train",
+      "true_disc_to_fov": 0.15980390463205882,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.12212836065185438,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.0564296450633708
+    },
+    {
+      "image_id": "IDRiD_42",
+      "split": "train",
+      "true_disc_to_fov": 0.1689045246413838,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.12186045250557609,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.036794806296254305
+    },
+    {
+      "image_id": "IDRiD_43",
+      "split": "train",
+      "true_disc_to_fov": 0.16397035479342387,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.09936944709121528,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.06881242417928546
+    },
+    {
+      "image_id": "IDRiD_44",
+      "split": "train",
+      "true_disc_to_fov": 0.1260665847616572,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.12997185088640223,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.046266178917757084
+    },
+    {
+      "image_id": "IDRiD_45",
+      "split": "train",
+      "true_disc_to_fov": 0.12273775353880798,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.024606445469097807,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.151840177885029
+    },
+    {
+      "image_id": "IDRiD_46",
+      "split": "train",
+      "true_disc_to_fov": 0.14157297946897796,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1947001232556804,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.0826667357779027
+    },
+    {
+      "image_id": "IDRiD_47",
+      "split": "train",
+      "true_disc_to_fov": 0.19654015941836867,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.10179352388805475,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.04307400710853294
+    },
+    {
+      "image_id": "IDRiD_48",
+      "split": "train",
+      "true_disc_to_fov": 0.1630742456464049,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.10193607980518858,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.022201139000921175
+    },
+    {
+      "image_id": "IDRiD_49",
+      "split": "train",
+      "true_disc_to_fov": 0.14764019493385105,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1884662290014944,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.032604805897098826
+    },
+    {
+      "image_id": "IDRiD_50",
+      "split": "train",
+      "true_disc_to_fov": 0.14903049068583094,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.12965455147334354,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.032541065991316155
+    },
+    {
+      "image_id": "IDRiD_51",
+      "split": "train",
+      "true_disc_to_fov": 0.16490603973151502,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1400344729503164,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.04852184380156813
+    },
+    {
+      "image_id": "IDRiD_52",
+      "split": "train",
+      "true_disc_to_fov": 0.17102776667682693,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.10092798305568025,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.10135027629719444
+    },
+    {
+      "image_id": "IDRiD_53",
+      "split": "train",
+      "true_disc_to_fov": 0.15288465339171733,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.08404441667209325,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.030277464417505607
+    },
+    {
+      "image_id": "IDRiD_54",
+      "split": "train",
+      "true_disc_to_fov": 0.15483054615741895,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.13232351590581198,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.05312668308246401
+    },
+    {
+      "image_id": "IDRiD_55",
+      "split": "test",
+      "true_disc_to_fov": 0.1497876229457446,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.13650171110184484,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.09076264751486121
+    },
+    {
+      "image_id": "IDRiD_56",
+      "split": "test",
+      "true_disc_to_fov": 0.14591693550856435,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.05593018026373412,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.05186485075524897
+    },
+    {
+      "image_id": "IDRiD_57",
+      "split": "test",
+      "true_disc_to_fov": 0.15645939450267266,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.21049049317728788,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.02885072511097676
+    },
+    {
+      "image_id": "IDRiD_58",
+      "split": "test",
+      "true_disc_to_fov": 0.1729153185485942,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.17272052916960437,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.027589357396798547
+    },
+    {
+      "image_id": "IDRiD_59",
+      "split": "test",
+      "true_disc_to_fov": 0.17415108357131254,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.12058210703058182,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.3439254183943223
+    },
+    {
+      "image_id": "IDRiD_60",
+      "split": "test",
+      "true_disc_to_fov": 0.18121730107680198,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.018880362510515572,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.1328355521105744
+    },
+    {
+      "image_id": "IDRiD_61",
+      "split": "test",
+      "true_disc_to_fov": 0.16432528311441139,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.07592935972079572,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.006793141833215746
+    },
+    {
+      "image_id": "IDRiD_62",
+      "split": "test",
+      "true_disc_to_fov": 0.14282186066070335,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.11258121669873306,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.083865036870475
+    },
+    {
+      "image_id": "IDRiD_63",
+      "split": "test",
+      "true_disc_to_fov": 0.18458184161278487,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.10689384026746665,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.07397999087187283
+    },
+    {
+      "image_id": "IDRiD_64",
+      "split": "test",
+      "true_disc_to_fov": 0.18508392663294557,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.07380323811900465,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.06278592095825823
+    },
+    {
+      "image_id": "IDRiD_65",
+      "split": "test",
+      "true_disc_to_fov": 0.1578045146217206,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.20426620089015743,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.05256354871907606
+    },
+    {
+      "image_id": "IDRiD_66",
+      "split": "test",
+      "true_disc_to_fov": 0.15490013487555349,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.15995190246776542,
+      "brightness + vessels: hit": false,
+      "brightness + vessels: error_dd": 1.9712415160986292
+    },
+    {
+      "image_id": "IDRiD_67",
+      "split": "test",
+      "true_disc_to_fov": 0.15904603299979914,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.14321790438041254,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.07758734093422456
+    },
+    {
+      "image_id": "IDRiD_68",
+      "split": "test",
+      "true_disc_to_fov": 0.15310616195202692,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.053251509783258315,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.07141440162329478
+    },
+    {
+      "image_id": "IDRiD_69",
+      "split": "test",
+      "true_disc_to_fov": 0.15431819337508026,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.12056113740740433,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.06001696845344759
+    },
+    {
+      "image_id": "IDRiD_70",
+      "split": "test",
+      "true_disc_to_fov": 0.16378088964655194,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.15847942873518106,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.03398251045677615
+    },
+    {
+      "image_id": "IDRiD_71",
+      "split": "test",
+      "true_disc_to_fov": 0.14908814944782142,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.16664191219073907,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.048183492451329475
+    },
+    {
+      "image_id": "IDRiD_72",
+      "split": "test",
+      "true_disc_to_fov": 0.14333781124761302,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.14732601266026785,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.06597209585005571
+    },
+    {
+      "image_id": "IDRiD_73",
+      "split": "test",
+      "true_disc_to_fov": 0.17192097764417585,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1419935573767825,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.05117611130584462
+    },
+    {
+      "image_id": "IDRiD_74",
+      "split": "test",
+      "true_disc_to_fov": 0.13444016600809366,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.1460461268588475,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.10066750394460239
+    },
+    {
+      "image_id": "IDRiD_75",
+      "split": "test",
+      "true_disc_to_fov": 0.13694988983257889,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.2769575952362503,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.10932311965089594
+    },
+    {
+      "image_id": "IDRiD_76",
+      "split": "test",
+      "true_disc_to_fov": 0.161397423156457,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.19714565156068284,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.00412601418746641
+    },
+    {
+      "image_id": "IDRiD_77",
+      "split": "test",
+      "true_disc_to_fov": 0.157363414867724,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.16760373425079797,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.0803965216014919
+    },
+    {
+      "image_id": "IDRiD_78",
+      "split": "test",
+      "true_disc_to_fov": 0.1678739865650821,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.08013979293694411,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.03692511443972107
+    },
+    {
+      "image_id": "IDRiD_79",
+      "split": "test",
+      "true_disc_to_fov": 0.15296845522908187,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.2146798498801109,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.06980493425397177
+    },
+    {
+      "image_id": "IDRiD_80",
+      "split": "test",
+      "true_disc_to_fov": 0.15359444615254914,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.08969231409205207,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.03149035369163847
+    },
+    {
+      "image_id": "IDRiD_81",
+      "split": "test",
+      "true_disc_to_fov": 0.1611614237498394,
+      "brightness: hit": true,
+      "brightness: error_dd": 0.15880764649387685,
+      "brightness + vessels: hit": true,
+      "brightness + vessels: error_dd": 0.08333572691114251
+    }
+  ]
+}

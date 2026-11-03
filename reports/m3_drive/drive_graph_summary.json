@@ -1,0 +1,16 @@
+{
+  "note": "graphs from DRIVE manual (expert) masks; tests graph extraction only",
+  "images": 20,
+  "failures": [],
+  "median": {
+    "segments": 250.5,
+    "junctions": 132.5,
+    "tips": 99.5,
+    "truncated_tips": 22.5,
+    "crossings_resolved": 16.0,
+    "possible_crossings": 59.0,
+    "components": 3.0,
+    "radius_px_median": 0.9911251292672021,
+    "seconds": 1.2553933240000106
+  }
+}

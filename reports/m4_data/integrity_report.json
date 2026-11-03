@@ -1,0 +1,274 @@
+{
+  "data_dir": "/content/drive/MyDrive/dr-pinn/data",
+  "seed": 0,
+  "duplicate_threshold": 0.92,
+  "review_threshold": 0.8,
+  "datasets": {
+    "DRIVE": {
+      "images_with_vessel_masks": 20,
+      "problems": []
+    },
+    "RITE": {
+      "images_with_av_labels": 40,
+      "problems": []
+    },
+    "IDRiD": {
+      "grading_images": 516,
+      "segmentation_images": 81,
+      "od_centres": 413,
+      "fovea_centres": 413,
+      "lesion_masks": {
+        "EX": 81,
+        "HE": 80,
+        "MA": 81,
+        "OD": 81,
+        "SE": 40
+      },
+      "problems": [
+        "IDRiD_001: label file says train, image folder says test",
+        "IDRiD_002: label file says train, image folder says test",
+        "IDRiD_003: label file says train, image folder says test",
+        "IDRiD_004: label file says train, image folder says test",
+        "IDRiD_005: label file says train, image folder says test",
+        "IDRiD_006: label file says train, image folder says test",
+        "IDRiD_007: label file says train, image folder says test",
+        "IDRiD_008: label file says train, image folder says test",
+        "IDRiD_009: label file says train, image folder says test",
+        "IDRiD_010: label file says train, image folder says test",
+        "IDRiD_011: label file says train, image folder says test",
+        "IDRiD_012: label file says train, image folder says test",
+        "IDRiD_013: label file says train, image folder says test",
+        "IDRiD_014: label file says train, image folder says test",
+        "IDRiD_015: label file says train, image folder says test",
+        "IDRiD_016: label file says train, image folder says test",
+        "IDRiD_017: label file says train, image folder says test",
+        "IDRiD_018: label file says train, image folder says test",
+        "IDRiD_019: label file says train, image folder says test",
+        "IDRiD_020: label file says train, image folder says test",
+        "IDRiD_021: label file says train, image folder says test",
+        "IDRiD_022: label file says train, image folder says test",
+        "IDRiD_023: label file says train, image folder says test",
+        "IDRiD_024: label file says train, image folder says test",
+        "IDRiD_025: label file says train, image folder says test",
+        "IDRiD_026: label file says train, image folder says test",
+        "IDRiD_027: label file says train, image folder says test",
+        "IDRiD_028: label file says train, image folder says test",
+        "IDRiD_029: label file says train, image folder says test",
+        "IDRiD_030: label file says train, image folder says test",
+        "IDRiD_031: label file says train, image folder says test",
+        "IDRiD_032: label file says train, image folder says test",
+        "IDRiD_033: label file says train, image folder says test",
+        "IDRiD_034: label file says train, image folder says test",
+        "IDRiD_035: label file says train, image folder says test",
+        "IDRiD_036: label file says train, image folder says test",
+        "IDRiD_037: label file says train, image folder says test",
+        "IDRiD_038: label file says train, image folder says test",
+        "IDRiD_039: label file says train, image folder says test",
+        "IDRiD_040: label file says train, image folder says test",
+        "IDRiD_041: label file says train, image folder says test",
+        "IDRiD_042: label file says train, image folder says test",
+        "IDRiD_043: label file says train, image folder says test",
+        "IDRiD_044: label file says train, image folder says test",
+        "IDRiD_045: label file says train, image folder says test",
+        "IDRiD_046: label file says train, image folder says test",
+        "IDRiD_047: label file says train, image folder says test",
+        "IDRiD_048: label file says train, image folder says test",
+        "IDRiD_049: label file says train, image folder says test",
+        "IDRiD_050: label file says train, image folder says test",
+        "IDRiD_051: label file says train, image folder says test",
+        "IDRiD_052: label file says train, image folder says test",
+        "IDRiD_053: label file says train, image folder says test",
+        "IDRiD_054: label file says train, image folder says test",
+        "IDRiD_055: label file says train, image folder says test",
+        "IDRiD_056: label file says train, image folder says test",
+        "IDRiD_057: label file says train, image folder says test",
+        "IDRiD_058: label file says train, image folder says test",
+        "IDRiD_059: label file says train, image folder says test",
+        "IDRiD_060: label file says train, image folder says test",
+        "IDRiD_061: label file says train, image folder says test",
+        "IDRiD_062: label file says train, image folder says test",
+        "IDRiD_063: label file says train, image folder says test",
+        "IDRiD_064: label file says train, image folder says test",
+        "IDRiD_065: label file says train, image folder says test",
+        "IDRiD_066: label file says train, image folder says test",
+        "IDRiD_067: label file says train, image folder says test",
+        "IDRiD_068: label file says train, image folder says test",
+        "IDRiD_069: label file says train, image folder says test",
+        "IDRiD_070: label file says train, image folder says test",
+        "IDRiD_071: label file says train, image folder says test",
+        "IDRiD_072: label file says train, image folder says test",
+        "IDRiD_073: label file says train, image folder says test",
+        "IDRiD_074: label file says train, image folder says test",
+        "IDRiD_075: label file says train, image folder says test",
+        "IDRiD_076: label file says train, image folder says test",
+        "IDRiD_077: label file says train, image folder says test",
+        "IDRiD_078: label file says train, image folder says test",
+        "IDRiD_079: label file says train, image folder says test",
+        "IDRiD_080: label file says train, image folder says test",
+        "IDRiD_081: label file says train, image folder says test",
+        "IDRiD_082: label file says train, image folder says test",
+        "IDRiD_083: label file says train, image folder says test",
+        "IDRiD_084: label file says train, image folder says test",
+        "IDRiD_085: label file says train, image folder says test",
+        "IDRiD_086: label file says train, image folder says test",
+        "IDRiD_087: label file says train, image folder says test",
+        "IDRiD_088: label file says train, image folder says test",
+        "IDRiD_089: label file says train, image folder says test",
+        "IDRiD_090: label file says train, image folder says test",
+        "IDRiD_091: label file says train, image folder says test",
+        "IDRiD_092: label file says train, image folder says test",
+        "IDRiD_093: label file says train, image folder says test",
+        "IDRiD_094: label file says train, image folder says test",
+        "IDRiD_095: label file says train, image folder says test",
+        "IDRiD_096: label file says train, image folder says test",
+        "IDRiD_097: label file says train, image folder says test",
+        "IDRiD_098: label file says train, image folder says test",
+        "IDRiD_099: label file says train, image folder says test",
+        "IDRiD_100: label file says train, image folder says test",
+        "IDRiD_101: label file says train, image folder says test",
+        "IDRiD_102: label file says train, image folder says test",
+        "IDRiD_103: label file says train, image folder says test"
+      ]
+    },
+    "APTOS2019": {
+      "folder": "APTOS2019",
+      "labelled_images": 3662,
+      "images_without_label": 0,
+      "problems": []
+    }
+  },
+  "images_checked": 4319,
+  "corrupt_images": [],
+  "image_sizes": {
+    "DRIVE": {
+      "width_min_median_max": [
+        565,
+        565,
+        565
+      ],
+      "height_min_median_max": [
+        584,
+        584,
+        584
+      ]
+    },
+    "RITE": {
+      "width_min_median_max": [
+        565,
+        565,
+        565
+      ],
+      "height_min_median_max": [
+        584,
+        584,
+        584
+      ]
+    },
+    "IDRiD": {
+      "width_min_median_max": [
+        4288,
+        4288,
+        4288
+      ],
+      "height_min_median_max": [
+        2848,
+        2848,
+        2848
+      ]
+    },
+    "APTOS2019": {
+      "width_min_median_max": [
+        442,
+        1024,
+        1024
+      ],
+      "height_min_median_max": [
+        358,
+        857,
+        1024
+      ]
+    }
+  },
+  "duplicate_pairs": 325,
+  "duplicate_pairs_by_kind": {
+    "DRIVE/vessels vs RITE/av": 20,
+    "same dataset": 253,
+    "IDRiD/grading vs IDRiD/segmentation": 52
+  },
+  "review_pairs": 202,
+  "grouping": {
+    "groups": 4007,
+    "duplicate_groups": 300,
+    "label_conflict_groups": 118,
+    "excluded_for_conflict": 244,
+    "moved_to_test_by_duplicates": 13
+  },
+  "manifest_rows": 4075,
+  "manifest_fingerprint": "196f47a2f7c67930",
+  "splits": {
+    "APTOS2019/grading": {
+      "test": {
+        "0": 269,
+        "1": 54,
+        "2": 148,
+        "3": 27,
+        "4": 43
+      },
+      "train": {
+        "0": 1262,
+        "1": 249,
+        "2": 680,
+        "3": 120,
+        "4": 192
+      },
+      "val": {
+        "0": 270,
+        "1": 57,
+        "2": 147,
+        "3": 25,
+        "4": 40
+      }
+    },
+    "DRIVE/vessels": {
+      "cv": {
+        "": 20
+      }
+    },
+    "IDRiD/grading": {
+      "test": {
+        "2": 26,
+        "3": 18,
+        "4": 9
+      },
+      "train": {
+        "0": 113,
+        "1": 15,
+        "2": 77,
+        "3": 38,
+        "4": 18
+      },
+      "val": {
+        "0": 20,
+        "1": 3,
+        "2": 9,
+        "3": 5,
+        "4": 2
+      }
+    },
+    "IDRiD/segmentation": {
+      "test": {
+        "": 28
+      },
+      "train": {
+        "": 51
+      }
+    },
+    "RITE/av": {
+      "cv": {
+        "": 40
+      }
+    }
+  },
+  "leakage_check": "passed",
+  "seconds": 28.4
+}

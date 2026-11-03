@@ -1,0 +1,13 @@
+# M1-M8. PyTorch (M5-M8) and torchvision (M6) are preinstalled in Colab; locally install them separately:
+#   pip install torch torchvision    (see pytorch.org for a CPU-only or CUDA build)
+numpy>=1.26
+scipy>=1.11
+scikit-image>=0.22
+Pillow>=10.0
+matplotlib>=3.7
+pytest>=7.4
+# M9-M10 API and dashboard (httpx is only for the API tests)
+fastapi>=0.110
+uvicorn>=0.27
+python-multipart>=0.0.9
+httpx>=0.27

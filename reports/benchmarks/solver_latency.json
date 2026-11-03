@@ -1,0 +1,85 @@
+{
+  "note": "synthetic networks; measured on the machine listed below only",
+  "environment": {
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_count": 2,
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "single_solve": [
+    {
+      "segments": 16,
+      "nodes": 16,
+      "median_ms": 1.2146660000666998,
+      "p95_ms": 1.4111539999589695
+    },
+    {
+      "segments": 32,
+      "nodes": 32,
+      "median_ms": 1.1222980000411553,
+      "p95_ms": 1.2478367499909382
+    },
+    {
+      "segments": 64,
+      "nodes": 64,
+      "median_ms": 1.289242000041213,
+      "p95_ms": 2.2967085500113202
+    },
+    {
+      "segments": 129,
+      "nodes": 128,
+      "median_ms": 1.368858999967415,
+      "p95_ms": 1.496864149925159
+    },
+    {
+      "segments": 260,
+      "nodes": 256,
+      "median_ms": 1.5720350000378858,
+      "p95_ms": 1.9396084999925736
+    },
+    {
+      "segments": 521,
+      "nodes": 512,
+      "median_ms": 1.898132999997415,
+      "p95_ms": 2.0917353500067293
+    },
+    {
+      "segments": 1043,
+      "nodes": 1024,
+      "median_ms": 2.427841499979877,
+      "p95_ms": 2.909199650048322
+    },
+    {
+      "segments": 2087,
+      "nodes": 2048,
+      "median_ms": 3.4192480000001524,
+      "p95_ms": 4.024818400029062
+    },
+    {
+      "segments": 4176,
+      "nodes": 4096,
+      "median_ms": 5.239948499990987,
+      "p95_ms": 5.677485749964717
+    },
+    {
+      "segments": 8354,
+      "nodes": 8192,
+      "median_ms": 9.881953000046906,
+      "p95_ms": 12.369751449978141
+    },
+    {
+      "segments": 16710,
+      "nodes": 16384,
+      "median_ms": 19.244544999935442,
+      "p95_ms": 23.676024949963903
+    }
+  ],
+  "monte_carlo": {
+    "segments": 521,
+    "samples": 1000,
+    "total_s": 2.220769501999939,
+    "per_sample_ms": 2.220769501999939
+  }
+}

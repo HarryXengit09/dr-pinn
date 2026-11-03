@@ -1,0 +1,4936 @@
+{
+  "drpinn_version": "0.11.0",
+  "disclaimer": "Research prototype, not a medical device. Model-derived risk estimates are experimental, depend on stated modelling assumptions, and require independent clinical validation.",
+  "milestones": {
+    "M5": {
+      "status": "ok",
+      "path": "/content/drive/MyDrive/dr-pinn/reports/m5_full/m5_results.json"
+    },
+    "M6": {
+      "status": "ok",
+      "path": "/content/drive/MyDrive/dr-pinn/reports/m6_full/m6_results.json"
+    },
+    "M7": {
+      "status": "ok",
+      "path": "/content/drive/MyDrive/dr-pinn/reports/m7_full/m7_results.json"
+    },
+    "M8": {
+      "status": "ok",
+      "path": "/content/drive/MyDrive/dr-pinn/reports/m8_quick/m8_results.json"
+    }
+  },
+  "supported_statements": [
+    "Model-derived high-shear regions did not locate red lesions better than chance (AUROC 0.514 [0.477, 0.551], 27 test photos).",
+    "The data rule out a strong association: AUROCs above 0.55 are outside the interval.",
+    "Simple baselines performed better than high-shear: near_fovea, thinness (paired CI below 0).",
+    "Adding the physics scores to position and geometry did not change AUROC measurably (+0.001 [-0.009, 0.010]).",
+    "DRIVE: the direct solve is exact by definition and took 4.5 ms; the most accurate alternative (CG(30)) had a median pressure error of 2.0e-01 in 3.2 ms; the fastest (Jacobi(30)) took 1.8 ms.",
+    "synthetic: the direct solve is exact by definition and took 4.1 ms; the most accurate alternative (nodal PINN) had a median pressure error of 9.4e-06 in 1.8 s; the fastest (Jacobi(30)) took 1.8 ms.",
+    "synthetic: the most accurate alternative was not faster than the direct solve."
+  ],
+  "avoid": [
+    "Do not write that shear and lesions are unrelated: an interval that includes 0.5 is absence of evidence, not evidence of absence.",
+    "Do not present the map as showing where disease is or will develop.",
+    "Only 27 test photos: state the small sample wherever the interval is quoted.",
+    "Do not generalise the M8 comparison beyond these networks, boundary conditions and iteration budgets."
+  ],
+  "limitations": [
+    "Shear stress comes from a one-dimensional network model with assumed pressures, hematocrit and optic-disc size and from vessel radii measured on a 2-D photo; absolute values are illustrative and only within-eye rankings are used.",
+    "Branches too small or too faint to segment are missing, and the artery and vein trees are connected only as far as the segmentation allows.",
+    "The M7 lesion analysis uses one dataset (IDRiD) and one camera; its optic-disc masks are expert-drawn, whereas the deployed API locates the disc with an unvalidated heuristic.",
+    "Lesions are labelled on the photo, but only vessel patches are scored; many lesions lie between vessels.",
+    "The DR grade model is trained on public data (APTOS) and tested externally on IDRiD only; it is not validated for clinical use, other cameras, or other populations.",
+    "Nothing in this project is a medical device, a diagnosis or a referral decision."
+  ],
+  "results": {
+    "M5": {
+      "preset": "full",
+      "config": {
+        "iterations": 4000,
+        "batch": 16,
+        "patch": 96,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "vessel_fraction": 0.5,
+        "av_loss_weight": 1.0,
+        "save_every": 1000,
+        "seed": 0,
+        "unet": {
+          "in_channels": 4,
+          "out_channels": 3,
+          "base": 32,
+          "depth": 4,
+          "dropout": 0.1
+        }
+      },
+      "environment": {
+        "device": "cuda",
+        "gpu": "Tesla T4",
+        "torch": "2.11.0+cu130",
+        "python": "3.13.16"
+      },
+      "use_av": true,
+      "train_photos": [
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "test_photos": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20"
+      ],
+      "cv": {
+        "per_image": [
+          {
+            "fold": 0,
+            "image_id": "21",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8432689126330745,
+            "iou": 0.7290103307870915,
+            "sensitivity": 0.8788640973630831,
+            "specificity": 0.9747847723314257,
+            "accuracy": 0.9643040780141844,
+            "auc": 0.9878293778991979,
+            "centreline_recall": 0.8816395600263233,
+            "centreline_precision": 0.977725922783199,
+            "radius_median_abs_error": 0.14773511987897536,
+            "segments_pred": 153,
+            "segments_ref": 210,
+            "av_accuracy": 0.87196802646086,
+            "av_sensitivity": 0.8764010905786126,
+            "av_specificity": 0.8682680151706701,
+            "av_centreline_pixels": 7256,
+            "combined_segments": 153,
+            "combined_components": 11,
+            "combined_crossings_split": 11,
+            "combined_possible_crossings": 37,
+            "artery_segments": 60,
+            "artery_components": 26,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 4,
+            "vein_segments": 76,
+            "vein_components": 18,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 8
+          },
+          {
+            "fold": 0,
+            "image_id": "28",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8276072633777921,
+            "iou": 0.7059129910359385,
+            "sensitivity": 0.7994970349902202,
+            "specificity": 0.9781158068450886,
+            "accuracy": 0.9528080694330194,
+            "auc": 0.9778112020165285,
+            "centreline_recall": 0.7766392687331835,
+            "centreline_precision": 0.9873776908023484,
+            "radius_median_abs_error": 0.1520587549878788,
+            "segments_pred": 191,
+            "segments_ref": 329,
+            "av_accuracy": 0.8170336037079954,
+            "av_sensitivity": 0.8329460366640847,
+            "av_specificity": 0.804078200546563,
+            "av_centreline_pixels": 8630,
+            "combined_segments": 191,
+            "combined_components": 13,
+            "combined_crossings_split": 8,
+            "combined_possible_crossings": 49,
+            "artery_segments": 69,
+            "artery_components": 33,
+            "artery_crossings_split": 2,
+            "artery_possible_crossings": 4,
+            "vein_segments": 93,
+            "vein_components": 21,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 14
+          },
+          {
+            "fold": 0,
+            "image_id": "36",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8355841051688079,
+            "iou": 0.7175993636620224,
+            "sensitivity": 0.7793724222494706,
+            "specificity": 0.9838553725703355,
+            "accuracy": 0.9515617229344635,
+            "auc": 0.9805816253451911,
+            "centreline_recall": 0.782882046152747,
+            "centreline_precision": 0.9801201173238978,
+            "radius_median_abs_error": 0.1116215880591161,
+            "segments_pred": 188,
+            "segments_ref": 297,
+            "av_accuracy": 0.8010084033613445,
+            "av_sensitivity": 0.7698850574712643,
+            "av_specificity": 0.8306010928961749,
+            "av_centreline_pixels": 8925,
+            "combined_segments": 188,
+            "combined_components": 20,
+            "combined_crossings_split": 6,
+            "combined_possible_crossings": 31,
+            "artery_segments": 73,
+            "artery_components": 43,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 4,
+            "vein_segments": 96,
+            "vein_components": 31,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 7
+          },
+          {
+            "fold": 0,
+            "image_id": "37",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.838077660254135,
+            "iou": 0.7212854349951124,
+            "sensitivity": 0.8186956069484415,
+            "specificity": 0.9803624996848925,
+            "accuracy": 0.9598390745908639,
+            "auc": 0.9825453546861767,
+            "centreline_recall": 0.8111153796901012,
+            "centreline_precision": 0.981614539306847,
+            "radius_median_abs_error": 0.14385493181789955,
+            "segments_pred": 173,
+            "segments_ref": 252,
+            "av_accuracy": 0.864679822795006,
+            "av_sensitivity": 0.8529498962348058,
+            "av_specificity": 0.8743866535819431,
+            "av_centreline_pixels": 7449,
+            "combined_segments": 173,
+            "combined_components": 9,
+            "combined_crossings_split": 10,
+            "combined_possible_crossings": 37,
+            "artery_segments": 70,
+            "artery_components": 27,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 2,
+            "vein_segments": 86,
+            "vein_components": 19,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 11
+          },
+          {
+            "fold": 1,
+            "image_id": "25",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.7711536012516601,
+            "iou": 0.6275427116335535,
+            "sensitivity": 0.6693405760485094,
+            "specificity": 0.9892231908348578,
+            "accuracy": 0.9446741320009501,
+            "auc": 0.9626866503660488,
+            "centreline_recall": 0.6288236251220306,
+            "centreline_precision": 0.9720615944383081,
+            "radius_median_abs_error": 0.17532597030924446,
+            "segments_pred": 114,
+            "segments_ref": 278,
+            "av_accuracy": 0.8142136134224526,
+            "av_sensitivity": 0.8455309872313921,
+            "av_specificity": 0.7898058252427185,
+            "av_centreline_pixels": 7331,
+            "combined_segments": 114,
+            "combined_components": 15,
+            "combined_crossings_split": 9,
+            "combined_possible_crossings": 30,
+            "artery_segments": 46,
+            "artery_components": 28,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 5,
+            "vein_segments": 58,
+            "vein_components": 13,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 4
+          },
+          {
+            "fold": 1,
+            "image_id": "33",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8310245147726846,
+            "iou": 0.7108998651165778,
+            "sensitivity": 0.8297162562314929,
+            "specificity": 0.977822430231922,
+            "accuracy": 0.9604721214729206,
+            "auc": 0.981805214566277,
+            "centreline_recall": 0.7723526212292373,
+            "centreline_precision": 0.9933102910023414,
+            "radius_median_abs_error": 0.14799995682146444,
+            "segments_pred": 120,
+            "segments_ref": 248,
+            "av_accuracy": 0.8685537029856534,
+            "av_sensitivity": 0.8712871287128713,
+            "av_specificity": 0.8663722983964676,
+            "av_centreline_pixels": 7737,
+            "combined_segments": 120,
+            "combined_components": 17,
+            "combined_crossings_split": 18,
+            "combined_possible_crossings": 24,
+            "artery_segments": 44,
+            "artery_components": 18,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 0,
+            "vein_segments": 82,
+            "vein_components": 20,
+            "vein_crossings_split": 2,
+            "vein_possible_crossings": 8
+          },
+          {
+            "fold": 1,
+            "image_id": "35",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8428429116141665,
+            "iou": 0.7283738051416019,
+            "sensitivity": 0.8575422899482734,
+            "specificity": 0.9745068681732769,
+            "accuracy": 0.9598060146016183,
+            "auc": 0.9845596183115405,
+            "centreline_recall": 0.8457164360078605,
+            "centreline_precision": 0.9889646869983949,
+            "radius_median_abs_error": 0.13145390547033275,
+            "segments_pred": 170,
+            "segments_ref": 250,
+            "av_accuracy": 0.8591531755915317,
+            "av_sensitivity": 0.8539811752734673,
+            "av_specificity": 0.8641131983410588,
+            "av_centreline_pixels": 8030,
+            "combined_segments": 170,
+            "combined_components": 12,
+            "combined_crossings_split": 20,
+            "combined_possible_crossings": 39,
+            "artery_segments": 71,
+            "artery_components": 21,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 0,
+            "vein_segments": 84,
+            "vein_components": 12,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 10
+          },
+          {
+            "fold": 1,
+            "image_id": "39",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8081988804741521,
+            "iou": 0.6781323387208178,
+            "sensitivity": 0.8658459150557358,
+            "specificity": 0.9605900196874121,
+            "accuracy": 0.9487822034643454,
+            "auc": 0.98022383113917,
+            "centreline_recall": 0.8611921634014172,
+            "centreline_precision": 0.9723278813236972,
+            "radius_median_abs_error": 0.1988589704635444,
+            "segments_pred": 193,
+            "segments_ref": 254,
+            "av_accuracy": 0.853523952846752,
+            "av_sensitivity": 0.8419057931781266,
+            "av_specificity": 0.8635514018691589,
+            "av_centreline_pixels": 7974,
+            "combined_segments": 193,
+            "combined_components": 10,
+            "combined_crossings_split": 10,
+            "combined_possible_crossings": 54,
+            "artery_segments": 61,
+            "artery_components": 23,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 2,
+            "vein_segments": 84,
+            "vein_components": 26,
+            "vein_crossings_split": 2,
+            "vein_possible_crossings": 4
+          },
+          {
+            "fold": 2,
+            "image_id": "29",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8134033926655879,
+            "iou": 0.6854927678352537,
+            "sensitivity": 0.8064388203907996,
+            "specificity": 0.9754773990208998,
+            "accuracy": 0.9548500059390521,
+            "auc": 0.9744578043726708,
+            "centreline_recall": 0.7182142717037385,
+            "centreline_precision": 0.9877276326207443,
+            "radius_median_abs_error": 0.21470815190380677,
+            "segments_pred": 174,
+            "segments_ref": 327,
+            "av_accuracy": 0.8173470653927286,
+            "av_sensitivity": 0.850051975051975,
+            "av_specificity": 0.7874614105913085,
+            "av_centreline_pixels": 8059,
+            "combined_segments": 174,
+            "combined_components": 13,
+            "combined_crossings_split": 9,
+            "combined_possible_crossings": 47,
+            "artery_segments": 60,
+            "artery_components": 20,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 6,
+            "vein_segments": 77,
+            "vein_components": 15,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 9
+          },
+          {
+            "fold": 2,
+            "image_id": "31",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.7965928449744464,
+            "iou": 0.6619479048697622,
+            "sensitivity": 0.8225360607126703,
+            "specificity": 0.9767713807241439,
+            "accuracy": 0.9632939688451083,
+            "auc": 0.9774742293555395,
+            "centreline_recall": 0.7524541884816754,
+            "centreline_precision": 0.9697347207973033,
+            "radius_median_abs_error": 0.23472087135726727,
+            "segments_pred": 90,
+            "segments_ref": 131,
+            "av_accuracy": 0.7074646940147948,
+            "av_sensitivity": 0.820109439124487,
+            "av_specificity": 0.5985449735449735,
+            "av_centreline_pixels": 5948,
+            "combined_segments": 90,
+            "combined_components": 15,
+            "combined_crossings_split": 2,
+            "combined_possible_crossings": 18,
+            "artery_segments": 47,
+            "artery_components": 28,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 0,
+            "vein_segments": 44,
+            "vein_components": 12,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 10
+          },
+          {
+            "fold": 2,
+            "image_id": "34",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.6134187740778884,
+            "iou": 0.44239656690140844,
+            "sensitivity": 0.4980952085978877,
+            "specificity": 0.9790738977117706,
+            "accuracy": 0.9105243177865473,
+            "auc": 0.8901788617244266,
+            "centreline_recall": 0.571577964519141,
+            "centreline_precision": 0.9455119768360095,
+            "radius_median_abs_error": 0.1497803913302782,
+            "segments_pred": 135,
+            "segments_ref": 251,
+            "av_accuracy": 0.7802118440057776,
+            "av_sensitivity": 0.7748194945848376,
+            "av_specificity": 0.7863777089783281,
+            "av_centreline_pixels": 4154,
+            "combined_segments": 135,
+            "combined_components": 31,
+            "combined_crossings_split": 3,
+            "combined_possible_crossings": 34,
+            "artery_segments": 71,
+            "artery_components": 45,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 8,
+            "vein_segments": 48,
+            "vein_components": 26,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 0
+          },
+          {
+            "fold": 2,
+            "image_id": "38",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8165006640106242,
+            "iou": 0.6899037787191068,
+            "sensitivity": 0.8636092285001932,
+            "specificity": 0.9637415485443521,
+            "accuracy": 0.9511369262324069,
+            "auc": 0.981953924855409,
+            "centreline_recall": 0.8750581370766564,
+            "centreline_precision": 0.9753729915837797,
+            "radius_median_abs_error": 0.16987040602500847,
+            "segments_pred": 190,
+            "segments_ref": 216,
+            "av_accuracy": 0.8767003619118932,
+            "av_sensitivity": 0.9128151260504201,
+            "av_specificity": 0.8439952437574316,
+            "av_centreline_pixels": 8013,
+            "combined_segments": 190,
+            "combined_components": 13,
+            "combined_crossings_split": 10,
+            "combined_possible_crossings": 37,
+            "artery_segments": 72,
+            "artery_components": 24,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 0,
+            "vein_segments": 87,
+            "vein_components": 15,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 6
+          },
+          {
+            "fold": 3,
+            "image_id": "22",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8187560403147867,
+            "iou": 0.6931303509335827,
+            "sensitivity": 0.7960067114093959,
+            "specificity": 0.9776487472585226,
+            "accuracy": 0.9538750735662271,
+            "auc": 0.9757154010508525,
+            "centreline_recall": 0.7521487848251334,
+            "centreline_precision": 0.9907970832285642,
+            "radius_median_abs_error": 0.1673633035381168,
+            "segments_pred": 165,
+            "segments_ref": 298,
+            "av_accuracy": 0.8214285714285714,
+            "av_sensitivity": 0.7837155963302752,
+            "av_specificity": 0.8635897435897436,
+            "av_centreline_pixels": 8260,
+            "combined_segments": 165,
+            "combined_components": 14,
+            "combined_crossings_split": 11,
+            "combined_possible_crossings": 37,
+            "artery_segments": 63,
+            "artery_components": 23,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 0,
+            "vein_segments": 76,
+            "vein_components": 18,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 10
+          },
+          {
+            "fold": 3,
+            "image_id": "30",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.7876580758764207,
+            "iou": 0.6496996104839242,
+            "sensitivity": 0.7605982146307532,
+            "specificity": 0.9780665600699169,
+            "accuracy": 0.9533043795845269,
+            "auc": 0.972301025162485,
+            "centreline_recall": 0.7406758448060075,
+            "centreline_precision": 0.989693689543989,
+            "radius_median_abs_error": 0.2046917008886735,
+            "segments_pred": 112,
+            "segments_ref": 192,
+            "av_accuracy": 0.793015788065293,
+            "av_sensitivity": 0.7921524026158658,
+            "av_specificity": 0.7937831690674754,
+            "av_centreline_pixels": 7474,
+            "combined_segments": 112,
+            "combined_components": 15,
+            "combined_crossings_split": 12,
+            "combined_possible_crossings": 21,
+            "artery_segments": 36,
+            "artery_components": 18,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 0,
+            "vein_segments": 62,
+            "vein_components": 28,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 0
+          },
+          {
+            "fold": 3,
+            "image_id": "32",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8113304965549166,
+            "iou": 0.6825534719309808,
+            "sensitivity": 0.8452663599940644,
+            "specificity": 0.9675434874840899,
+            "accuracy": 0.9528904971904119,
+            "auc": 0.9776915393806043,
+            "centreline_recall": 0.8024795479463608,
+            "centreline_precision": 0.9772630684232895,
+            "radius_median_abs_error": 0.2636411945828272,
+            "segments_pred": 149,
+            "segments_ref": 202,
+            "av_accuracy": 0.8654458598726115,
+            "av_sensitivity": 0.8263640999490056,
+            "av_specificity": 0.9078583287216381,
+            "av_centreline_pixels": 7536,
+            "combined_segments": 149,
+            "combined_components": 21,
+            "combined_crossings_split": 13,
+            "combined_possible_crossings": 38,
+            "artery_segments": 51,
+            "artery_components": 23,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 6,
+            "vein_segments": 73,
+            "vein_components": 27,
+            "vein_crossings_split": 2,
+            "vein_possible_crossings": 0
+          },
+          {
+            "fold": 3,
+            "image_id": "40",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8079257011766448,
+            "iou": 0.6777477729149207,
+            "sensitivity": 0.8734,
+            "specificity": 0.9642676780179628,
+            "accuracy": 0.954259078132297,
+            "auc": 0.9820243472922258,
+            "centreline_recall": 0.8528182277550646,
+            "centreline_precision": 0.9819863160145392,
+            "radius_median_abs_error": 0.25685640139170496,
+            "segments_pred": 150,
+            "segments_ref": 186,
+            "av_accuracy": 0.9045143638850889,
+            "av_sensitivity": 0.8905223647169221,
+            "av_specificity": 0.9153902261123268,
+            "av_centreline_pixels": 7310,
+            "combined_segments": 150,
+            "combined_components": 7,
+            "combined_crossings_split": 10,
+            "combined_possible_crossings": 44,
+            "artery_segments": 53,
+            "artery_components": 15,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 4,
+            "vein_segments": 78,
+            "vein_components": 12,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 11
+          },
+          {
+            "fold": 4,
+            "image_id": "23",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.6647268977201576,
+            "iou": 0.49782093010426437,
+            "sensitivity": 0.8311688311688312,
+            "specificity": 0.9295791701578414,
+            "accuracy": 0.9202145608645541,
+            "auc": 0.9624042479456525,
+            "centreline_recall": 0.9016245487364621,
+            "centreline_precision": 0.6535692438002918,
+            "radius_median_abs_error": 0.1262633312011039,
+            "segments_pred": 212,
+            "segments_ref": 92,
+            "av_accuracy": 0.6718981972428419,
+            "av_sensitivity": 0.7396755162241888,
+            "av_specificity": 0.5801298052920619,
+            "av_centreline_pixels": 4715,
+            "combined_segments": 212,
+            "combined_components": 24,
+            "combined_crossings_split": 10,
+            "combined_possible_crossings": 67,
+            "artery_segments": 151,
+            "artery_components": 53,
+            "artery_crossings_split": 3,
+            "artery_possible_crossings": 21,
+            "vein_segments": 68,
+            "vein_components": 52,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 0
+          },
+          {
+            "fold": 4,
+            "image_id": "24",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8321623731459797,
+            "iou": 0.7125668449197861,
+            "sensitivity": 0.7671071568755724,
+            "specificity": 0.984565539731203,
+            "accuracy": 0.9480735620877722,
+            "auc": 0.9746477966703391,
+            "centreline_recall": 0.7237118822292324,
+            "centreline_precision": 0.9882518137140183,
+            "radius_median_abs_error": 0.13993660008359066,
+            "segments_pred": 179,
+            "segments_ref": 444,
+            "av_accuracy": 0.815519610952532,
+            "av_sensitivity": 0.8548990276738968,
+            "av_specificity": 0.7865271659324523,
+            "av_centreline_pixels": 9459,
+            "combined_segments": 179,
+            "combined_components": 6,
+            "combined_crossings_split": 19,
+            "combined_possible_crossings": 42,
+            "artery_segments": 66,
+            "artery_components": 14,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 4,
+            "vein_segments": 97,
+            "vein_components": 30,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 13
+          },
+          {
+            "fold": 4,
+            "image_id": "26",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.800801632151949,
+            "iou": 0.6677807889190003,
+            "sensitivity": 0.8065536805353506,
+            "specificity": 0.9710824105751129,
+            "accuracy": 0.9509844863433619,
+            "auc": 0.9714115952259397,
+            "centreline_recall": 0.7579485761680951,
+            "centreline_precision": 0.9522255192878338,
+            "radius_median_abs_error": 0.18138838891303877,
+            "segments_pred": 141,
+            "segments_ref": 188,
+            "av_accuracy": 0.7978784403669725,
+            "av_sensitivity": 0.8338630453626119,
+            "av_specificity": 0.7624466571834992,
+            "av_centreline_pixels": 6976,
+            "combined_segments": 141,
+            "combined_components": 6,
+            "combined_crossings_split": 15,
+            "combined_possible_crossings": 26,
+            "artery_segments": 59,
+            "artery_components": 27,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 7,
+            "vein_segments": 80,
+            "vein_components": 32,
+            "vein_crossings_split": 2,
+            "vein_possible_crossings": 4
+          },
+          {
+            "fold": 4,
+            "image_id": "27",
+            "reference": "DRIVE 1st observer",
+            "dice": 0.8221101346783839,
+            "iou": 0.6979516157513685,
+            "sensitivity": 0.8157614117161432,
+            "specificity": 0.9753113129229454,
+            "accuracy": 0.9549524637223143,
+            "auc": 0.9801768523592749,
+            "centreline_recall": 0.786554499435522,
+            "centreline_precision": 0.9864539576155189,
+            "radius_median_abs_error": 0.15871007387983704,
+            "segments_pred": 175,
+            "segments_ref": 322,
+            "av_accuracy": 0.8537530835193234,
+            "av_sensitivity": 0.9164171656686627,
+            "av_specificity": 0.7980022197558269,
+            "av_centreline_pixels": 8513,
+            "combined_segments": 175,
+            "combined_components": 13,
+            "combined_crossings_split": 15,
+            "combined_possible_crossings": 46,
+            "artery_segments": 75,
+            "artery_components": 25,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 6,
+            "vein_segments": 77,
+            "vein_components": 14,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 7
+          }
+        ],
+        "summary": {
+          "fold": {
+            "mean": 2.0,
+            "sd": 1.4509525002200232,
+            "n": 20
+          },
+          "dice": {
+            "mean": 0.7991572438447129,
+            "sd": 0.05841223254414446,
+            "n": 20
+          },
+          "iou": {
+            "mean": 0.6688874622688037,
+            "sd": 0.07345067333425792,
+            "n": 20
+          },
+          "sensitivity": {
+            "mean": 0.7992707941683445,
+            "sd": 0.08574066011656202,
+            "n": 20
+          },
+          "specificity": {
+            "mean": 0.9731195046288986,
+            "sd": 0.012498993897852863,
+            "n": 20
+          },
+          "accuracy": {
+            "mean": 0.9505303368403473,
+            "sd": 0.013119828355233688,
+            "n": 20
+          },
+          "auc": {
+            "mean": 0.9729240249862776,
+            "sd": 0.020523705718104256,
+            "n": 20
+          },
+          "centreline_recall": {
+            "mean": 0.7797813787022994,
+            "sd": 0.08233853855637271,
+            "n": 20
+          },
+          "centreline_precision": {
+            "mean": 0.9626045368722458,
+            "sd": 0.07377979389764301,
+            "n": 20
+          },
+          "radius_median_abs_error": {
+            "mean": 0.17384200064518546,
+            "sd": 0.04269753000754722,
+            "n": 20
+          },
+          "segments_pred": {
+            "mean": 158.7,
+            "sd": 32.164216796080446,
+            "n": 20
+          },
+          "segments_ref": {
+            "mean": 248.35,
+            "sd": 78.0507763203578,
+            "n": 20
+          },
+          "av_accuracy": {
+            "mean": 0.8227656090915012,
+            "sd": 0.056638998788936655,
+            "n": 20
+          },
+          "av_sensitivity": {
+            "mean": 0.8370146209348887,
+            "sd": 0.04695807442152445,
+            "n": 20
+          },
+          "av_specificity": {
+            "mean": 0.809264166928591,
+            "sd": 0.08703318469309036,
+            "n": 20
+          },
+          "av_centreline_pixels": {
+            "mean": 7487.45,
+            "sd": 1290.5978000829489,
+            "n": 20
+          },
+          "combined_segments": {
+            "mean": 158.7,
+            "sd": 32.164216796080446,
+            "n": 20
+          },
+          "combined_components": {
+            "mean": 14.25,
+            "sd": 6.154801292273246,
+            "n": 20
+          },
+          "combined_crossings_split": {
+            "mean": 11.05,
+            "sd": 4.718106221333882,
+            "n": 20
+          },
+          "combined_possible_crossings": {
+            "mean": 37.9,
+            "sd": 11.647904713317597,
+            "n": 20
+          },
+          "artery_segments": {
+            "mean": 64.9,
+            "sd": 23.096821380760097,
+            "n": 20
+          },
+          "artery_components": {
+            "mean": 26.7,
+            "sd": 10.037298860801776,
+            "n": 20
+          },
+          "artery_crossings_split": {
+            "mean": 0.5,
+            "sd": 0.8271701918685112,
+            "n": 20
+          },
+          "artery_possible_crossings": {
+            "mean": 4.15,
+            "sd": 4.760307376187958,
+            "n": 20
+          },
+          "vein_segments": {
+            "mean": 76.3,
+            "sd": 14.393346416057371,
+            "n": 20
+          },
+          "vein_components": {
+            "mean": 22.05,
+            "sd": 9.805879009955953,
+            "n": 20
+          },
+          "vein_crossings_split": {
+            "mean": 0.7,
+            "sd": 0.8013147091860319,
+            "n": 20
+          },
+          "vein_possible_crossings": {
+            "mean": 6.8,
+            "sd": 4.431941477857971,
+            "n": 20
+          }
+        }
+      },
+      "final_model": {
+        "checkpoint": "/content/drive/MyDrive/dr-pinn/checkpoints/m5_full/final.pt",
+        "parameters": 7763395
+      },
+      "test": {
+        "per_image": [
+          {
+            "image_id": "1",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.834496699409368,
+            "iou": 0.7159968564537547,
+            "sensitivity": 0.9152348621310794,
+            "specificity": 0.9592237642257438,
+            "accuracy": 0.9536016292557666,
+            "auc": 0.9862542247481939,
+            "centreline_recall": 0.8525529828795535,
+            "centreline_precision": 0.9813451153657339,
+            "radius_median_abs_error": 0.2367764414217005,
+            "segments_pred": 211,
+            "segments_ref": 291,
+            "av_accuracy": 0.8312569521690768,
+            "av_sensitivity": 0.8043429594806357,
+            "av_specificity": 0.857837718328543,
+            "av_centreline_pixels": 8990,
+            "combined_segments": 211,
+            "combined_components": 12,
+            "combined_crossings_split": 9,
+            "combined_possible_crossings": 55,
+            "artery_segments": 76,
+            "artery_components": 40,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 2,
+            "vein_segments": 119,
+            "vein_components": 33,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 16
+          },
+          {
+            "image_id": "2",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8759258161995616,
+            "iou": 0.7792420009488166,
+            "sensitivity": 0.8894972772947441,
+            "specificity": 0.9756378046569453,
+            "accuracy": 0.9629845680649096,
+            "auc": 0.9896144013689956,
+            "centreline_recall": 0.8721080731273256,
+            "centreline_precision": 0.9865618897051985,
+            "radius_median_abs_error": 0.12277543284976566,
+            "segments_pred": 196,
+            "segments_ref": 257,
+            "av_accuracy": 0.8278910762701874,
+            "av_sensitivity": 0.8187256176853056,
+            "av_specificity": 0.8354894351013368,
+            "av_centreline_pixels": 8483,
+            "combined_segments": 196,
+            "combined_components": 10,
+            "combined_crossings_split": 13,
+            "combined_possible_crossings": 46,
+            "artery_segments": 69,
+            "artery_components": 35,
+            "artery_crossings_split": 2,
+            "artery_possible_crossings": 1,
+            "vein_segments": 108,
+            "vein_components": 26,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 8
+          },
+          {
+            "image_id": "3",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8328884143085958,
+            "iou": 0.7136322049405307,
+            "sensitivity": 0.8758677011024908,
+            "specificity": 0.9661539864433569,
+            "accuracy": 0.9544540572003068,
+            "auc": 0.9832053846353249,
+            "centreline_recall": 0.8249683861684036,
+            "centreline_precision": 0.9512282681163137,
+            "radius_median_abs_error": 0.1650932585675649,
+            "segments_pred": 189,
+            "segments_ref": 234,
+            "av_accuracy": 0.8611361587015329,
+            "av_sensitivity": 0.8780271707028943,
+            "av_specificity": 0.8480694539639022,
+            "av_centreline_pixels": 7763,
+            "combined_segments": 189,
+            "combined_components": 15,
+            "combined_crossings_split": 12,
+            "combined_possible_crossings": 49,
+            "artery_segments": 64,
+            "artery_components": 31,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 3,
+            "vein_segments": 92,
+            "vein_components": 28,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 12
+          },
+          {
+            "image_id": "4",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8554604241176258,
+            "iou": 0.7474275613913263,
+            "sensitivity": 0.8273356159597512,
+            "specificity": 0.9844850402324202,
+            "accuracy": 0.9645695613479683,
+            "auc": 0.9794380026504733,
+            "centreline_recall": 0.7334185250834742,
+            "centreline_precision": 0.9942910404287545,
+            "radius_median_abs_error": 0.1381852164301447,
+            "segments_pred": 103,
+            "segments_ref": 266,
+            "av_accuracy": 0.8030892726830455,
+            "av_sensitivity": 0.88373804267844,
+            "av_specificity": 0.7237635705669482,
+            "av_centreline_pixels": 8222,
+            "combined_segments": 103,
+            "combined_components": 7,
+            "combined_crossings_split": 11,
+            "combined_possible_crossings": 14,
+            "artery_segments": 62,
+            "artery_components": 22,
+            "artery_crossings_split": 2,
+            "artery_possible_crossings": 0,
+            "vein_segments": 51,
+            "vein_components": 19,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 2
+          },
+          {
+            "image_id": "5",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8586187246089082,
+            "iou": 0.7522628442583347,
+            "sensitivity": 0.8707680835197614,
+            "specificity": 0.9788329834721923,
+            "accuracy": 0.9660326026949559,
+            "auc": 0.9873113256585389,
+            "centreline_recall": 0.812315825966372,
+            "centreline_precision": 0.9872396117351947,
+            "radius_median_abs_error": 0.12794121899759037,
+            "segments_pred": 151,
+            "segments_ref": 239,
+            "av_accuracy": 0.8047754714421381,
+            "av_sensitivity": 0.7756326637098878,
+            "av_specificity": 0.8363482193329564,
+            "av_centreline_pixels": 7371,
+            "combined_segments": 151,
+            "combined_components": 12,
+            "combined_crossings_split": 8,
+            "combined_possible_crossings": 35,
+            "artery_segments": 61,
+            "artery_components": 39,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 2,
+            "vein_segments": 77,
+            "vein_components": 14,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 4
+          },
+          {
+            "image_id": "6",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.825521063908909,
+            "iou": 0.7028828176828901,
+            "sensitivity": 0.7606631204516529,
+            "specificity": 0.9871055918425848,
+            "accuracy": 0.9564024619577963,
+            "auc": 0.9714508634012095,
+            "centreline_recall": 0.6479518072289157,
+            "centreline_precision": 0.9945819136457577,
+            "radius_median_abs_error": 0.11880059598648779,
+            "segments_pred": 142,
+            "segments_ref": 401,
+            "av_accuracy": 0.7665779670037254,
+            "av_sensitivity": 0.7228335625859698,
+            "av_specificity": 0.8044903636002384,
+            "av_centreline_pixels": 9395,
+            "combined_segments": 142,
+            "combined_components": 16,
+            "combined_crossings_split": 12,
+            "combined_possible_crossings": 30,
+            "artery_segments": 49,
+            "artery_components": 23,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 2,
+            "vein_segments": 91,
+            "vein_components": 23,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 10
+          },
+          {
+            "image_id": "7",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8334408515442303,
+            "iou": 0.7144437147893409,
+            "sensitivity": 0.8746297706693746,
+            "specificity": 0.9738266702229599,
+            "accuracy": 0.9634573536436495,
+            "auc": 0.9849933453215821,
+            "centreline_recall": 0.810758568667201,
+            "centreline_precision": 0.9741800418702024,
+            "radius_median_abs_error": 0.2064567195688487,
+            "segments_pred": 147,
+            "segments_ref": 214,
+            "av_accuracy": 0.7420251682762657,
+            "av_sensitivity": 0.8554560260586319,
+            "av_specificity": 0.678391959798995,
+            "av_centreline_pixels": 6834,
+            "combined_segments": 147,
+            "combined_components": 11,
+            "combined_crossings_split": 8,
+            "combined_possible_crossings": 30,
+            "artery_segments": 64,
+            "artery_components": 36,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 0,
+            "vein_segments": 62,
+            "vein_components": 15,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 5
+          },
+          {
+            "image_id": "8",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8059508408796895,
+            "iou": 0.6749729144095341,
+            "sensitivity": 0.8510541414325395,
+            "specificity": 0.9719209335836221,
+            "accuracy": 0.960175581436511,
+            "auc": 0.9830788495083898,
+            "centreline_recall": 0.8090302768581162,
+            "centreline_precision": 0.9849255249147574,
+            "radius_median_abs_error": 0.19541813708550737,
+            "segments_pred": 126,
+            "segments_ref": 176,
+            "av_accuracy": 0.7336212030970816,
+            "av_sensitivity": 0.7038953134510043,
+            "av_specificity": 0.7620991253644315,
+            "av_centreline_pixels": 6716,
+            "combined_segments": 126,
+            "combined_components": 15,
+            "combined_crossings_split": 9,
+            "combined_possible_crossings": 33,
+            "artery_segments": 51,
+            "artery_components": 31,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 2,
+            "vein_segments": 72,
+            "vein_components": 23,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 8
+          },
+          {
+            "image_id": "9",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8338637561747076,
+            "iou": 0.7150654656263604,
+            "sensitivity": 0.8102139930186675,
+            "specificity": 0.9824423506323157,
+            "accuracy": 0.9623658767437129,
+            "auc": 0.9727301689926704,
+            "centreline_recall": 0.7121429401961165,
+            "centreline_precision": 0.99164095371669,
+            "radius_median_abs_error": 0.14843578827989534,
+            "segments_pred": 150,
+            "segments_ref": 333,
+            "av_accuracy": 0.8176121741076424,
+            "av_sensitivity": 0.8718924403855911,
+            "av_specificity": 0.7747747747747747,
+            "av_centreline_pixels": 8937,
+            "combined_segments": 150,
+            "combined_components": 12,
+            "combined_crossings_split": 8,
+            "combined_possible_crossings": 36,
+            "artery_segments": 56,
+            "artery_components": 24,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 0,
+            "vein_segments": 66,
+            "vein_components": 18,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 2
+          },
+          {
+            "image_id": "10",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8351462792067543,
+            "iou": 0.7169537808043691,
+            "sensitivity": 0.898441130497233,
+            "specificity": 0.9703530715642812,
+            "accuracy": 0.9628138522386539,
+            "auc": 0.9870825334520273,
+            "centreline_recall": 0.8291168566397924,
+            "centreline_precision": 0.9819172235637671,
+            "radius_median_abs_error": 0.1942085011802055,
+            "segments_pred": 152,
+            "segments_ref": 209,
+            "av_accuracy": 0.7793045429052159,
+            "av_sensitivity": 0.8203814403643609,
+            "av_specificity": 0.7394307819839735,
+            "av_centreline_pixels": 7132,
+            "combined_segments": 152,
+            "combined_components": 10,
+            "combined_crossings_split": 8,
+            "combined_possible_crossings": 43,
+            "artery_segments": 59,
+            "artery_components": 29,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 0,
+            "vein_segments": 68,
+            "vein_components": 20,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 5
+          },
+          {
+            "image_id": "11",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8446598580578155,
+            "iou": 0.7310919333573055,
+            "sensitivity": 0.8895289485197608,
+            "specificity": 0.9700945864359026,
+            "accuracy": 0.9603250393477992,
+            "auc": 0.9861624817781577,
+            "centreline_recall": 0.7796692972566704,
+            "centreline_precision": 0.9700265893159294,
+            "radius_median_abs_error": 0.2407160725979609,
+            "segments_pred": 216,
+            "segments_ref": 324,
+            "av_accuracy": 0.7908526256352343,
+            "av_sensitivity": 0.7892653969824388,
+            "av_specificity": 0.7921862011637573,
+            "av_centreline_pixels": 8855,
+            "combined_segments": 216,
+            "combined_components": 17,
+            "combined_crossings_split": 8,
+            "combined_possible_crossings": 57,
+            "artery_segments": 77,
+            "artery_components": 35,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 2,
+            "vein_segments": 98,
+            "vein_components": 31,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 6
+          },
+          {
+            "image_id": "12",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8418442354358184,
+            "iou": 0.7268834307038204,
+            "sensitivity": 0.8976693234616402,
+            "specificity": 0.9688376753507014,
+            "accuracy": 0.9605039080297072,
+            "auc": 0.986644343724657,
+            "centreline_recall": 0.8399555774925962,
+            "centreline_precision": 0.9849030539247127,
+            "radius_median_abs_error": 0.2530821467647,
+            "segments_pred": 167,
+            "segments_ref": 260,
+            "av_accuracy": 0.827673106924277,
+            "av_sensitivity": 0.9055293136982495,
+            "av_specificity": 0.7684833122095479,
+            "av_centreline_pixels": 8333,
+            "combined_segments": 167,
+            "combined_components": 14,
+            "combined_crossings_split": 16,
+            "combined_possible_crossings": 38,
+            "artery_segments": 81,
+            "artery_components": 33,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 2,
+            "vein_segments": 95,
+            "vein_components": 31,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 6
+          },
+          {
+            "image_id": "13",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8441599196635913,
+            "iou": 0.7303431798436143,
+            "sensitivity": 0.8062340776262551,
+            "specificity": 0.9819961572415226,
+            "accuracy": 0.9560404541129086,
+            "auc": 0.9805600956548827,
+            "centreline_recall": 0.7968015051740357,
+            "centreline_precision": 0.9905353728489483,
+            "radius_median_abs_error": 0.09738562397630801,
+            "segments_pred": 197,
+            "segments_ref": 302,
+            "av_accuracy": 0.7828288511308653,
+            "av_sensitivity": 0.819351763584366,
+            "av_specificity": 0.7501598806224685,
+            "av_centreline_pixels": 8887,
+            "combined_segments": 197,
+            "combined_components": 13,
+            "combined_crossings_split": 14,
+            "combined_possible_crossings": 44,
+            "artery_segments": 85,
+            "artery_components": 35,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 3,
+            "vein_segments": 89,
+            "vein_components": 23,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 2
+          },
+          {
+            "image_id": "14",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8196522887323944,
+            "iou": 0.6944159597277897,
+            "sensitivity": 0.9067191430658119,
+            "specificity": 0.9627220105872458,
+            "accuracy": 0.9566356228172294,
+            "auc": 0.9876576108323656,
+            "centreline_recall": 0.8796765307029236,
+            "centreline_precision": 0.9661469933184855,
+            "radius_median_abs_error": 0.29953097709061915,
+            "segments_pred": 198,
+            "segments_ref": 226,
+            "av_accuracy": 0.8345982727034807,
+            "av_sensitivity": 0.852544704264099,
+            "av_specificity": 0.8183179435987022,
+            "av_centreline_pixels": 7642,
+            "combined_segments": 198,
+            "combined_components": 15,
+            "combined_crossings_split": 9,
+            "combined_possible_crossings": 41,
+            "artery_segments": 80,
+            "artery_components": 32,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 7,
+            "vein_segments": 97,
+            "vein_components": 21,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 5
+          },
+          {
+            "image_id": "15",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8219713417281806,
+            "iou": 0.6977515665315149,
+            "sensitivity": 0.8491558600440421,
+            "specificity": 0.9735438160348042,
+            "accuracy": 0.9600260584009537,
+            "auc": 0.9811729290257188,
+            "centreline_recall": 0.8662962068132399,
+            "centreline_precision": 0.9551644329619463,
+            "radius_median_abs_error": 0.11664172558644603,
+            "segments_pred": 115,
+            "segments_ref": 135,
+            "av_accuracy": 0.803969095591577,
+            "av_sensitivity": 0.8207395498392283,
+            "av_specificity": 0.7821540606483095,
+            "av_centreline_pixels": 6601,
+            "combined_segments": 115,
+            "combined_components": 11,
+            "combined_crossings_split": 9,
+            "combined_possible_crossings": 27,
+            "artery_segments": 73,
+            "artery_components": 37,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 6,
+            "vein_segments": 42,
+            "vein_components": 20,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 0
+          },
+          {
+            "image_id": "16",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8486776490009286,
+            "iou": 0.7371329569555217,
+            "sensitivity": 0.8785915192081746,
+            "specificity": 0.9727809395878256,
+            "accuracy": 0.9610808898323825,
+            "auc": 0.9856112290995529,
+            "centreline_recall": 0.8045565806816042,
+            "centreline_precision": 0.9907482862758257,
+            "radius_median_abs_error": 0.3243055559220769,
+            "segments_pred": 197,
+            "segments_ref": 328,
+            "av_accuracy": 0.7858191261149373,
+            "av_sensitivity": 0.7705802968960864,
+            "av_specificity": 0.8011788710043074,
+            "av_centreline_pixels": 8857,
+            "combined_segments": 197,
+            "combined_components": 6,
+            "combined_crossings_split": 13,
+            "combined_possible_crossings": 40,
+            "artery_segments": 87,
+            "artery_components": 39,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 5,
+            "vein_segments": 103,
+            "vein_components": 27,
+            "vein_crossings_split": 2,
+            "vein_possible_crossings": 9
+          },
+          {
+            "image_id": "17",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8301945284042471,
+            "iou": 0.7096859679342785,
+            "sensitivity": 0.8783567709401009,
+            "specificity": 0.9712553056448094,
+            "accuracy": 0.9612320459340981,
+            "auc": 0.98540025220244,
+            "centreline_recall": 0.8111662864045095,
+            "centreline_precision": 0.9749547870882885,
+            "radius_median_abs_error": 0.33558523975777044,
+            "segments_pred": 163,
+            "segments_ref": 235,
+            "av_accuracy": 0.8315918035011535,
+            "av_sensitivity": 0.8834397044004031,
+            "av_specificity": 0.796448087431694,
+            "av_centreline_pixels": 7369,
+            "combined_segments": 163,
+            "combined_components": 15,
+            "combined_crossings_split": 13,
+            "combined_possible_crossings": 41,
+            "artery_segments": 51,
+            "artery_components": 23,
+            "artery_crossings_split": 1,
+            "artery_possible_crossings": 5,
+            "vein_segments": 83,
+            "vein_components": 17,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 5
+          },
+          {
+            "image_id": "18",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8663475519106043,
+            "iou": 0.7642091307355314,
+            "sensitivity": 0.8744475958050261,
+            "specificity": 0.9776447799487884,
+            "accuracy": 0.9637978414114461,
+            "auc": 0.9850211191270823,
+            "centreline_recall": 0.8043676069153776,
+            "centreline_precision": 0.9776072983620153,
+            "radius_median_abs_error": 0.14975508171616947,
+            "segments_pred": 177,
+            "segments_ref": 269,
+            "av_accuracy": 0.8273583751376483,
+            "av_sensitivity": 0.8449554896142433,
+            "av_specificity": 0.8101235165899734,
+            "av_centreline_pixels": 8173,
+            "combined_segments": 177,
+            "combined_components": 15,
+            "combined_crossings_split": 13,
+            "combined_possible_crossings": 46,
+            "artery_segments": 67,
+            "artery_components": 21,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 4,
+            "vein_segments": 101,
+            "vein_components": 34,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 12
+          },
+          {
+            "image_id": "19",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8693930369977705,
+            "iou": 0.7689613326714104,
+            "sensitivity": 0.8514582378989158,
+            "specificity": 0.9818160172263862,
+            "accuracy": 0.962923292776305,
+            "auc": 0.9839790438112052,
+            "centreline_recall": 0.788267710825901,
+            "centreline_precision": 0.9939133717089742,
+            "radius_median_abs_error": 0.09474792971748408,
+            "segments_pred": 177,
+            "segments_ref": 315,
+            "av_accuracy": 0.8162575013638843,
+            "av_sensitivity": 0.7906026557711952,
+            "av_specificity": 0.8456674473067916,
+            "av_centreline_pixels": 9165,
+            "combined_segments": 177,
+            "combined_components": 14,
+            "combined_crossings_split": 15,
+            "combined_possible_crossings": 40,
+            "artery_segments": 71,
+            "artery_components": 29,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 6,
+            "vein_segments": 85,
+            "vein_components": 28,
+            "vein_crossings_split": 1,
+            "vein_possible_crossings": 7
+          },
+          {
+            "image_id": "20",
+            "reference": "RITE test (DRIVE 2nd observer)",
+            "dice": 0.8376584389593063,
+            "iou": 0.720664619622923,
+            "sensitivity": 0.8243229935992122,
+            "specificity": 0.9775988548935409,
+            "accuracy": 0.9569444444444445,
+            "auc": 0.9767396043700443,
+            "centreline_recall": 0.7188411078717201,
+            "centreline_precision": 0.9832126744308047,
+            "radius_median_abs_error": 0.12044104347140416,
+            "segments_pred": 181,
+            "segments_ref": 379,
+            "av_accuracy": 0.7864370290635091,
+            "av_sensitivity": 0.7943358057990559,
+            "av_specificity": 0.7791778558149143,
+            "av_centreline_pixels": 9290,
+            "combined_segments": 181,
+            "combined_components": 16,
+            "combined_crossings_split": 9,
+            "combined_possible_crossings": 46,
+            "artery_segments": 66,
+            "artery_components": 44,
+            "artery_crossings_split": 0,
+            "artery_possible_crossings": 0,
+            "vein_segments": 85,
+            "vein_components": 31,
+            "vein_crossings_split": 0,
+            "vein_possible_crossings": 4
+          }
+        ],
+        "summary": {
+          "dice": {
+            "mean": 0.8407935859624504,
+            "sd": 0.01767303746112363,
+            "n": 20
+          },
+          "iou": {
+            "mean": 0.7257010119694485,
+            "sd": 0.02643084950516028,
+            "n": 20
+          },
+          "sensitivity": {
+            "mean": 0.8615095083123119,
+            "sd": 0.03916731303385119,
+            "n": 20
+          },
+          "specificity": {
+            "mean": 0.9744136169913974,
+            "sd": 0.007264627537248427,
+            "n": 20
+          },
+          "accuracy": {
+            "mean": 0.9603183570845752,
+            "sd": 0.0035291357833875953,
+            "n": 20
+          },
+          "auc": {
+            "mean": 0.9832053904681757,
+            "sd": 0.004895732549335049,
+            "n": 20
+          },
+          "centreline_recall": {
+            "mean": 0.7996981326476924,
+            "sd": 0.058355917795255445,
+            "n": 20
+          },
+          "centreline_precision": {
+            "mean": 0.9807562221649153,
+            "sd": 0.012400473869749106,
+            "n": 20
+          },
+          "radius_median_abs_error": {
+            "mean": 0.18431413534843252,
+            "sd": 0.07525511390275229,
+            "n": 20
+          },
+          "segments_pred": {
+            "mean": 167.75,
+            "sd": 31.70567772497538,
+            "n": 20
+          },
+          "segments_ref": {
+            "mean": 269.65,
+            "sd": 65.8549242853682,
+            "n": 20
+          },
+          "av_accuracy": {
+            "mean": 0.8027337886911239,
+            "sd": 0.032241818892670006,
+            "n": 20
+          },
+          "av_sensitivity": {
+            "mean": 0.8203134958976044,
+            "sd": 0.053531695748123526,
+            "n": 20
+          },
+          "av_specificity": {
+            "mean": 0.7902296289603283,
+            "sd": 0.04560554130668496,
+            "n": 20
+          },
+          "av_centreline_pixels": {
+            "mean": 8150.75,
+            "sd": 910.277972293137,
+            "n": 20
+          },
+          "combined_segments": {
+            "mean": 167.75,
+            "sd": 31.70567772497538,
+            "n": 20
+          },
+          "combined_components": {
+            "mean": 12.8,
+            "sd": 2.9841687549290405,
+            "n": 20
+          },
+          "combined_crossings_split": {
+            "mean": 10.85,
+            "sd": 2.641271623569542,
+            "n": 20
+          },
+          "combined_possible_crossings": {
+            "mean": 39.55,
+            "sd": 9.907333806725942,
+            "n": 20
+          },
+          "artery_segments": {
+            "mean": 67.45,
+            "sd": 11.292638496406688,
+            "n": 20
+          },
+          "artery_components": {
+            "mean": 31.9,
+            "sd": 6.656219885031949,
+            "n": 20
+          },
+          "artery_crossings_split": {
+            "mean": 0.5,
+            "sd": 0.6882472016116853,
+            "n": 20
+          },
+          "artery_possible_crossings": {
+            "mean": 2.6,
+            "sd": 2.2337129816094383,
+            "n": 20
+          },
+          "vein_segments": {
+            "mean": 84.2,
+            "sd": 19.449259220096952,
+            "n": 20
+          },
+          "vein_components": {
+            "mean": 24.1,
+            "sd": 6.103493391406873,
+            "n": 20
+          },
+          "vein_crossings_split": {
+            "mean": 0.35,
+            "sd": 0.5871429486123998,
+            "n": 20
+          },
+          "vein_possible_crossings": {
+            "mean": 6.4,
+            "sd": 3.965641913924363,
+            "n": 20
+          }
+        },
+        "note": "held-out DRIVE test photos; vessel reference = DRIVE 2nd observer (via RITE)"
+      }
+    },
+    "M6": {
+      "source": "APTOS 2019 + IDRiD grading (manifest)",
+      "drpinn_version": "0.11.0",
+      "preset": "full",
+      "config": {
+        "arch": "mobilenet_v3_large",
+        "pretrained": true,
+        "image_size": 512,
+        "epochs": 20,
+        "batch": 32,
+        "lr": 0.0005,
+        "weight_decay": 0.0001,
+        "label_smoothing": 0.05,
+        "class_weighting": "sqrt",
+        "warmup_epochs": 1.0,
+        "seed": 0
+      },
+      "device": "cuda",
+      "disclaimer": "Research prototype, not a medical device. Model-derived risk estimates are experimental, depend on stated modelling assumptions, and require independent clinical validation.",
+      "status": "complete",
+      "split_info": {
+        "dropped_as_duplicates_of_training": {
+          "test_internal": 0,
+          "external_idrid_test": 0,
+          "external_idrid_train": 0
+        }
+      },
+      "set_sizes": {
+        "train": 2503,
+        "val": 539,
+        "test_internal": 541,
+        "external_idrid_test": 53,
+        "external_idrid_train": 300
+      },
+      "training": {
+        "best_epoch": 9,
+        "best_val_qwk": 0.9206512778235779,
+        "history": [
+          {
+            "epoch": 1,
+            "train_loss": 1.1888741707500023,
+            "val_loss": 0.7116099057529114,
+            "val_qwk": 0.7338222792178787,
+            "val_accuracy": 0.7439703153988868,
+            "seconds": 32.8
+          },
+          {
+            "epoch": 2,
+            "train_loss": 0.9326717431032205,
+            "val_loss": 0.6311121580305654,
+            "val_qwk": 0.8781003493366181,
+            "val_accuracy": 0.7717996289424861,
+            "seconds": 20.8
+          },
+          {
+            "epoch": 3,
+            "train_loss": 0.8497112204756918,
+            "val_loss": 0.5148529136106664,
+            "val_qwk": 0.9189000212419458,
+            "val_accuracy": 0.8441558441558441,
+            "seconds": 21.2
+          },
+          {
+            "epoch": 4,
+            "train_loss": 0.7905353930177568,
+            "val_loss": 0.52358168885361,
+            "val_qwk": 0.8927704611466996,
+            "val_accuracy": 0.8367346938775511,
+            "seconds": 21.9
+          },
+          {
+            "epoch": 5,
+            "train_loss": 0.7428951987737342,
+            "val_loss": 0.591185530102951,
+            "val_qwk": 0.8538556325667984,
+            "val_accuracy": 0.7884972170686456,
+            "seconds": 22.1
+          },
+          {
+            "epoch": 6,
+            "train_loss": 0.701927138280265,
+            "val_loss": 0.4716430536545155,
+            "val_qwk": 0.9084497722628558,
+            "val_accuracy": 0.8534322820037106,
+            "seconds": 22.8
+          },
+          {
+            "epoch": 7,
+            "train_loss": 0.6848908466628835,
+            "val_loss": 0.48498432075859044,
+            "val_qwk": 0.8817427918560169,
+            "val_accuracy": 0.8330241187384044,
+            "seconds": 23.0
+          },
+          {
+            "epoch": 8,
+            "train_loss": 0.6520988797839684,
+            "val_loss": 0.5101420855090706,
+            "val_qwk": 0.8787865017192702,
+            "val_accuracy": 0.8311688311688312,
+            "seconds": 22.4
+          },
+          {
+            "epoch": 9,
+            "train_loss": 0.608815532696398,
+            "val_loss": 0.43949722157542087,
+            "val_qwk": 0.9206512778235779,
+            "val_accuracy": 0.862708719851577,
+            "seconds": 22.5
+          },
+          {
+            "epoch": 10,
+            "train_loss": 0.5400091085252883,
+            "val_loss": 0.5147916992932766,
+            "val_qwk": 0.889867746660329,
+            "val_accuracy": 0.8181818181818182,
+            "seconds": 22.8
+          },
+          {
+            "epoch": 11,
+            "train_loss": 0.5071398574340192,
+            "val_loss": 0.5254808283207488,
+            "val_qwk": 0.8924950029596205,
+            "val_accuracy": 0.8404452690166976,
+            "seconds": 22.9
+          },
+          {
+            "epoch": 12,
+            "train_loss": 0.4885143215143228,
+            "val_loss": 0.5065947217617854,
+            "val_qwk": 0.8772834810650764,
+            "val_accuracy": 0.8348794063079777,
+            "seconds": 22.6
+          },
+          {
+            "epoch": 13,
+            "train_loss": 0.4594422171387491,
+            "val_loss": 0.45189996953044953,
+            "val_qwk": 0.8985989405416109,
+            "val_accuracy": 0.862708719851577,
+            "seconds": 22.7
+          },
+          {
+            "epoch": 14,
+            "train_loss": 0.411660072546971,
+            "val_loss": 0.4515344404628718,
+            "val_qwk": 0.9046846154799222,
+            "val_accuracy": 0.8682745825602969,
+            "seconds": 22.7
+          },
+          {
+            "epoch": 15,
+            "train_loss": 0.40833280244960063,
+            "val_loss": 0.5018619616005157,
+            "val_qwk": 0.8837492391965915,
+            "val_accuracy": 0.8460111317254174,
+            "seconds": 22.7
+          },
+          {
+            "epoch": 16,
+            "train_loss": 0.3902341266976127,
+            "val_loss": 0.4748539613133956,
+            "val_qwk": 0.8906922905150139,
+            "val_accuracy": 0.8645640074211502,
+            "seconds": 22.6
+          },
+          {
+            "epoch": 17,
+            "train_loss": 0.37539087443412106,
+            "val_loss": 0.48195030857682436,
+            "val_qwk": 0.8951347466433506,
+            "val_accuracy": 0.8682745825602969,
+            "seconds": 22.7
+          },
+          {
+            "epoch": 18,
+            "train_loss": 0.3717067977295646,
+            "val_loss": 0.4791231348907833,
+            "val_qwk": 0.8936136321925848,
+            "val_accuracy": 0.8701298701298701,
+            "seconds": 22.7
+          },
+          {
+            "epoch": 19,
+            "train_loss": 0.37495203863216353,
+            "val_loss": 0.4886325942497018,
+            "val_qwk": 0.8870231349584128,
+            "val_accuracy": 0.8608534322820037,
+            "seconds": 22.7
+          },
+          {
+            "epoch": 20,
+            "train_loss": 0.37156086254723464,
+            "val_loss": 0.48470392901992454,
+            "val_qwk": 0.894222785803783,
+            "val_accuracy": 0.8645640074211502,
+            "seconds": 22.7
+          }
+        ]
+      },
+      "temperature": 0.8546649719862675,
+      "operating_point": {
+        "temperature": 0.8546649719862675,
+        "referral_threshold": 0.7229253984165984,
+        "target_sensitivity": 0.9,
+        "uncertainty_limit": 0.5236037237597002,
+        "uncertain_share": 0.1
+      },
+      "quality_reference": {
+        "low": {
+          "fov_fraction": 0.7847118591472745,
+          "brightness": 40.226876220703126,
+          "contrast": 0.0831895937025547,
+          "clipped": 0.0,
+          "sharpness": 0.7235726809501648
+        },
+        "high": {
+          "fov_fraction": 0.9935778403001072,
+          "brightness": 130.80458770751954,
+          "contrast": 0.4720505011081696,
+          "clipped": 0.0034161107948465505,
+          "sharpness": 4.020657138824463
+        },
+        "n": 2503
+      },
+      "sets": {
+        "val": {
+          "description": "APTOS validation (used to calibrate)",
+          "images": 539,
+          "grade_counts": [
+            270,
+            57,
+            147,
+            25,
+            40
+          ],
+          "qwk": {
+            "value": 0.9206512778235779,
+            "ci": [
+              0.8971481287399709,
+              0.9412857897502341
+            ]
+          },
+          "accuracy": {
+            "value": 0.862708719851577,
+            "ci": [
+              0.8348794063079777,
+              0.8886827458256029
+            ]
+          },
+          "macro_f1": {
+            "value": 0.7131097201312919,
+            "ci": [
+              0.653184564099525,
+              0.7665363970529807
+            ]
+          },
+          "per_class": [
+            {
+              "grade": 0,
+              "n": 270,
+              "sensitivity": 0.9740740740740741,
+              "specificity": 0.9814126394052045,
+              "f1": 0.9776951672862454
+            },
+            {
+              "grade": 1,
+              "n": 57,
+              "sensitivity": 0.6842105263157895,
+              "specificity": 0.9647302904564315,
+              "f1": 0.6902654867256637
+            },
+            {
+              "grade": 2,
+              "n": 147,
+              "sensitivity": 0.8979591836734694,
+              "specificity": 0.9005102040816326,
+              "f1": 0.8301886792452831
+            },
+            {
+              "grade": 3,
+              "n": 25,
+              "sensitivity": 0.32,
+              "specificity": 0.9883268482490273,
+              "f1": 0.41025641025641024
+            },
+            {
+              "grade": 4,
+              "n": 40,
+              "sensitivity": 0.575,
+              "specificity": 0.9859719438877755,
+              "f1": 0.6571428571428571
+            }
+          ],
+          "confusion_matrix": [
+            [
+              263,
+              6,
+              1,
+              0,
+              0
+            ],
+            [
+              3,
+              39,
+              15,
+              0,
+              0
+            ],
+            [
+              2,
+              10,
+              132,
+              2,
+              1
+            ],
+            [
+              0,
+              0,
+              11,
+              8,
+              6
+            ],
+            [
+              0,
+              1,
+              12,
+              4,
+              23
+            ]
+          ],
+          "referable": {
+            "prevalence": 0.39332096474953615,
+            "auc": {
+              "value": 0.9855894062662282,
+              "ci": [
+                0.9774210390382672,
+                0.9922458331416247
+              ]
+            },
+            "threshold": 0.7229253984165984,
+            "sensitivity": {
+              "value": 0.9009433962264151,
+              "ci": [
+                0.8593730370603015,
+                0.9389736207299043
+              ]
+            },
+            "specificity": {
+              "value": 0.963302752293578,
+              "ci": [
+                0.9430379746835443,
+                0.9820359281437125
+              ]
+            },
+            "ppv": 0.9408866995073891,
+            "npv": 0.9375,
+            "ece": 0.025232241434534293
+          },
+          "top_label_ece": 0.04733710628279266,
+          "brier": 0.2114289262143011,
+          "mean_normalised_entropy": 0.2669796488041685,
+          "selective": [
+            {
+              "coverage": 1.0,
+              "images": 539,
+              "accuracy": 0.862708719851577,
+              "qwk": 0.9206512778235779,
+              "referable_auc": 0.9855894062662282
+            },
+            {
+              "coverage": 0.9,
+              "images": 485,
+              "accuracy": 0.9010309278350516,
+              "qwk": 0.9305711155924017,
+              "referable_auc": 0.9879706915436038
+            },
+            {
+              "coverage": 0.8,
+              "images": 431,
+              "accuracy": 0.9303944315545244,
+              "qwk": 0.943420071868012,
+              "referable_auc": 0.9896912556983009
+            },
+            {
+              "coverage": 0.7,
+              "images": 377,
+              "accuracy": 0.9522546419098143,
+              "qwk": 0.9544998348451356,
+              "referable_auc": 0.9910892671621514
+            }
+          ],
+          "calibration": {
+            "nll_before": 0.43949722157542087,
+            "nll_after": 0.42968693287628357,
+            "top_label_ece_before": 0.059223998809623715,
+            "top_label_ece_after": 0.04733710628279266,
+            "referable_ece_before": 0.04142408257430588,
+            "referable_ece_after": 0.025232241434534293
+          },
+          "uncertain_share": 0.10018552875695733,
+          "quality": {
+            "flag_counts": {
+              "small field of view": 10,
+              "too bright": 6,
+              "too dark": 9,
+              "low contrast": 3,
+              "over/under-exposed areas": 4,
+              "blurry": 2
+            },
+            "quality_ok": {
+              "images": 505,
+              "qwk": 0.9177757464413507,
+              "referable_auc": 0.9859263638453707
+            },
+            "quality_flagged": {
+              "images": 34,
+              "qwk": 0.9676601141407736,
+              "referable_auc": 0.978021978021978
+            }
+          }
+        },
+        "test_internal": {
+          "description": "APTOS internal test",
+          "images": 541,
+          "grade_counts": [
+            269,
+            54,
+            148,
+            27,
+            43
+          ],
+          "qwk": {
+            "value": 0.9108575010204114,
+            "ci": [
+              0.882294245939351,
+              0.9348233485123673
+            ]
+          },
+          "accuracy": {
+            "value": 0.8502772643253235,
+            "ci": [
+              0.822550831792976,
+              0.8798521256931608
+            ]
+          },
+          "macro_f1": {
+            "value": 0.6892619517839007,
+            "ci": [
+              0.6316881288818499,
+              0.7388676662345578
+            ]
+          },
+          "per_class": [
+            {
+              "grade": 0,
+              "n": 269,
+              "sensitivity": 0.9962825278810409,
+              "specificity": 0.9852941176470589,
+              "f1": 0.9907578558225508
+            },
+            {
+              "grade": 1,
+              "n": 54,
+              "sensitivity": 0.7407407407407407,
+              "specificity": 0.9691991786447639,
+              "f1": 0.7339449541284404
+            },
+            {
+              "grade": 2,
+              "n": 148,
+              "sensitivity": 0.8175675675675675,
+              "specificity": 0.9033078880407125,
+              "f1": 0.7882736156351792
+            },
+            {
+              "grade": 3,
+              "n": 27,
+              "sensitivity": 0.2962962962962963,
+              "specificity": 0.9708171206225681,
+              "f1": 0.32
+            },
+            {
+              "grade": 4,
+              "n": 43,
+              "sensitivity": 0.5348837209302325,
+              "specificity": 0.9819277108433735,
+              "f1": 0.6133333333333333
+            }
+          ],
+          "confusion_matrix": [
+            [
+              268,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              40,
+              11,
+              1,
+              0
+            ],
+            [
+              1,
+              14,
+              121,
+              7,
+              5
+            ],
+            [
+              0,
+              0,
+              15,
+              8,
+              4
+            ],
+            [
+              1,
+              0,
+              12,
+              7,
+              23
+            ]
+          ],
+          "referable": {
+            "prevalence": 0.4029574861367837,
+            "auc": {
+              "value": 0.9882693782486437,
+              "ci": [
+                0.9802243865529027,
+                0.9947159265406544
+              ]
+            },
+            "threshold": 0.7229253984165984,
+            "sensitivity": {
+              "value": 0.8853211009174312,
+              "ci": [
+                0.8416289592760181,
+                0.9257682354843927
+              ]
+            },
+            "specificity": {
+              "value": 0.9752321981424149,
+              "ci": [
+                0.9569230769230769,
+                0.9908536585365854
+              ]
+            },
+            "ppv": 0.9601990049751243,
+            "npv": 0.9264705882352942,
+            "ece": 0.03336361190313482
+          },
+          "top_label_ece": 0.06081143263071583,
+          "brier": 0.21785066557370214,
+          "mean_normalised_entropy": 0.27233334891875377,
+          "selective": [
+            {
+              "coverage": 1.0,
+              "images": 541,
+              "accuracy": 0.8502772643253235,
+              "qwk": 0.9108575010204114,
+              "referable_auc": 0.9882693782486437
+            },
+            {
+              "coverage": 0.9,
+              "images": 487,
+              "accuracy": 0.8891170431211499,
+              "qwk": 0.9318291178554868,
+              "referable_auc": 0.9910479391990646
+            },
+            {
+              "coverage": 0.8,
+              "images": 433,
+              "accuracy": 0.9214780600461894,
+              "qwk": 0.950450965909682,
+              "referable_auc": 0.9924997483137018
+            },
+            {
+              "coverage": 0.7,
+              "images": 379,
+              "accuracy": 0.941952506596306,
+              "qwk": 0.9629080071854095,
+              "referable_auc": 0.9951577631990003
+            }
+          ],
+          "calibration": {
+            "nll_before": 0.4291325478540652,
+            "nll_after": 0.4162492381709356,
+            "top_label_ece_before": 0.05775837017726579,
+            "top_label_ece_after": 0.06081143263071583,
+            "referable_ece_before": 0.05474030166307438,
+            "referable_ece_after": 0.03336361190313482
+          },
+          "uncertain_share": 0.12939001848428835,
+          "quality": {
+            "flag_counts": {
+              "small field of view": 6,
+              "over/under-exposed areas": 6,
+              "too bright": 8,
+              "too dark": 6,
+              "low contrast": 2,
+              "blurry": 1
+            },
+            "quality_ok": {
+              "images": 515,
+              "qwk": 0.9102678895530334,
+              "referable_auc": 0.9873659192544642
+            },
+            "quality_flagged": {
+              "images": 26,
+              "qwk": 0.9189189189189189,
+              "referable_auc": 1.0
+            }
+          }
+        },
+        "external_idrid_test": {
+          "description": "IDRiD official test (external, PRIMARY)",
+          "images": 53,
+          "grade_counts": [
+            0,
+            0,
+            26,
+            18,
+            9
+          ],
+          "qwk": {
+            "value": 0.49702052527035967,
+            "ci": [
+              0.3149125627739352,
+              0.6407840087064455
+            ]
+          },
+          "accuracy": {
+            "value": 0.4716981132075472,
+            "ci": [
+              0.33962264150943394,
+              0.6037735849056604
+            ]
+          },
+          "macro_f1": {
+            "value": 0.3159340659340659,
+            "ci": [
+              0.2076053391053391,
+              0.44739614614614615
+            ]
+          },
+          "per_class": [
+            {
+              "grade": 0,
+              "n": 0,
+              "sensitivity": NaN,
+              "specificity": 0.9622641509433962,
+              "f1": 0.0
+            },
+            {
+              "grade": 1,
+              "n": 0,
+              "sensitivity": NaN,
+              "specificity": 0.8679245283018868,
+              "f1": 0.0
+            },
+            {
+              "grade": 2,
+              "n": 26,
+              "sensitivity": 0.5769230769230769,
+              "specificity": 0.4444444444444444,
+              "f1": 0.5357142857142857
+            },
+            {
+              "grade": 3,
+              "n": 18,
+              "sensitivity": 0.3333333333333333,
+              "specificity": 0.8857142857142857,
+              "f1": 0.42857142857142855
+            },
+            {
+              "grade": 4,
+              "n": 9,
+              "sensitivity": 0.4444444444444444,
+              "specificity": 1.0,
+              "f1": 0.6153846153846154
+            }
+          ],
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              7,
+              15,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              3,
+              2,
+              4
+            ]
+          ],
+          "referable": {
+            "prevalence": 1.0,
+            "auc": {
+              "value": NaN,
+              "ci": [
+                NaN,
+                NaN
+              ]
+            },
+            "threshold": 0.7229253984165984,
+            "sensitivity": {
+              "value": 0.7547169811320755,
+              "ci": [
+                0.6415094339622641,
+                0.8679245283018868
+              ]
+            },
+            "specificity": {
+              "value": NaN,
+              "ci": [
+                NaN,
+                NaN
+              ]
+            },
+            "ppv": 1.0,
+            "npv": 0.0,
+            "ece": 0.22319916659509523
+          },
+          "top_label_ece": 0.34305386039310576,
+          "brier": 0.723350198628367,
+          "mean_normalised_entropy": 0.45676947202058893,
+          "selective": [
+            {
+              "coverage": 1.0,
+              "images": 53,
+              "accuracy": 0.4716981132075472,
+              "qwk": 0.49702052527035967,
+              "referable_auc": NaN
+            },
+            {
+              "coverage": 0.9,
+              "images": 48,
+              "accuracy": 0.5,
+              "qwk": 0.5319148936170213,
+              "referable_auc": NaN
+            },
+            {
+              "coverage": 0.8,
+              "images": 42,
+              "accuracy": 0.4523809523809524,
+              "qwk": 0.4285714285714286,
+              "referable_auc": NaN
+            },
+            {
+              "coverage": 0.7,
+              "images": 37,
+              "accuracy": 0.5135135135135135,
+              "qwk": 0.46029173419773095,
+              "referable_auc": NaN
+            }
+          ],
+          "calibration": {
+            "nll_before": 1.3965565233036545,
+            "nll_after": 1.4995985195544472,
+            "top_label_ece_before": 0.27921437870230753,
+            "top_label_ece_after": 0.34305386039310576,
+            "referable_ece_before": 0.22922714782001674,
+            "referable_ece_after": 0.22319916659509523
+          },
+          "uncertain_share": 0.3018867924528302,
+          "quality": {
+            "flag_counts": {
+              "small field of view": 53
+            },
+            "quality_ok": {
+              "images": 0,
+              "qwk": NaN,
+              "referable_auc": NaN
+            },
+            "quality_flagged": {
+              "images": 53,
+              "qwk": 0.49702052527035967,
+              "referable_auc": NaN
+            }
+          }
+        },
+        "external_idrid_train": {
+          "description": "IDRiD train images (external, secondary)",
+          "images": 300,
+          "grade_counts": [
+            133,
+            18,
+            86,
+            43,
+            20
+          ],
+          "qwk": {
+            "value": 0.7590715772328296,
+            "ci": [
+              0.6925395296762554,
+              0.8109766142741704
+            ]
+          },
+          "accuracy": {
+            "value": 0.5166666666666667,
+            "ci": [
+              0.45666666666666667,
+              0.57
+            ]
+          },
+          "macro_f1": {
+            "value": 0.4193387341707808,
+            "ci": [
+              0.35352660669572794,
+              0.4834721279135571
+            ]
+          },
+          "per_class": [
+            {
+              "grade": 0,
+              "n": 133,
+              "sensitivity": 0.631578947368421,
+              "specificity": 0.9520958083832335,
+              "f1": 0.7466666666666667
+            },
+            {
+              "grade": 1,
+              "n": 18,
+              "sensitivity": 0.7222222222222222,
+              "specificity": 0.6985815602836879,
+              "f1": 0.22413793103448276
+            },
+            {
+              "grade": 2,
+              "n": 86,
+              "sensitivity": 0.5,
+              "specificity": 0.8457943925233645,
+              "f1": 0.5308641975308642
+            },
+            {
+              "grade": 3,
+              "n": 43,
+              "sensitivity": 0.2558139534883721,
+              "specificity": 0.9494163424124513,
+              "f1": 0.3283582089552239
+            },
+            {
+              "grade": 4,
+              "n": 20,
+              "sensitivity": 0.2,
+              "specificity": 0.9785714285714285,
+              "f1": 0.26666666666666666
+            }
+          ],
+          "confusion_matrix": [
+            [
+              84,
+              46,
+              0,
+              1,
+              2
+            ],
+            [
+              5,
+              13,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              38,
+              43,
+              2,
+              0
+            ],
+            [
+              0,
+              1,
+              27,
+              11,
+              4
+            ],
+            [
+              0,
+              0,
+              6,
+              10,
+              4
+            ]
+          ],
+          "referable": {
+            "prevalence": 0.49666666666666665,
+            "auc": {
+              "value": 0.910129339081737,
+              "ci": [
+                0.8687410256291015,
+                0.946098693638257
+              ]
+            },
+            "threshold": 0.7229253984165984,
+            "sensitivity": {
+              "value": 0.6241610738255033,
+              "ci": [
+                0.5400798357664235,
+                0.7018892339544512
+              ]
+            },
+            "specificity": {
+              "value": 0.9801324503311258,
+              "ci": [
+                0.956514945652174,
+                1.0
+              ]
+            },
+            "ppv": 0.96875,
+            "npv": 0.7254901960784313,
+            "ece": 0.10405515658770563
+          },
+          "top_label_ece": 0.259458937269015,
+          "brier": 0.7267394830855126,
+          "mean_normalised_entropy": 0.3884017652248483,
+          "selective": [
+            {
+              "coverage": 1.0,
+              "images": 300,
+              "accuracy": 0.5166666666666667,
+              "qwk": 0.7590715772328296,
+              "referable_auc": 0.910129339081737
+            },
+            {
+              "coverage": 0.9,
+              "images": 270,
+              "accuracy": 0.5407407407407407,
+              "qwk": 0.7683210261539819,
+              "referable_auc": 0.9096157017977898
+            },
+            {
+              "coverage": 0.8,
+              "images": 240,
+              "accuracy": 0.5458333333333333,
+              "qwk": 0.7692538207971231,
+              "referable_auc": 0.8955202821869489
+            },
+            {
+              "coverage": 0.7,
+              "images": 210,
+              "accuracy": 0.5523809523809524,
+              "qwk": 0.7640566396246056,
+              "referable_auc": 0.8840151445193462
+            }
+          ],
+          "calibration": {
+            "nll_before": 1.451094271771282,
+            "nll_after": 1.581310815291794,
+            "top_label_ece_before": 0.21511630792520153,
+            "top_label_ece_after": 0.259458937269015,
+            "referable_ece_before": 0.08883655807222202,
+            "referable_ece_after": 0.10405515658770563
+          },
+          "uncertain_share": 0.2833333333333333,
+          "quality": {
+            "flag_counts": {
+              "small field of view": 300,
+              "too bright": 6,
+              "blurry": 1,
+              "too dark": 1
+            },
+            "quality_ok": {
+              "images": 0,
+              "qwk": NaN,
+              "referable_auc": NaN
+            },
+            "quality_flagged": {
+              "images": 300,
+              "qwk": 0.7590715772328296,
+              "referable_auc": 0.910129339081737
+            }
+          }
+        }
+      },
+      "example_cards": [
+        {
+          "image_id": "IDRiD_005",
+          "true_grade": 4,
+          "grade": 4,
+          "grade_name": "Proliferative",
+          "grade_probabilities": [
+            0.045147347394995964,
+            0.3556992494633649,
+            0.015806629780330966,
+            0.06295597804916366,
+            0.5203907953121445
+          ],
+          "p_referable": 0.5991534031416391,
+          "uncertainty": 0.6754464215698139,
+          "priority": "lower priority",
+          "notes": [
+            "model uncertain: needs a human grader",
+            "quality outside the training range (small field of view): result less reliable"
+          ],
+          "quality_flags": [
+            "small field of view"
+          ],
+          "disclaimer": "Research prototype, not a medical device. Model-derived risk estimates are experimental, depend on stated modelling assumptions, and require independent clinical validation."
+        },
+        {
+          "image_id": "IDRiD_013",
+          "true_grade": 3,
+          "grade": 2,
+          "grade_name": "Moderate",
+          "grade_probabilities": [
+            0.004818763284518824,
+            0.01726757842892846,
+            0.556915762744565,
+            0.35993765147847295,
+            0.06106024406351474
+          ],
+          "p_referable": 0.9779136582865527,
+          "uncertainty": 0.5966641584304205,
+          "priority": "higher priority",
+          "notes": [
+            "model uncertain: needs a human grader",
+            "quality outside the training range (small field of view): result less reliable"
+          ],
+          "quality_flags": [
+            "small field of view"
+          ],
+          "disclaimer": "Research prototype, not a medical device. Model-derived risk estimates are experimental, depend on stated modelling assumptions, and require independent clinical validation."
+        },
+        {
+          "image_id": "IDRiD_019",
+          "true_grade": 2,
+          "grade": 2,
+          "grade_name": "Moderate",
+          "grade_probabilities": [
+            0.0011576624510121814,
+            0.1405316099279098,
+            0.8335085016938687,
+            0.018427484024780692,
+            0.006374741902428609
+          ],
+          "p_referable": 0.858310727621078,
+          "uncertainty": 0.336273814818004,
+          "priority": "higher priority",
+          "notes": [
+            "quality outside the training range (small field of view): result less reliable"
+          ],
+          "quality_flags": [
+            "small field of view"
+          ],
+          "disclaimer": "Research prototype, not a medical device. Model-derived risk estimates are experimental, depend on stated modelling assumptions, and require independent clinical validation."
+        }
+      ],
+      "headline": [
+        "PRIMARY  referable AUC, IDRiD external test (n=53): nan [nan, nan]",
+        "         at the validation threshold: sensitivity 0.755 [0.642, 0.868], specificity nan [nan, nan]",
+        "PRIMARY  QWK, APTOS internal test (n=541): 0.911 [0.882, 0.935]; referable AUC 0.988 [0.980, 0.995]"
+      ],
+      "figures": [
+        "m6_training.png",
+        "m6_confusion.png",
+        "m6_roc_reliability.png",
+        "m6_gradcam.png"
+      ],
+      "seconds": 2317.2
+    },
+    "M7": {
+      "source": "IDRiD segmentation set, model /content/drive/MyDrive/dr-pinn/checkpoints/m5_full/final.pt",
+      "drpinn_version": "0.11.0",
+      "config": {
+        "fov_diameter_px": 540,
+        "patch_px": 32,
+        "threshold": 0.5,
+        "mc": {
+          "n_samples": 50,
+          "radius_sigma": 0.258,
+          "levels": [
+            2.0,
+            10.0
+          ],
+          "length_to_radius": 20.0,
+          "outlet_jitter_mmhg": 3.0,
+          "p_pries": 0.5,
+          "hd_range": [
+            0.3,
+            0.5
+          ],
+          "disc_um_range": [
+            1500.0,
+            2100.0
+          ],
+          "top_fraction": 0.1,
+          "seed": 0,
+          "artery_disc_mmhg": 40.0,
+          "artery_bed_mmhg": 25.0,
+          "vein_disc_mmhg": 15.0,
+          "vein_bed_mmhg": 25.0
+        }
+      },
+      "model": {
+        "checkpoint": "/content/drive/MyDrive/dr-pinn/checkpoints/m5_full/final.pt",
+        "trained_on": [
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "36",
+          "37",
+          "38",
+          "39",
+          "40"
+        ],
+        "drpinn_version_at_training": "0.6.0"
+      },
+      "images": 81,
+      "test_images": 27,
+      "patches": 13185,
+      "primary": {
+        "available": true,
+        "score": "high_shear_mc",
+        "label": "red_lesion",
+        "images": 27,
+        "within_image_auroc": 0.5143244654922101,
+        "ci": [
+          0.477186983312916,
+          0.5514619476715042
+        ],
+        "p_vs_0.5": 0.4350422634036314,
+        "verdict": "no evidence of association (CI includes 0.5)",
+        "vs_baselines": {
+          "vessel_density": {
+            "difference": 0.11346725149911882,
+            "ci": [
+              0.06780164011641704,
+              0.1591328628818206
+            ],
+            "p_value": 2.531313368565614e-05,
+            "images": 27
+          },
+          "near_fovea": {
+            "difference": -0.0923381959107097,
+            "ci": [
+              -0.1513290077500938,
+              -0.03334738407132559
+            ],
+            "p_value": 0.0034495487598732106,
+            "images": 27
+          },
+          "high_shear_deterministic": {
+            "difference": -0.025457595120406035,
+            "ci": [
+              -0.05443087707364556,
+              0.0035156868328334867
+            ],
+            "p_value": 0.0824920852535814,
+            "images": 27
+          },
+          "thinness": {
+            "difference": -0.057654808088922566,
+            "ci": [
+              -0.11504352059694789,
+              -0.000266095580897234
+            ],
+            "p_value": 0.04902218394463322,
+            "images": 27
+          }
+        }
+      },
+      "median_rank_stability": {
+        "artery": 0.7808270628336228,
+        "vein": 0.7110171277997364
+      },
+      "red_lesion_pixels_labelled_vessel_median": 0.14301162476344959,
+      "results": {
+        "single_scores": {
+          "test": {
+            "red_lesion": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.5143244654922101,
+                "within_ci": [
+                  0.477186983312916,
+                  0.5514619476715042
+                ],
+                "p_vs_0.5": 0.4350422634036314,
+                "images_scored": 27,
+                "pooled_auroc": 0.520969017898787,
+                "pooled_ci": [
+                  0.4826866929827864,
+                  0.5592170905434837
+                ],
+                "average_precision": 0.2467295583225904,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.4687903965274342,
+                "within_ci": [
+                  0.4274902991559028,
+                  0.5100904938989655
+                ],
+                "p_vs_0.5": 0.1324358972099376,
+                "images_scored": 27,
+                "pooled_auroc": 0.46107050534230626,
+                "pooled_ci": [
+                  0.43140162153221084,
+                  0.4937338622105963
+                ],
+                "average_precision": 0.22814446004599592,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.539782060612616,
+                "within_ci": [
+                  0.49561872446994176,
+                  0.5839453967552903
+                ],
+                "p_vs_0.5": 0.075471761064119,
+                "images_scored": 27,
+                "pooled_auroc": 0.551985563745724,
+                "pooled_ci": [
+                  0.5136915224227744,
+                  0.5860482558364007
+                ],
+                "average_precision": 0.2719596189437403,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.46287398349832476,
+                "within_ci": [
+                  0.41933700257471523,
+                  0.5064109644219343
+                ],
+                "p_vs_0.5": 0.09141421883474576,
+                "images_scored": 27,
+                "pooled_auroc": 0.4588609667761743,
+                "pooled_ci": [
+                  0.4291465057017937,
+                  0.4895356329549138
+                ],
+                "average_precision": 0.22876237267713428,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.5116136701443147,
+                "within_ci": [
+                  0.46858012154929,
+                  0.5546472187393394
+                ],
+                "p_vs_0.5": 0.5838166576473804,
+                "images_scored": 27,
+                "pooled_auroc": 0.5265260384492461,
+                "pooled_ci": [
+                  0.4895116978283935,
+                  0.5634806263437436
+                ],
+                "average_precision": 0.2579768196887507,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "thinness": {
+                "within_image_auroc": 0.5719792735811325,
+                "within_ci": [
+                  0.5416702046735095,
+                  0.6022883424887556
+                ],
+                "p_vs_0.5": 4.593733572131993e-05,
+                "images_scored": 27,
+                "pooled_auroc": 0.5325880116863302,
+                "pooled_ci": [
+                  0.5069606908582233,
+                  0.5613550438047312
+                ],
+                "average_precision": 0.26112826965232455,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.47255486389880913,
+                "within_ci": [
+                  0.43855681872413615,
+                  0.506552909073482
+                ],
+                "p_vs_0.5": 0.10906364532744613,
+                "images_scored": 27,
+                "pooled_auroc": 0.4810510751807779,
+                "pooled_ci": [
+                  0.44594926893451836,
+                  0.5135666697449964
+                ],
+                "average_precision": 0.23269413781500597,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.40085721399309127,
+                "within_ci": [
+                  0.363429518106368,
+                  0.43828490987981455
+                ],
+                "p_vs_0.5": 1.042717943615849e-05,
+                "images_scored": 27,
+                "pooled_auroc": 0.4305158563895925,
+                "pooled_ci": [
+                  0.3975947955641501,
+                  0.4622866703669451
+                ],
+                "average_precision": 0.20391256118809317,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.6066626614029197,
+                "within_ci": [
+                  0.5541498904265103,
+                  0.6591754323793291
+                ],
+                "p_vs_0.5": 0.0002957101677720759,
+                "images_scored": 27,
+                "pooled_auroc": 0.5883389103524759,
+                "pooled_ci": [
+                  0.5545715695393482,
+                  0.6287658185562361
+                ],
+                "average_precision": 0.30709893784536296,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              },
+              "near_disc": {
+                "within_image_auroc": 0.3688587574193162,
+                "within_ci": [
+                  0.320933096945475,
+                  0.41678441789315734
+                ],
+                "p_vs_0.5": 6.518222694101083e-06,
+                "images_scored": 27,
+                "pooled_auroc": 0.3615345479678231,
+                "pooled_ci": [
+                  0.312581597881153,
+                  0.4165101397764395
+                ],
+                "average_precision": 0.1792097280090473,
+                "prevalence": 0.24186575654152445,
+                "patches": 4395
+              }
+            },
+            "MA": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.46490670448010823,
+                "within_ci": [
+                  0.42887171782738537,
+                  0.500941691132831
+                ],
+                "p_vs_0.5": 0.05584096367503313,
+                "images_scored": 27,
+                "pooled_auroc": 0.4528481004284191,
+                "pooled_ci": [
+                  0.42633669616273967,
+                  0.4819578797335897
+                ],
+                "average_precision": 0.11869349921444426,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.4853597231393977,
+                "within_ci": [
+                  0.43425667714484495,
+                  0.5364627691339504
+                ],
+                "p_vs_0.5": 0.5610242419976128,
+                "images_scored": 27,
+                "pooled_auroc": 0.47399781953474585,
+                "pooled_ci": [
+                  0.43741199258631935,
+                  0.5088625713078483
+                ],
+                "average_precision": 0.12875963822758923,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.4862138491885982,
+                "within_ci": [
+                  0.4464682975139256,
+                  0.5259594008632709
+                ],
+                "p_vs_0.5": 0.4822079036013218,
+                "images_scored": 27,
+                "pooled_auroc": 0.4944659227328498,
+                "pooled_ci": [
+                  0.4616377487125524,
+                  0.5251031867437026
+                ],
+                "average_precision": 0.1330213644890513,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.4857868424853506,
+                "within_ci": [
+                  0.4356285681241776,
+                  0.5359451168465236
+                ],
+                "p_vs_0.5": 0.5652694095034436,
+                "images_scored": 27,
+                "pooled_auroc": 0.46746061358221686,
+                "pooled_ci": [
+                  0.4360091516282712,
+                  0.49798188621965167
+                ],
+                "average_precision": 0.12831454743629359,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.4759255201291025,
+                "within_ci": [
+                  0.4431161562292808,
+                  0.5087348840289242
+                ],
+                "p_vs_0.5": 0.14353866599186663,
+                "images_scored": 27,
+                "pooled_auroc": 0.4826782234853396,
+                "pooled_ci": [
+                  0.4524327475015882,
+                  0.5134485983183484
+                ],
+                "average_precision": 0.1274141002192846,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "thinness": {
+                "within_image_auroc": 0.5972359295680286,
+                "within_ci": [
+                  0.5559036099409377,
+                  0.6385682491951196
+                ],
+                "p_vs_0.5": 5.184889478914267e-05,
+                "images_scored": 27,
+                "pooled_auroc": 0.5548721755168682,
+                "pooled_ci": [
+                  0.5256293872999317,
+                  0.5850166892309282
+                ],
+                "average_precision": 0.15885406290858894,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.46136431880966805,
+                "within_ci": [
+                  0.42450019591138544,
+                  0.49822844170795066
+                ],
+                "p_vs_0.5": 0.04065937252704934,
+                "images_scored": 27,
+                "pooled_auroc": 0.5001997877751051,
+                "pooled_ci": [
+                  0.4644417067778603,
+                  0.5342829090132658
+                ],
+                "average_precision": 0.1321718669361726,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.37922255796916915,
+                "within_ci": [
+                  0.3463620644802844,
+                  0.4120830514580539
+                ],
+                "p_vs_0.5": 5.084931291755916e-08,
+                "images_scored": 27,
+                "pooled_auroc": 0.41070765447387897,
+                "pooled_ci": [
+                  0.3886549449807042,
+                  0.43237201868786523
+                ],
+                "average_precision": 0.10816447132807032,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.6294970753013575,
+                "within_ci": [
+                  0.577999830802886,
+                  0.6809943197998289
+                ],
+                "p_vs_0.5": 2.1529721218854834e-05,
+                "images_scored": 27,
+                "pooled_auroc": 0.6159801111931432,
+                "pooled_ci": [
+                  0.5793521892277284,
+                  0.6595908245072594
+                ],
+                "average_precision": 0.19327752240549315,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              },
+              "near_disc": {
+                "within_image_auroc": 0.38100402198461475,
+                "within_ci": [
+                  0.3367909901411028,
+                  0.4252170538281267
+                ],
+                "p_vs_0.5": 8.295738023718494e-06,
+                "images_scored": 27,
+                "pooled_auroc": 0.3619656118048554,
+                "pooled_ci": [
+                  0.3237013830658025,
+                  0.4013501288326159
+                ],
+                "average_precision": 0.09806254119466232,
+                "prevalence": 0.13583617747440274,
+                "patches": 4395
+              }
+            },
+            "HE": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.5583962698916818,
+                "within_ci": [
+                  0.49722742212240495,
+                  0.6195651176609587
+                ],
+                "p_vs_0.5": 0.060474606346942766,
+                "images_scored": 26,
+                "pooled_auroc": 0.5820438765661995,
+                "pooled_ci": [
+                  0.5397565875063961,
+                  0.6179035263043452
+                ],
+                "average_precision": 0.16988328598811128,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.46519908988908537,
+                "within_ci": [
+                  0.40612989439431085,
+                  0.5242682853838598
+                ],
+                "p_vs_0.5": 0.23632186504341868,
+                "images_scored": 26,
+                "pooled_auroc": 0.44820711536726643,
+                "pooled_ci": [
+                  0.4209206332532222,
+                  0.47714393109244546
+                ],
+                "average_precision": 0.13036325985107833,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.602748271530898,
+                "within_ci": [
+                  0.5422918288906962,
+                  0.6632047141710999
+                ],
+                "p_vs_0.5": 0.0017642889647416706,
+                "images_scored": 26,
+                "pooled_auroc": 0.6097541826315046,
+                "pooled_ci": [
+                  0.5771454662792476,
+                  0.6394956838501404
+                ],
+                "average_precision": 0.19115388208820885,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.45192324943785533,
+                "within_ci": [
+                  0.3916738103839323,
+                  0.5121726884917784
+                ],
+                "p_vs_0.5": 0.11281278914382067,
+                "images_scored": 26,
+                "pooled_auroc": 0.4443627880692234,
+                "pooled_ci": [
+                  0.41144261920446223,
+                  0.47391877374001584
+                ],
+                "average_precision": 0.1304344121935971,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.572517334886597,
+                "within_ci": [
+                  0.519246875616925,
+                  0.625787794156269
+                ],
+                "p_vs_0.5": 0.00962671387831309,
+                "images_scored": 26,
+                "pooled_auroc": 0.5692159768097785,
+                "pooled_ci": [
+                  0.5206711257562219,
+                  0.6077810480134204
+                ],
+                "average_precision": 0.17625724783795746,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "thinness": {
+                "within_image_auroc": 0.5389330186681268,
+                "within_ci": [
+                  0.5002000410291971,
+                  0.5776659963070565
+                ],
+                "p_vs_0.5": 0.04891516233095782,
+                "images_scored": 26,
+                "pooled_auroc": 0.49450266302858437,
+                "pooled_ci": [
+                  0.4652543092651607,
+                  0.5300754068987067
+                ],
+                "average_precision": 0.13789280791687986,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.48084342573784183,
+                "within_ci": [
+                  0.4325196216500963,
+                  0.5291672298255874
+                ],
+                "p_vs_0.5": 0.4219578901027812,
+                "images_scored": 26,
+                "pooled_auroc": 0.4539336055653808,
+                "pooled_ci": [
+                  0.42020503415794697,
+                  0.49228785978870815
+                ],
+                "average_precision": 0.13180960552724502,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.4278961908750899,
+                "within_ci": [
+                  0.38015868172272005,
+                  0.47563370002745975
+                ],
+                "p_vs_0.5": 0.004620038295861146,
+                "images_scored": 26,
+                "pooled_auroc": 0.45666323114134905,
+                "pooled_ci": [
+                  0.4129338927544578,
+                  0.49462453948811796
+                ],
+                "average_precision": 0.1241493877587352,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.5858326892366879,
+                "within_ci": [
+                  0.5236289382203655,
+                  0.6480364402530102
+                ],
+                "p_vs_0.5": 0.008798683755907744,
+                "images_scored": 26,
+                "pooled_auroc": 0.5604496424613907,
+                "pooled_ci": [
+                  0.5193671020262698,
+                  0.6085643798385852
+                ],
+                "average_precision": 0.17034755063636503,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              },
+              "near_disc": {
+                "within_image_auroc": 0.3725042287730549,
+                "within_ci": [
+                  0.31617690249423974,
+                  0.42883155505187004
+                ],
+                "p_vs_0.5": 8.95439164738482e-05,
+                "images_scored": 26,
+                "pooled_auroc": 0.37364827256340116,
+                "pooled_ci": [
+                  0.295438300693335,
+                  0.4551005013700822
+                ],
+                "average_precision": 0.10468405680954052,
+                "prevalence": 0.14175199089874857,
+                "patches": 4395
+              }
+            },
+            "exudate": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.46122192938056267,
+                "within_ci": [
+                  0.42984362684900235,
+                  0.492600231912123
+                ],
+                "p_vs_0.5": 0.01739199853788937,
+                "images_scored": 27,
+                "pooled_auroc": 0.4485087055701307,
+                "pooled_ci": [
+                  0.42019807415647686,
+                  0.4819118105526621
+                ],
+                "average_precision": 0.1769720626025854,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.4491801108593338,
+                "within_ci": [
+                  0.4073522803553793,
+                  0.4910079413632883
+                ],
+                "p_vs_0.5": 0.01916892052352075,
+                "images_scored": 27,
+                "pooled_auroc": 0.4489006839514005,
+                "pooled_ci": [
+                  0.4162508342192856,
+                  0.4848966663067466
+                ],
+                "average_precision": 0.18387615909518376,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.5182438116365701,
+                "within_ci": [
+                  0.4867616427447969,
+                  0.5497259805283432
+                ],
+                "p_vs_0.5": 0.2443469761389056,
+                "images_scored": 27,
+                "pooled_auroc": 0.5067096620813648,
+                "pooled_ci": [
+                  0.4815493426402487,
+                  0.5358608886105712
+                ],
+                "average_precision": 0.19927563558130376,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.43315472761308227,
+                "within_ci": [
+                  0.3839350992435713,
+                  0.48237435598259326
+                ],
+                "p_vs_0.5": 0.009699597217221028,
+                "images_scored": 27,
+                "pooled_auroc": 0.4415039695280819,
+                "pooled_ci": [
+                  0.4010062416467474,
+                  0.48314767613182785
+                ],
+                "average_precision": 0.18447028947084732,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.480089289768802,
+                "within_ci": [
+                  0.4493924909502989,
+                  0.5107860885873051
+                ],
+                "p_vs_0.5": 0.19400875648336588,
+                "images_scored": 27,
+                "pooled_auroc": 0.46959123131279,
+                "pooled_ci": [
+                  0.4483972031172814,
+                  0.49116710210904857
+                ],
+                "average_precision": 0.19192748237529608,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "thinness": {
+                "within_image_auroc": 0.588749057008275,
+                "within_ci": [
+                  0.554621984418071,
+                  0.6228761295984789
+                ],
+                "p_vs_0.5": 1.3533243281318434e-05,
+                "images_scored": 27,
+                "pooled_auroc": 0.5805705344666413,
+                "pooled_ci": [
+                  0.5537560450884031,
+                  0.6103438168848869
+                ],
+                "average_precision": 0.23648380509691488,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.4495581052416658,
+                "within_ci": [
+                  0.40592071623846965,
+                  0.4931954942448619
+                ],
+                "p_vs_0.5": 0.025151692645667918,
+                "images_scored": 27,
+                "pooled_auroc": 0.4612614888265973,
+                "pooled_ci": [
+                  0.422711336520498,
+                  0.5053597802092761
+                ],
+                "average_precision": 0.18114892026322948,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.38953568643735575,
+                "within_ci": [
+                  0.35364240986834794,
+                  0.42542896300636357
+                ],
+                "p_vs_0.5": 1.0674791284188318e-06,
+                "images_scored": 27,
+                "pooled_auroc": 0.3966816373229314,
+                "pooled_ci": [
+                  0.36836682504547447,
+                  0.42330622839426857
+                ],
+                "average_precision": 0.15632232166097582,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.705526560939262,
+                "within_ci": [
+                  0.6618055769598922,
+                  0.7492475449186319
+                ],
+                "p_vs_0.5": 4.309771421191973e-10,
+                "images_scored": 27,
+                "pooled_auroc": 0.6860900810573177,
+                "pooled_ci": [
+                  0.650251812280197,
+                  0.7189472212008704
+                ],
+                "average_precision": 0.3463615431937014,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              },
+              "near_disc": {
+                "within_image_auroc": 0.39353400010783735,
+                "within_ci": [
+                  0.34929738722471787,
+                  0.4377706129909568
+                ],
+                "p_vs_0.5": 3.863652394412157e-05,
+                "images_scored": 27,
+                "pooled_auroc": 0.3974948269190144,
+                "pooled_ci": [
+                  0.3572668177041604,
+                  0.4382987759683702
+                ],
+                "average_precision": 0.15400675371355232,
+                "prevalence": 0.20045506257110352,
+                "patches": 4395
+              }
+            },
+            "any_lesion": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.4828946260270857,
+                "within_ci": [
+                  0.44603622673246107,
+                  0.5197530253217104
+                ],
+                "p_vs_0.5": 0.3489008915405398,
+                "images_scored": 27,
+                "pooled_auroc": 0.4834460015357613,
+                "pooled_ci": [
+                  0.4504168119416946,
+                  0.519704046289295
+                ],
+                "average_precision": 0.35522577450653936,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.46286743998612717,
+                "within_ci": [
+                  0.42535031307266774,
+                  0.5003845668995865
+                ],
+                "p_vs_0.5": 0.05222328168002508,
+                "images_scored": 27,
+                "pooled_auroc": 0.4554259879828448,
+                "pooled_ci": [
+                  0.42792002212798935,
+                  0.484600306950405
+                ],
+                "average_precision": 0.353159221586995,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.525035301563545,
+                "within_ci": [
+                  0.48788095496819783,
+                  0.5621896481588923
+                ],
+                "p_vs_0.5": 0.17780584920126577,
+                "images_scored": 27,
+                "pooled_auroc": 0.5280377066554375,
+                "pooled_ci": [
+                  0.49894459141125486,
+                  0.5583699742784715
+                ],
+                "average_precision": 0.3894004326597212,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.4532266842885018,
+                "within_ci": [
+                  0.41288997317023435,
+                  0.4935633954067693
+                ],
+                "p_vs_0.5": 0.024738380720394252,
+                "images_scored": 27,
+                "pooled_auroc": 0.4512158036561027,
+                "pooled_ci": [
+                  0.4209432306102146,
+                  0.4794725569767151
+                ],
+                "average_precision": 0.3544351788377278,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.4889803055095952,
+                "within_ci": [
+                  0.45333263108411204,
+                  0.5246279799350784
+                ],
+                "p_vs_0.5": 0.5307067077056817,
+                "images_scored": 27,
+                "pooled_auroc": 0.49528865854435306,
+                "pooled_ci": [
+                  0.4657056747413893,
+                  0.5266356326737685
+                ],
+                "average_precision": 0.3701464219385108,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "thinness": {
+                "within_image_auroc": 0.5815409084592859,
+                "within_ci": [
+                  0.5523260530574942,
+                  0.6107557638610775
+                ],
+                "p_vs_0.5": 4.862879888531657e-06,
+                "images_scored": 27,
+                "pooled_auroc": 0.5594606567325794,
+                "pooled_ci": [
+                  0.5352366106529365,
+                  0.5823195473655174
+                ],
+                "average_precision": 0.41341613953799866,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.4757482136758781,
+                "within_ci": [
+                  0.4383042278897098,
+                  0.5131921994620464
+                ],
+                "p_vs_0.5": 0.1946369703371444,
+                "images_scored": 27,
+                "pooled_auroc": 0.4762756505753797,
+                "pooled_ci": [
+                  0.4411093483210528,
+                  0.5116428981161574
+                ],
+                "average_precision": 0.35800004067710056,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.39354069243925793,
+                "within_ci": [
+                  0.36221405014128083,
+                  0.42486733473723504
+                ],
+                "p_vs_0.5": 2.0384838301329058e-07,
+                "images_scored": 27,
+                "pooled_auroc": 0.4059843822984048,
+                "pooled_ci": [
+                  0.3787371976622176,
+                  0.4331428888124447
+                ],
+                "average_precision": 0.30902671374957486,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.6652630339718045,
+                "within_ci": [
+                  0.6279034673528794,
+                  0.7026226005907297
+                ],
+                "p_vs_0.5": 1.4779408691122637e-09,
+                "images_scored": 27,
+                "pooled_auroc": 0.6392192830047134,
+                "pooled_ci": [
+                  0.6077918145837559,
+                  0.6744629470443553
+                ],
+                "average_precision": 0.5089574141671901,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              },
+              "near_disc": {
+                "within_image_auroc": 0.366829759628089,
+                "within_ci": [
+                  0.3211105675588064,
+                  0.4125489516973716
+                ],
+                "p_vs_0.5": 2.543823984021506e-06,
+                "images_scored": 27,
+                "pooled_auroc": 0.36032666775184363,
+                "pooled_ci": [
+                  0.3162746420833889,
+                  0.4075230794430139
+                ],
+                "average_precision": 0.28545848887968894,
+                "prevalence": 0.3738339021615472,
+                "patches": 4395
+              }
+            }
+          },
+          "all": {
+            "red_lesion": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.5040202743040412,
+                "within_ci": [
+                  0.48368675514520365,
+                  0.5243537934628787
+                ],
+                "p_vs_0.5": 0.6949770942418154,
+                "images_scored": 80,
+                "pooled_auroc": 0.5139584753806105,
+                "pooled_ci": [
+                  0.493646926868391,
+                  0.5356630029297061
+                ],
+                "average_precision": 0.24027918807947318,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.45648932432451755,
+                "within_ci": [
+                  0.4366753981681609,
+                  0.4763032504808742
+                ],
+                "p_vs_0.5": 3.728409918179918e-05,
+                "images_scored": 80,
+                "pooled_auroc": 0.456455689062528,
+                "pooled_ci": [
+                  0.44123659296279943,
+                  0.47266663110264945
+                ],
+                "average_precision": 0.22123037749688426,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.5368128146737691,
+                "within_ci": [
+                  0.5147838380021086,
+                  0.5588417913454296
+                ],
+                "p_vs_0.5": 0.0013374391556952977,
+                "images_scored": 80,
+                "pooled_auroc": 0.5430516157087741,
+                "pooled_ci": [
+                  0.5217189819585644,
+                  0.5643990798121195
+                ],
+                "average_precision": 0.2614239552003364,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.4480415489866969,
+                "within_ci": [
+                  0.4284117092606367,
+                  0.4676713887127571
+                ],
+                "p_vs_0.5": 1.1605109238194627e-06,
+                "images_scored": 80,
+                "pooled_auroc": 0.4516510609986738,
+                "pooled_ci": [
+                  0.43617147490731206,
+                  0.468270611875967
+                ],
+                "average_precision": 0.21792520632523357,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.49253644641562555,
+                "within_ci": [
+                  0.47118922590980217,
+                  0.5138836669214489
+                ],
+                "p_vs_0.5": 0.48852492768993616,
+                "images_scored": 80,
+                "pooled_auroc": 0.5098384532603002,
+                "pooled_ci": [
+                  0.48805763954063586,
+                  0.5316560004444905
+                ],
+                "average_precision": 0.2470741371405825,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "thinness": {
+                "within_image_auroc": 0.5554811132774667,
+                "within_ci": [
+                  0.5352399244033554,
+                  0.575722302151578
+                ],
+                "p_vs_0.5": 5.428528202157261e-07,
+                "images_scored": 80,
+                "pooled_auroc": 0.5293938136814855,
+                "pooled_ci": [
+                  0.5080654915623976,
+                  0.5513732221110811
+                ],
+                "average_precision": 0.254053991255036,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.47650915945157957,
+                "within_ci": [
+                  0.4605532953415553,
+                  0.4924650235616038
+                ],
+                "p_vs_0.5": 0.004424275262255449,
+                "images_scored": 80,
+                "pooled_auroc": 0.47318647629885996,
+                "pooled_ci": [
+                  0.4540924405456398,
+                  0.4911271828579006
+                ],
+                "average_precision": 0.2271805543527513,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.4163860082124115,
+                "within_ci": [
+                  0.39665898156326784,
+                  0.43611303486155517
+                ],
+                "p_vs_0.5": 1.226308148382383e-12,
+                "images_scored": 80,
+                "pooled_auroc": 0.4292706351102884,
+                "pooled_ci": [
+                  0.4107119886592851,
+                  0.4472322015296282
+                ],
+                "average_precision": 0.19822413333539607,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.5998678389475707,
+                "within_ci": [
+                  0.5706874969442277,
+                  0.6290481809509136
+                ],
+                "p_vs_0.5": 1.7046411370408072e-09,
+                "images_scored": 80,
+                "pooled_auroc": 0.5864628833720236,
+                "pooled_ci": [
+                  0.5616732229211979,
+                  0.6131527074223243
+                ],
+                "average_precision": 0.29881180651301564,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              },
+              "near_disc": {
+                "within_image_auroc": 0.3838938996676097,
+                "within_ci": [
+                  0.36010676472001946,
+                  0.4076810346151999
+                ],
+                "p_vs_0.5": 3.928151052881266e-15,
+                "images_scored": 80,
+                "pooled_auroc": 0.3802306904949108,
+                "pooled_ci": [
+                  0.35434498030496236,
+                  0.4065319691418303
+                ],
+                "average_precision": 0.1804654408882517,
+                "prevalence": 0.23754266211604094,
+                "patches": 13185
+              }
+            },
+            "MA": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.4650760501950053,
+                "within_ci": [
+                  0.44427204081224886,
+                  0.48588005957776176
+                ],
+                "p_vs_0.5": 0.001275224125575326,
+                "images_scored": 80,
+                "pooled_auroc": 0.4668617792514836,
+                "pooled_ci": [
+                  0.4499345799232963,
+                  0.48549455615752735
+                ],
+                "average_precision": 0.13019170737857708,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.48144921835264193,
+                "within_ci": [
+                  0.45498164580104355,
+                  0.5079167909042404
+                ],
+                "p_vs_0.5": 0.16690126152633766,
+                "images_scored": 80,
+                "pooled_auroc": 0.4751376030692018,
+                "pooled_ci": [
+                  0.456629877495225,
+                  0.49287957847431885
+                ],
+                "average_precision": 0.13604325552362034,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.48633903026733744,
+                "within_ci": [
+                  0.46618472143059214,
+                  0.5064933391040827
+                ],
+                "p_vs_0.5": 0.18113835210381785,
+                "images_scored": 80,
+                "pooled_auroc": 0.4941368262849334,
+                "pooled_ci": [
+                  0.4731982048173572,
+                  0.5143570197568937
+                ],
+                "average_precision": 0.1408091700753784,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.47880030749199654,
+                "within_ci": [
+                  0.45306678014563945,
+                  0.5045338348383537
+                ],
+                "p_vs_0.5": 0.10503039876708835,
+                "images_scored": 80,
+                "pooled_auroc": 0.47194357822213795,
+                "pooled_ci": [
+                  0.4541474340631092,
+                  0.4897829629757691
+                ],
+                "average_precision": 0.13441883221186718,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.48397224505150777,
+                "within_ci": [
+                  0.46311907847642697,
+                  0.5048254116265886
+                ],
+                "p_vs_0.5": 0.1300456801565813,
+                "images_scored": 80,
+                "pooled_auroc": 0.49321669611985514,
+                "pooled_ci": [
+                  0.4742673669433163,
+                  0.5128713489065447
+                ],
+                "average_precision": 0.13734047426193424,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "thinness": {
+                "within_image_auroc": 0.584058799659394,
+                "within_ci": [
+                  0.5589703134265798,
+                  0.6091472858922082
+                ],
+                "p_vs_0.5": 3.1861012915477105e-09,
+                "images_scored": 80,
+                "pooled_auroc": 0.5546777755556298,
+                "pooled_ci": [
+                  0.534276059275391,
+                  0.5759316713863326
+                ],
+                "average_precision": 0.1631506898608091,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.4831607462135608,
+                "within_ci": [
+                  0.4621816555961506,
+                  0.5041398368309711
+                ],
+                "p_vs_0.5": 0.11410853436085844,
+                "images_scored": 80,
+                "pooled_auroc": 0.48934283123337197,
+                "pooled_ci": [
+                  0.4725500419521725,
+                  0.5061864674796503
+                ],
+                "average_precision": 0.13754411688711896,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.4102202634061042,
+                "within_ci": [
+                  0.3897962707978061,
+                  0.43064425601440226
+                ],
+                "p_vs_0.5": 2.999866355217211e-13,
+                "images_scored": 80,
+                "pooled_auroc": 0.4212947262623407,
+                "pooled_ci": [
+                  0.405865098505765,
+                  0.43645300735199305
+                ],
+                "average_precision": 0.11407033657114168,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.6379476547470061,
+                "within_ci": [
+                  0.6109354287306725,
+                  0.6649598807633397
+                ],
+                "p_vs_0.5": 5.294098012553421e-16,
+                "images_scored": 80,
+                "pooled_auroc": 0.631137975229034,
+                "pooled_ci": [
+                  0.6078615211788477,
+                  0.6560786662249904
+                ],
+                "average_precision": 0.20565462911996066,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              },
+              "near_disc": {
+                "within_image_auroc": 0.3784354115752504,
+                "within_ci": [
+                  0.3561046798354921,
+                  0.4007661433150087
+                ],
+                "p_vs_0.5": 2.729692432386968e-17,
+                "images_scored": 80,
+                "pooled_auroc": 0.37168209145496606,
+                "pooled_ci": [
+                  0.3494094476389943,
+                  0.3946124578743717
+                ],
+                "average_precision": 0.10372767936422424,
+                "prevalence": 0.1416003033750474,
+                "patches": 13185
+              }
+            },
+            "HE": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.5526236922284187,
+                "within_ci": [
+                  0.5232645150979015,
+                  0.5819828693589358
+                ],
+                "p_vs_0.5": 0.0006181039831511145,
+                "images_scored": 79,
+                "pooled_auroc": 0.5668628619797565,
+                "pooled_ci": [
+                  0.5431691649239356,
+                  0.5906696710852736
+                ],
+                "average_precision": 0.16085268211446002,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.45201660559847573,
+                "within_ci": [
+                  0.4228875440217001,
+                  0.48114566717525137
+                ],
+                "p_vs_0.5": 0.0015556336518320615,
+                "images_scored": 79,
+                "pooled_auroc": 0.44239812110301746,
+                "pooled_ci": [
+                  0.42492579462207813,
+                  0.4596983293751015
+                ],
+                "average_precision": 0.12654191126283676,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.5919244898731211,
+                "within_ci": [
+                  0.5645115311137399,
+                  0.6193374486325023
+                ],
+                "p_vs_0.5": 3.2364664249960413e-09,
+                "images_scored": 79,
+                "pooled_auroc": 0.5968904970254771,
+                "pooled_ci": [
+                  0.5732954269891011,
+                  0.620917011942209
+                ],
+                "average_precision": 0.18020349718606368,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.43357203623746926,
+                "within_ci": [
+                  0.40422124345395816,
+                  0.46292282902098036
+                ],
+                "p_vs_0.5": 2.2905044924306915e-05,
+                "images_scored": 79,
+                "pooled_auroc": 0.4322914913148702,
+                "pooled_ci": [
+                  0.41461040636198426,
+                  0.4502556409308468
+                ],
+                "average_precision": 0.12436819929491914,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.5111407021112631,
+                "within_ci": [
+                  0.48028141868326896,
+                  0.5419999855392571
+                ],
+                "p_vs_0.5": 0.47445608013570173,
+                "images_scored": 79,
+                "pooled_auroc": 0.5335958225539169,
+                "pooled_ci": [
+                  0.5022788656252739,
+                  0.5643483856306702
+                ],
+                "average_precision": 0.16140472496691632,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "thinness": {
+                "within_image_auroc": 0.5423402873482366,
+                "within_ci": [
+                  0.5188228195739109,
+                  0.5658577551225623
+                ],
+                "p_vs_0.5": 0.000586767767537306,
+                "images_scored": 79,
+                "pooled_auroc": 0.5105914710475804,
+                "pooled_ci": [
+                  0.48501466860885745,
+                  0.5367769016894609
+                ],
+                "average_precision": 0.14332940700966004,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.475716523503177,
+                "within_ci": [
+                  0.45088549800610156,
+                  0.5005475490002524
+                ],
+                "p_vs_0.5": 0.055140955181018046,
+                "images_scored": 79,
+                "pooled_auroc": 0.4539844061087996,
+                "pooled_ci": [
+                  0.43131291200001814,
+                  0.4763374807762988
+                ],
+                "average_precision": 0.12998729679491114,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.43223834042977066,
+                "within_ci": [
+                  0.40783611604137465,
+                  0.45664056481816667
+                ],
+                "p_vs_0.5": 4.140477923050701e-07,
+                "images_scored": 79,
+                "pooled_auroc": 0.44489383516732434,
+                "pooled_ci": [
+                  0.42050406193180906,
+                  0.46859047611268534
+                ],
+                "average_precision": 0.11925223162294306,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.5715221533271845,
+                "within_ci": [
+                  0.5352276300446225,
+                  0.6078166766097465
+                ],
+                "p_vs_0.5": 0.00018688561838069243,
+                "images_scored": 79,
+                "pooled_auroc": 0.5527700139486641,
+                "pooled_ci": [
+                  0.5230044199769641,
+                  0.5827321302080656
+                ],
+                "average_precision": 0.16444877069603436,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              },
+              "near_disc": {
+                "within_image_auroc": 0.39117869261021615,
+                "within_ci": [
+                  0.36093594206092594,
+                  0.42142144315950636
+                ],
+                "p_vs_0.5": 3.8407824149920556e-10,
+                "images_scored": 79,
+                "pooled_auroc": 0.3914215000178829,
+                "pooled_ci": [
+                  0.35505813287123367,
+                  0.42484721359941363
+                ],
+                "average_precision": 0.10641280546492358,
+                "prevalence": 0.1403109594235874,
+                "patches": 13185
+              }
+            },
+            "exudate": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.4560138463448328,
+                "within_ci": [
+                  0.43707655024550274,
+                  0.4749511424441628
+                ],
+                "p_vs_0.5": 1.4354038708446376e-05,
+                "images_scored": 81,
+                "pooled_auroc": 0.45844238419789796,
+                "pooled_ci": [
+                  0.4396734854858062,
+                  0.47670308622138574
+                ],
+                "average_precision": 0.15682377932347116,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.43155332293029725,
+                "within_ci": [
+                  0.4059203834404061,
+                  0.4571862624201884
+                ],
+                "p_vs_0.5": 9.445458585993744e-07,
+                "images_scored": 81,
+                "pooled_auroc": 0.4436687376468108,
+                "pooled_ci": [
+                  0.4248033085376259,
+                  0.4625968265209672
+                ],
+                "average_precision": 0.15836855577723488,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.5115723571586789,
+                "within_ci": [
+                  0.4895585225680988,
+                  0.533586191749259
+                ],
+                "p_vs_0.5": 0.29864341929990246,
+                "images_scored": 81,
+                "pooled_auroc": 0.501962955546592,
+                "pooled_ci": [
+                  0.4840384409785103,
+                  0.5212248823490866
+                ],
+                "average_precision": 0.17357870327628924,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.4218227607174878,
+                "within_ci": [
+                  0.3956929597265537,
+                  0.4479525617084219
+                ],
+                "p_vs_0.5": 6.636692899782946e-08,
+                "images_scored": 81,
+                "pooled_auroc": 0.4410534961264685,
+                "pooled_ci": [
+                  0.4214402538156291,
+                  0.46151467118736056
+                ],
+                "average_precision": 0.1568249611194496,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.5020982653830939,
+                "within_ci": [
+                  0.48034045809419185,
+                  0.5238560726719959
+                ],
+                "p_vs_0.5": 0.8482939508486168,
+                "images_scored": 81,
+                "pooled_auroc": 0.48646345167338034,
+                "pooled_ci": [
+                  0.46765626712510144,
+                  0.5051530341313796
+                ],
+                "average_precision": 0.16992009124358942,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "thinness": {
+                "within_image_auroc": 0.5917170147755034,
+                "within_ci": [
+                  0.5689694165561143,
+                  0.6144646129948925
+                ],
+                "p_vs_0.5": 7.2638948998323e-12,
+                "images_scored": 81,
+                "pooled_auroc": 0.5609613192238415,
+                "pooled_ci": [
+                  0.5375513548873613,
+                  0.5826084668377824
+                ],
+                "average_precision": 0.19776424346779434,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.45606216940176075,
+                "within_ci": [
+                  0.43324297517714755,
+                  0.47888136362637396
+                ],
+                "p_vs_0.5": 0.0002519334580127161,
+                "images_scored": 81,
+                "pooled_auroc": 0.4578396789154432,
+                "pooled_ci": [
+                  0.43493095134320264,
+                  0.48005728849971047
+                ],
+                "average_precision": 0.16100941579909786,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.3773563720143533,
+                "within_ci": [
+                  0.3551423465489901,
+                  0.3995703974797165
+                ],
+                "p_vs_0.5": 1.1918317918882658e-17,
+                "images_scored": 81,
+                "pooled_auroc": 0.391142833334986,
+                "pooled_ci": [
+                  0.3737374274888157,
+                  0.4076651436388825
+                ],
+                "average_precision": 0.13371492709975538,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.7109881754023093,
+                "within_ci": [
+                  0.6792689977834638,
+                  0.7427073530211548
+                ],
+                "p_vs_0.5": 7.493862853870093e-22,
+                "images_scored": 81,
+                "pooled_auroc": 0.6721765075808876,
+                "pooled_ci": [
+                  0.6438707362888179,
+                  0.7012366568888146
+                ],
+                "average_precision": 0.2984657900859057,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              },
+              "near_disc": {
+                "within_image_auroc": 0.4033219773523859,
+                "within_ci": [
+                  0.37917469866727543,
+                  0.42746925603749636
+                ],
+                "p_vs_0.5": 9.36116620797057e-12,
+                "images_scored": 81,
+                "pooled_auroc": 0.3897743662707995,
+                "pooled_ci": [
+                  0.36671852078295647,
+                  0.41465460048539504
+                ],
+                "average_precision": 0.13161523472252845,
+                "prevalence": 0.17421312097080016,
+                "patches": 13185
+              }
+            },
+            "any_lesion": {
+              "high_shear_mc": {
+                "within_image_auroc": 0.4762212141587974,
+                "within_ci": [
+                  0.45791266555161053,
+                  0.4945297627659843
+                ],
+                "p_vs_0.5": 0.011564603724836654,
+                "images_scored": 81,
+                "pooled_auroc": 0.48363147231644643,
+                "pooled_ci": [
+                  0.4649399735090731,
+                  0.5027725361382356
+                ],
+                "average_precision": 0.32236110806435103,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "low_shear_mc": {
+                "within_image_auroc": 0.4421150118460715,
+                "within_ci": [
+                  0.4224564700141364,
+                  0.4617735536780066
+                ],
+                "p_vs_0.5": 9.880623730120001e-08,
+                "images_scored": 81,
+                "pooled_auroc": 0.44642230654943765,
+                "pooled_ci": [
+                  0.43116067266776653,
+                  0.46215271557097287
+                ],
+                "average_precision": 0.3136713537789358,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "high_shear_deterministic": {
+                "within_image_auroc": 0.523136393434957,
+                "within_ci": [
+                  0.5047846202323762,
+                  0.5414881666375377
+                ],
+                "p_vs_0.5": 0.01413077472880279,
+                "images_scored": 81,
+                "pooled_auroc": 0.5207093321536963,
+                "pooled_ci": [
+                  0.5022771520175239,
+                  0.5399642557834211
+                ],
+                "average_precision": 0.3487316235997215,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "low_shear_deterministic": {
+                "within_image_auroc": 0.4357173673976414,
+                "within_ci": [
+                  0.4162535988782472,
+                  0.4551811359170356
+                ],
+                "p_vs_0.5": 4.641826312029932e-09,
+                "images_scored": 81,
+                "pooled_auroc": 0.4441538064584714,
+                "pooled_ci": [
+                  0.42906243139322775,
+                  0.45946397361791236
+                ],
+                "average_precision": 0.31114773942408974,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "tortuosity": {
+                "within_image_auroc": 0.4910488251443761,
+                "within_ci": [
+                  0.47338217469862454,
+                  0.5087154755901276
+                ],
+                "p_vs_0.5": 0.3163472009447249,
+                "images_scored": 81,
+                "pooled_auroc": 0.49521475375334606,
+                "pooled_ci": [
+                  0.47665534014351585,
+                  0.5141877175951903
+                ],
+                "average_precision": 0.338368627984947,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "thinness": {
+                "within_image_auroc": 0.5811794443013021,
+                "within_ci": [
+                  0.5621000916057132,
+                  0.600258796996891
+                ],
+                "p_vs_0.5": 9.786187695604783e-13,
+                "images_scored": 81,
+                "pooled_auroc": 0.5468743057601398,
+                "pooled_ci": [
+                  0.5266169532979673,
+                  0.567240059958731
+                ],
+                "average_precision": 0.36911982282543426,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "murray_deviation": {
+                "within_image_auroc": 0.46788720476435774,
+                "within_ci": [
+                  0.44981678619997323,
+                  0.48595762332874226
+                ],
+                "p_vs_0.5": 0.0006778188221129048,
+                "images_scored": 81,
+                "pooled_auroc": 0.4617879478369782,
+                "pooled_ci": [
+                  0.4432019939893379,
+                  0.47975377186370033
+                ],
+                "average_precision": 0.3176102519936038,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "vessel_density": {
+                "within_image_auroc": 0.38971697311290154,
+                "within_ci": [
+                  0.3710445319622951,
+                  0.408389414263508
+                ],
+                "p_vs_0.5": 4.1558827314576563e-19,
+                "images_scored": 81,
+                "pooled_auroc": 0.4022297740127082,
+                "pooled_ci": [
+                  0.38626133635348264,
+                  0.4175300107014713
+                ],
+                "average_precision": 0.2759837488404805,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "near_fovea": {
+                "within_image_auroc": 0.6648919907893596,
+                "within_ci": [
+                  0.6385205671688405,
+                  0.6912634144098786
+                ],
+                "p_vs_0.5": 2.13778430475356e-20,
+                "images_scored": 81,
+                "pooled_auroc": 0.6236609668323556,
+                "pooled_ci": [
+                  0.5999855923295301,
+                  0.6494742396021689
+                ],
+                "average_precision": 0.4574703264842188,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              },
+              "near_disc": {
+                "within_image_auroc": 0.37130475116119754,
+                "within_ci": [
+                  0.34817635936441393,
+                  0.39443314295798115
+                ],
+                "p_vs_0.5": 8.144258023229736e-18,
+                "images_scored": 81,
+                "pooled_auroc": 0.3684877158601761,
+                "pooled_ci": [
+                  0.34581699362120893,
+                  0.39246121510329207
+                ],
+                "average_precision": 0.25963091634396845,
+                "prevalence": 0.33947667804323095,
+                "patches": 13185
+              }
+            }
+          }
+        },
+        "paired_vs_baselines": {
+          "test": {
+            "vessel_density": {
+              "difference": 0.11346725149911882,
+              "ci": [
+                0.06780164011641704,
+                0.1591328628818206
+              ],
+              "p_value": 2.531313368565614e-05,
+              "images": 27
+            },
+            "near_fovea": {
+              "difference": -0.0923381959107097,
+              "ci": [
+                -0.1513290077500938,
+                -0.03334738407132559
+              ],
+              "p_value": 0.0034495487598732106,
+              "images": 27
+            },
+            "high_shear_deterministic": {
+              "difference": -0.025457595120406035,
+              "ci": [
+                -0.05443087707364556,
+                0.0035156868328334867
+              ],
+              "p_value": 0.0824920852535814,
+              "images": 27
+            },
+            "thinness": {
+              "difference": -0.057654808088922566,
+              "ci": [
+                -0.11504352059694789,
+                -0.000266095580897234
+              ],
+              "p_value": 0.04902218394463322,
+              "images": 27
+            }
+          },
+          "all": {
+            "vessel_density": {
+              "difference": 0.0876342660916298,
+              "ci": [
+                0.06422799543119333,
+                0.11104053675206628
+              ],
+              "p_value": 1.0081300022807342e-10,
+              "images": 80
+            },
+            "near_fovea": {
+              "difference": -0.0958475646435294,
+              "ci": [
+                -0.13456367848358852,
+                -0.05713145080347029
+              ],
+              "p_value": 4.492123714894819e-06,
+              "images": 80
+            },
+            "high_shear_deterministic": {
+              "difference": -0.032792540369727875,
+              "ci": [
+                -0.04752696715741715,
+                -0.018058113582038602
+              ],
+              "p_value": 2.998297580445762e-05,
+              "images": 80
+            },
+            "thinness": {
+              "difference": -0.051460838973425474,
+              "ci": [
+                -0.08461174569013996,
+                -0.018309932256710987
+              ],
+              "p_value": 0.0027649634315301138,
+              "images": 80
+            }
+          }
+        },
+        "combined_models": {
+          "position + density": {
+            "within_image_auroc": 0.6743626394220035,
+            "within_ci": [
+              0.6299734918948212,
+              0.7187517869491857
+            ],
+            "p_vs_0.5": 1.4870346464993021e-08,
+            "images_scored": 27,
+            "pooled_auroc": 0.6590670134469592,
+            "pooled_ci": [
+              0.6074276702312487,
+              0.7032583248406046
+            ],
+            "average_precision": 0.3507098967907834,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "+ geometry": {
+            "within_image_auroc": 0.675780637649887,
+            "within_ci": [
+              0.6301957333566701,
+              0.721365541943104
+            ],
+            "p_vs_0.5": 2.102922873399857e-08,
+            "images_scored": 27,
+            "pooled_auroc": 0.6634005436605498,
+            "pooled_ci": [
+              0.6109627381446433,
+              0.708834749115074
+            ],
+            "average_precision": 0.36405514837222686,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "+ geometry + physics": {
+            "within_image_auroc": 0.676521908838547,
+            "within_ci": [
+              0.6297352697561521,
+              0.7233085479209419
+            ],
+            "p_vs_0.5": 3.151099236413257e-08,
+            "images_scored": 27,
+            "pooled_auroc": 0.6686756546456777,
+            "pooled_ci": [
+              0.6175351098185263,
+              0.7152505704787363
+            ],
+            "average_precision": 0.37422581067896915,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "physics added (paired)": {
+            "difference": 0.0007412711886601596,
+            "ci": [
+              -0.008969069629998608,
+              0.01045161200731893
+            ],
+            "p_value": 0.8765234693501318,
+            "images": 27
+          }
+        }
+      },
+      "runtime_s": 3010.9813608120003
+    },
+    "M8": {
+      "note": "numerical comparison on identical networks and boundary conditions; synthetic + DRIVE-geometry graphs",
+      "settings": {
+        "steps": 30,
+        "gnn_iters": 200,
+        "pinn_adam": 1500,
+        "pinn_lbfgs": 300,
+        "nodal_lbfgs": 1000,
+        "coordinate_sigma": 10.0,
+        "sigma_tuning": {},
+        "seed": 0
+      },
+      "gnn_training": {
+        "seconds": 47.09411582400003,
+        "untrained_loss": 0.00011286815424682572,
+        "hidden": 32,
+        "steps": 30,
+        "iterations": 200,
+        "batch": 8
+      },
+      "gnn_history": [
+        [
+          0,
+          0.00021717663912568241
+        ],
+        [
+          33,
+          5.350489300326444e-05
+        ],
+        [
+          66,
+          3.7752233765786514e-05
+        ],
+        [
+          99,
+          5.222769686952233e-05
+        ],
+        [
+          132,
+          2.3408130800817162e-05
+        ],
+        [
+          165,
+          2.4400951588177122e-05
+        ],
+        [
+          198,
+          1.682305446593091e-05
+        ],
+        [
+          199,
+          1.6163301552296616e-05
+        ]
+      ],
+      "environment": {
+        "python": "3.13.18",
+        "torch": "2.11.0+cpu",
+        "threads": 1
+      },
+      "summary": {
+        "DRIVE": {
+          "direct solve (reference)": {
+            "networks": 4,
+            "pressure_error_median": 0.0,
+            "pressure_error_worst": 0.0,
+            "wss_median_rel_error": 0.0,
+            "wss_spearman_median": 1.0,
+            "wss_top10_overlap_median": 1.0,
+            "conservation_error_worst": 7.50053478738569e-14,
+            "seconds_median": 0.004455908000068121
+          },
+          "Jacobi(30)": {
+            "networks": 4,
+            "pressure_error_median": 0.2665864408097624,
+            "pressure_error_worst": 0.37570251053845255,
+            "wss_median_rel_error": 0.8570975454935473,
+            "wss_spearman_median": 0.8311091336236696,
+            "wss_top10_overlap_median": 0.7068181818181818,
+            "conservation_error_worst": 0.556962947418361,
+            "seconds_median": 0.0018058545000485537
+          },
+          "CG(30)": {
+            "networks": 4,
+            "pressure_error_median": 0.19532778835603737,
+            "pressure_error_worst": 0.3064600166284303,
+            "wss_median_rel_error": 0.720007568699732,
+            "wss_spearman_median": 0.6551655415168041,
+            "wss_top10_overlap_median": 0.710344827586207,
+            "conservation_error_worst": 0.2734053616372627,
+            "seconds_median": 0.0032439520000480115
+          },
+          "PI-GNN(30)": {
+            "networks": 4,
+            "pressure_error_median": 0.28794882428197044,
+            "pressure_error_worst": 0.3293079563960858,
+            "wss_median_rel_error": 0.9131026586016165,
+            "wss_spearman_median": 0.6817825322270543,
+            "wss_top10_overlap_median": 0.5845959595959596,
+            "conservation_error_worst": 0.45071328686816603,
+            "seconds_median": 0.025475118000031216
+          },
+          "nodal PINN": {
+            "networks": 4,
+            "pressure_error_median": 0.2588087019471213,
+            "pressure_error_worst": 0.3460739980423466,
+            "wss_median_rel_error": 0.6503133559055003,
+            "wss_spearman_median": 0.8321644985145168,
+            "wss_top10_overlap_median": 0.6772727272727272,
+            "conservation_error_worst": 0.39530448711385996,
+            "seconds_median": 2.2598388319999003
+          },
+          "coordinate PINN": {
+            "networks": 4,
+            "pressure_error_median": 0.2392719362038767,
+            "pressure_error_worst": 0.36693061119605785,
+            "wss_median_rel_error": 0.4957512800800573,
+            "wss_spearman_median": 0.7546451045980249,
+            "wss_top10_overlap_median": 0.7638888888888888,
+            "conservation_error_worst": 0.24112894363716,
+            "seconds_median": 8.656798378000076
+          }
+        },
+        "synthetic": {
+          "direct solve (reference)": {
+            "networks": 8,
+            "pressure_error_median": 0.0,
+            "pressure_error_worst": 0.0,
+            "wss_median_rel_error": 0.0,
+            "wss_spearman_median": 0.9999999999999999,
+            "wss_top10_overlap_median": 1.0,
+            "conservation_error_worst": 1.4445625651991307e-14,
+            "seconds_median": 0.004118478000009418
+          },
+          "Jacobi(30)": {
+            "networks": 8,
+            "pressure_error_median": 0.14223271317831832,
+            "pressure_error_worst": 0.28118328217952393,
+            "wss_median_rel_error": 0.2674984401318547,
+            "wss_spearman_median": 0.9333138167606478,
+            "wss_top10_overlap_median": 0.7596153846153846,
+            "conservation_error_worst": 0.266744084455577,
+            "seconds_median": 0.0018275725000194143
+          },
+          "CG(30)": {
+            "networks": 8,
+            "pressure_error_median": 0.028350413362432172,
+            "pressure_error_worst": 0.2609927929483497,
+            "wss_median_rel_error": 0.010531633760821323,
+            "wss_spearman_median": 0.9977458193709936,
+            "wss_top10_overlap_median": 1.0,
+            "conservation_error_worst": 0.027362378945591844,
+            "seconds_median": 0.0029832604999455725
+          },
+          "PI-GNN(30)": {
+            "networks": 8,
+            "pressure_error_median": 0.029533886382423463,
+            "pressure_error_worst": 0.4198697186498761,
+            "wss_median_rel_error": 0.03316466947395975,
+            "wss_spearman_median": 0.9969778859838188,
+            "wss_top10_overlap_median": 0.9807692307692308,
+            "conservation_error_worst": Infinity,
+            "seconds_median": 0.02818729400007669
+          },
+          "nodal PINN": {
+            "networks": 8,
+            "pressure_error_median": 9.400372345036434e-06,
+            "pressure_error_worst": 0.005043106675148068,
+            "wss_median_rel_error": 1.1338120044905229e-05,
+            "wss_spearman_median": 0.9999999999999998,
+            "wss_top10_overlap_median": 1.0,
+            "conservation_error_worst": 0.0030981833827145376,
+            "seconds_median": 1.8491134895000414
+          },
+          "coordinate PINN": {
+            "networks": 8,
+            "pressure_error_median": 0.02310520624875384,
+            "pressure_error_worst": 0.33731587203504915,
+            "wss_median_rel_error": 0.007950287254382973,
+            "wss_spearman_median": 0.9992926886108255,
+            "wss_top10_overlap_median": 0.9423076923076923,
+            "conservation_error_worst": 0.22875432637759585,
+            "seconds_median": 9.44997571600004
+          }
+        }
+      },
+      "runtime_s": 186.79413641200017
+    }
+  }
+}

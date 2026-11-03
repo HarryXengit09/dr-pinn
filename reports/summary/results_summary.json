@@ -1,0 +1,543 @@
+{
+  "generated": "2026-11-01T08:47",
+  "drpinn_version": "0.8.2",
+  "disclaimer": "Research prototype, not a medical device. Model-derived risk estimates are experimental, depend on stated modelling assumptions, and require independent clinical validation.",
+  "provenance": {
+    "m4": {
+      "file": "reports/m4_data/integrity_report.json",
+      "modified": "2026-10-31T15:33"
+    },
+    "m5": {
+      "file": "reports/m5_full/m5_results.json",
+      "modified": "2026-10-30T20:41"
+    },
+    "m6": {
+      "file": "reports/m6_full/m6_results.json",
+      "modified": "2026-11-01T07:37",
+      "code_version": "0.7.2"
+    },
+    "m7": {
+      "file": "reports/m7_full/m7_results.json",
+      "modified": "2026-10-31T16:27",
+      "code_version": "0.11.0"
+    },
+    "m8": {
+      "file": "reports/m8_quick/m8_results.json",
+      "modified": "2026-10-31T15:37"
+    },
+    "m9_disc": {
+      "file": "reports/m9_disc/disc_check.json",
+      "modified": "2026-11-01T08:46"
+    }
+  },
+  "warnings": [
+    "M4: the split manifest was built before the IDRiD fix (353 IDRiD grading rows with old ids). Re-run step 11d, then step 15; until then every IDRiD triage number is invalid",
+    "M6: IDRiD results are left out (made before the IDRiD fix, or from an old or different manifest); re-run step 11d, then step 15, to get valid external results",
+    "M7 \u00b7 Shear risk vs lesions (core experiment): made by code version 0.11.0, which is not a version of this project (installed: 0.8.2). Re-run that step with the installed code.",
+    "M8: 'quick' run (fewer networks); the 'full' run is the one to report"
+  ],
+  "missing": [],
+  "m4": {
+    "manifest_fingerprint": "196f47a2f7c67930",
+    "splits": {
+      "APTOS2019/grading": {
+        "test": {
+          "0": 269,
+          "1": 54,
+          "2": 148,
+          "3": 27,
+          "4": 43
+        },
+        "train": {
+          "0": 1262,
+          "1": 249,
+          "2": 680,
+          "3": 120,
+          "4": 192
+        },
+        "val": {
+          "0": 270,
+          "1": 57,
+          "2": 147,
+          "3": 25,
+          "4": 40
+        }
+      },
+      "DRIVE/vessels": {
+        "cv": {
+          "": 20
+        }
+      },
+      "IDRiD/grading": {
+        "test": {
+          "2": 26,
+          "3": 18,
+          "4": 9
+        },
+        "train": {
+          "0": 113,
+          "1": 15,
+          "2": 77,
+          "3": 38,
+          "4": 18
+        },
+        "val": {
+          "0": 20,
+          "1": 3,
+          "2": 9,
+          "3": 5,
+          "4": 2
+        }
+      },
+      "IDRiD/segmentation": {
+        "test": {
+          "": 28
+        },
+        "train": {
+          "": 51
+        }
+      },
+      "RITE/av": {
+        "cv": {
+          "": 40
+        }
+      }
+    },
+    "grouping": {
+      "groups": 4007,
+      "duplicate_groups": 300,
+      "label_conflict_groups": 118,
+      "excluded_for_conflict": 244,
+      "moved_to_test_by_duplicates": 13
+    },
+    "corrupt_images": 0,
+    "aptos_split_vs_previous_manifest": null
+  },
+  "m5": {
+    "preset": "full",
+    "artery_vein": true,
+    "cv": {
+      "dice": {
+        "mean": 0.7991572438447129,
+        "sd": 0.05841223254414446,
+        "n": 20
+      },
+      "auc": {
+        "mean": 0.9729240249862776,
+        "sd": 0.020523705718104256,
+        "n": 20
+      },
+      "sensitivity": {
+        "mean": 0.7992707941683445,
+        "sd": 0.08574066011656202,
+        "n": 20
+      },
+      "specificity": {
+        "mean": 0.9731195046288986,
+        "sd": 0.012498993897852863,
+        "n": 20
+      },
+      "centreline_recall": {
+        "mean": 0.7797813787022994,
+        "sd": 0.08233853855637271,
+        "n": 20
+      },
+      "centreline_precision": {
+        "mean": 0.9626045368722458,
+        "sd": 0.07377979389764301,
+        "n": 20
+      },
+      "radius_median_abs_error": {
+        "mean": 0.17384200064518546,
+        "sd": 0.04269753000754722,
+        "n": 20
+      },
+      "av_accuracy": {
+        "mean": 0.8227656090915012,
+        "sd": 0.056638998788936655,
+        "n": 20
+      }
+    },
+    "test": {
+      "dice": {
+        "mean": 0.8407935859624504,
+        "sd": 0.01767303746112363,
+        "n": 20
+      },
+      "auc": {
+        "mean": 0.9832053904681757,
+        "sd": 0.004895732549335049,
+        "n": 20
+      },
+      "sensitivity": {
+        "mean": 0.8615095083123119,
+        "sd": 0.03916731303385119,
+        "n": 20
+      },
+      "specificity": {
+        "mean": 0.9744136169913974,
+        "sd": 0.007264627537248427,
+        "n": 20
+      },
+      "centreline_recall": {
+        "mean": 0.7996981326476924,
+        "sd": 0.058355917795255445,
+        "n": 20
+      },
+      "centreline_precision": {
+        "mean": 0.9807562221649153,
+        "sd": 0.012400473869749106,
+        "n": 20
+      },
+      "radius_median_abs_error": {
+        "mean": 0.18431413534843252,
+        "sd": 0.07525511390275229,
+        "n": 20
+      },
+      "av_accuracy": {
+        "mean": 0.8027337886911239,
+        "sd": 0.032241818892670006,
+        "n": 20
+      }
+    },
+    "test_note": "held-out DRIVE test photos; vessel reference = DRIVE 2nd observer (via RITE)"
+  },
+  "m6": {
+    "preset": "full",
+    "selected_epoch": 9,
+    "temperature": 0.8546649719862675,
+    "operating_point": {
+      "temperature": 0.8546649719862675,
+      "referral_threshold": 0.7229253984165984,
+      "target_sensitivity": 0.9,
+      "uncertainty_limit": 0.5236037237597002,
+      "uncertain_share": 0.1
+    },
+    "sets": {
+      "val": {
+        "images": 539,
+        "qwk": {
+          "value": 0.9206512778235779,
+          "ci": [
+            0.8971481287399709,
+            0.9412857897502341
+          ]
+        },
+        "accuracy": {
+          "value": 0.862708719851577,
+          "ci": [
+            0.8348794063079777,
+            0.8886827458256029
+          ]
+        },
+        "macro_f1": {
+          "value": 0.7131097201312919,
+          "ci": [
+            0.653184564099525,
+            0.7665363970529807
+          ]
+        },
+        "referable_auc": {
+          "value": 0.9855894062662282,
+          "ci": [
+            0.9774210390382672,
+            0.9922458331416247
+          ]
+        },
+        "sensitivity": {
+          "value": 0.9009433962264151,
+          "ci": [
+            0.8593730370603015,
+            0.9389736207299043
+          ]
+        },
+        "specificity": {
+          "value": 0.963302752293578,
+          "ci": [
+            0.9430379746835443,
+            0.9820359281437125
+          ]
+        },
+        "referable_ece_after": 0.025232241434534293,
+        "quality_flagged": 24
+      },
+      "test_internal": {
+        "images": 541,
+        "qwk": {
+          "value": 0.9108575010204114,
+          "ci": [
+            0.882294245939351,
+            0.9348233485123673
+          ]
+        },
+        "accuracy": {
+          "value": 0.8502772643253235,
+          "ci": [
+            0.822550831792976,
+            0.8798521256931608
+          ]
+        },
+        "macro_f1": {
+          "value": 0.6892619517839007,
+          "ci": [
+            0.6316881288818499,
+            0.7388676662345578
+          ]
+        },
+        "referable_auc": {
+          "value": 0.9882693782486437,
+          "ci": [
+            0.9802243865529027,
+            0.9947159265406544
+          ]
+        },
+        "sensitivity": {
+          "value": 0.8853211009174312,
+          "ci": [
+            0.8416289592760181,
+            0.9257682354843927
+          ]
+        },
+        "specificity": {
+          "value": 0.9752321981424149,
+          "ci": [
+            0.9569230769230769,
+            0.9908536585365854
+          ]
+        },
+        "referable_ece_after": 0.03336361190313482,
+        "quality_flagged": 21
+      }
+    }
+  },
+  "m7": {
+    "images": 81,
+    "test_images": 27,
+    "patches": 13185,
+    "radius_sigma": 0.258,
+    "primary": {
+      "available": true,
+      "score": "high_shear_mc",
+      "label": "red_lesion",
+      "images": 27,
+      "within_image_auroc": 0.5143244654922101,
+      "ci": [
+        0.477186983312916,
+        0.5514619476715042
+      ],
+      "p_vs_0.5": 0.4350422634036314,
+      "verdict": "no evidence of association (CI includes 0.5)",
+      "vs_baselines": {
+        "vessel_density": {
+          "difference": 0.11346725149911882,
+          "ci": [
+            0.06780164011641704,
+            0.1591328628818206
+          ],
+          "p_value": 2.531313368565614e-05,
+          "images": 27
+        },
+        "near_fovea": {
+          "difference": -0.0923381959107097,
+          "ci": [
+            -0.1513290077500938,
+            -0.03334738407132559
+          ],
+          "p_value": 0.0034495487598732106,
+          "images": 27
+        },
+        "high_shear_deterministic": {
+          "difference": -0.025457595120406035,
+          "ci": [
+            -0.05443087707364556,
+            0.0035156868328334867
+          ],
+          "p_value": 0.0824920852535814,
+          "images": 27
+        },
+        "thinness": {
+          "difference": -0.057654808088922566,
+          "ci": [
+            -0.11504352059694789,
+            -0.000266095580897234
+          ],
+          "p_value": 0.04902218394463322,
+          "images": 27
+        }
+      }
+    },
+    "physics_added": {
+      "difference": 0.0007412711886601596,
+      "ci": [
+        -0.008969069629998608,
+        0.01045161200731893
+      ],
+      "p_value": 0.8765234693501318,
+      "images": 27
+    },
+    "median_rank_stability": {
+      "artery": 0.7808270628336228,
+      "vein": 0.7110171277997364
+    },
+    "red_lesion_pixels_labelled_vessel_median": 0.14301162476344959
+  },
+  "m8": {
+    "settings": {
+      "steps": 30,
+      "gnn_iters": 200,
+      "pinn_adam": 1500,
+      "pinn_lbfgs": 300,
+      "nodal_lbfgs": 1000,
+      "coordinate_sigma": 10.0,
+      "sigma_tuning": {},
+      "seed": 0
+    },
+    "summary": {
+      "DRIVE": {
+        "direct solve (reference)": {
+          "networks": 4,
+          "pressure_error_median": 0.0,
+          "pressure_error_worst": 0.0,
+          "wss_median_rel_error": 0.0,
+          "wss_spearman_median": 1.0,
+          "wss_top10_overlap_median": 1.0,
+          "conservation_error_worst": 7.50053478738569e-14,
+          "seconds_median": 0.004455908000068121
+        },
+        "Jacobi(30)": {
+          "networks": 4,
+          "pressure_error_median": 0.2665864408097624,
+          "pressure_error_worst": 0.37570251053845255,
+          "wss_median_rel_error": 0.8570975454935473,
+          "wss_spearman_median": 0.8311091336236696,
+          "wss_top10_overlap_median": 0.7068181818181818,
+          "conservation_error_worst": 0.556962947418361,
+          "seconds_median": 0.0018058545000485537
+        },
+        "CG(30)": {
+          "networks": 4,
+          "pressure_error_median": 0.19532778835603737,
+          "pressure_error_worst": 0.3064600166284303,
+          "wss_median_rel_error": 0.720007568699732,
+          "wss_spearman_median": 0.6551655415168041,
+          "wss_top10_overlap_median": 0.710344827586207,
+          "conservation_error_worst": 0.2734053616372627,
+          "seconds_median": 0.0032439520000480115
+        },
+        "PI-GNN(30)": {
+          "networks": 4,
+          "pressure_error_median": 0.28794882428197044,
+          "pressure_error_worst": 0.3293079563960858,
+          "wss_median_rel_error": 0.9131026586016165,
+          "wss_spearman_median": 0.6817825322270543,
+          "wss_top10_overlap_median": 0.5845959595959596,
+          "conservation_error_worst": 0.45071328686816603,
+          "seconds_median": 0.025475118000031216
+        },
+        "nodal PINN": {
+          "networks": 4,
+          "pressure_error_median": 0.2588087019471213,
+          "pressure_error_worst": 0.3460739980423466,
+          "wss_median_rel_error": 0.6503133559055003,
+          "wss_spearman_median": 0.8321644985145168,
+          "wss_top10_overlap_median": 0.6772727272727272,
+          "conservation_error_worst": 0.39530448711385996,
+          "seconds_median": 2.2598388319999003
+        },
+        "coordinate PINN": {
+          "networks": 4,
+          "pressure_error_median": 0.2392719362038767,
+          "pressure_error_worst": 0.36693061119605785,
+          "wss_median_rel_error": 0.4957512800800573,
+          "wss_spearman_median": 0.7546451045980249,
+          "wss_top10_overlap_median": 0.7638888888888888,
+          "conservation_error_worst": 0.24112894363716,
+          "seconds_median": 8.656798378000076
+        }
+      },
+      "synthetic": {
+        "direct solve (reference)": {
+          "networks": 8,
+          "pressure_error_median": 0.0,
+          "pressure_error_worst": 0.0,
+          "wss_median_rel_error": 0.0,
+          "wss_spearman_median": 0.9999999999999999,
+          "wss_top10_overlap_median": 1.0,
+          "conservation_error_worst": 1.4445625651991307e-14,
+          "seconds_median": 0.004118478000009418
+        },
+        "Jacobi(30)": {
+          "networks": 8,
+          "pressure_error_median": 0.14223271317831832,
+          "pressure_error_worst": 0.28118328217952393,
+          "wss_median_rel_error": 0.2674984401318547,
+          "wss_spearman_median": 0.9333138167606478,
+          "wss_top10_overlap_median": 0.7596153846153846,
+          "conservation_error_worst": 0.266744084455577,
+          "seconds_median": 0.0018275725000194143
+        },
+        "CG(30)": {
+          "networks": 8,
+          "pressure_error_median": 0.028350413362432172,
+          "pressure_error_worst": 0.2609927929483497,
+          "wss_median_rel_error": 0.010531633760821323,
+          "wss_spearman_median": 0.9977458193709936,
+          "wss_top10_overlap_median": 1.0,
+          "conservation_error_worst": 0.027362378945591844,
+          "seconds_median": 0.0029832604999455725
+        },
+        "PI-GNN(30)": {
+          "networks": 8,
+          "pressure_error_median": 0.029533886382423463,
+          "pressure_error_worst": 0.4198697186498761,
+          "wss_median_rel_error": 0.03316466947395975,
+          "wss_spearman_median": 0.9969778859838188,
+          "wss_top10_overlap_median": 0.9807692307692308,
+          "conservation_error_worst": Infinity,
+          "seconds_median": 0.02818729400007669
+        },
+        "nodal PINN": {
+          "networks": 8,
+          "pressure_error_median": 9.400372345036434e-06,
+          "pressure_error_worst": 0.005043106675148068,
+          "wss_median_rel_error": 1.1338120044905229e-05,
+          "wss_spearman_median": 0.9999999999999998,
+          "wss_top10_overlap_median": 1.0,
+          "conservation_error_worst": 0.0030981833827145376,
+          "seconds_median": 1.8491134895000414
+        },
+        "coordinate PINN": {
+          "networks": 8,
+          "pressure_error_median": 0.02310520624875384,
+          "pressure_error_worst": 0.33731587203504915,
+          "wss_median_rel_error": 0.007950287254382973,
+          "wss_spearman_median": 0.9992926886108255,
+          "wss_top10_overlap_median": 0.9423076923076923,
+          "conservation_error_worst": 0.22875432637759585,
+          "seconds_median": 9.44997571600004
+        }
+      }
+    }
+  },
+  "m9_disc": {
+    "images": 81,
+    "assumed_disc_to_fov": 0.16,
+    "true_disc_to_fov_median": 0.1611614237498394,
+    "true_disc_to_fov_iqr": [
+      0.15310616195202692,
+      0.17014125737450528
+    ],
+    "brightness": {
+      "images": 81,
+      "hit_rate": 0.9876543209876543,
+      "median_error_disc_diameters": 0.13100532364468567,
+      "worst_error_disc_diameters": 3.030392314656228
+    },
+    "brightness + vessels": {
+      "images": 81,
+      "hit_rate": 0.9753086419753086,
+      "median_error_disc_diameters": 0.06326905536971433,
+      "worst_error_disc_diameters": 2.1749377599479716
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "note": "SYNTHETIC trees, illustrative perturbation sizes; not patient data",
+  "config": {
+    "trees": 20,
+    "samples": 20,
+    "generations": 8,
+    "seed": 0,
+    "segments_per_tree": 255,
+    "baseline": "Newtonian 3.5 mPa s, inlet 40 mmHg, outlets 15 mmHg"
+  },
+  "runtime_s": 27.427525211000102,
+  "results": [
+    {
+      "perturbation": "control_blood_pressure",
+      "group": "control (proved invariant)",
+      "description": "inlet 30\u201360 mmHg",
+      "n": 400,
+      "spearman_mean": 1.0,
+      "spearman_p05": 1.0,
+      "top10_overlap_mean": 1.0,
+      "top10_overlap_p05": 1.0
+    },
+    {
+      "perturbation": "control_viscosity",
+      "group": "control (proved invariant)",
+      "description": "uniform 3.0\u20134.5 mPa s",
+      "n": 400,
+      "spearman_mean": 1.0,
+      "spearman_p05": 1.0,
+      "top10_overlap_mean": 1.0,
+      "top10_overlap_p05": 1.0
+    },
+    {
+      "perturbation": "control_image_scale",
+      "group": "control (proved invariant)",
+      "description": "pixel size x0.8\u20131.2",
+      "n": 400,
+      "spearman_mean": 1.0,
+      "spearman_p05": 1.0,
+      "top10_overlap_mean": 1.0,
+      "top10_overlap_p05": 1.0
+    },
+    {
+      "perturbation": "control_radius_x_bias",
+      "group": "control (proved invariant)",
+      "description": "all radii x0.9\u20131.1",
+      "n": 400,
+      "spearman_mean": 1.0,
+      "spearman_p05": 1.0,
+      "top10_overlap_mean": 1.0,
+      "top10_overlap_p05": 1.0
+    },
+    {
+      "perturbation": "outlet_pressure_heterogeneity",
+      "group": "boundary conditions",
+      "description": "each outlet 10\u201320 mmHg",
+      "n": 400,
+      "spearman_mean": 0.5807883261203104,
+      "spearman_p05": 0.4613085847035665,
+      "top10_overlap_mean": 0.45355769230769233,
+      "top10_overlap_p05": 0.3076923076923077
+    },
+    {
+      "perturbation": "terminal_resistance",
+      "group": "boundary conditions",
+      "description": "Robin, 2\u201310 unseen Murray levels",
+      "n": 400,
+      "spearman_mean": 0.8493857001215841,
+      "spearman_p05": 0.7811566408059287,
+      "top10_overlap_mean": 0.4740384615384615,
+      "top10_overlap_p05": 0.3076923076923077
+    },
+    {
+      "perturbation": "radius_noise_5pct",
+      "group": "geometry error",
+      "description": "per-segment radius, lognormal 5%",
+      "n": 400,
+      "spearman_mean": 0.9524545959500926,
+      "spearman_p05": 0.9326858499305234,
+      "top10_overlap_mean": 0.805,
+      "top10_overlap_p05": 0.6923076923076923
+    },
+    {
+      "perturbation": "radius_noise_10pct",
+      "group": "geometry error",
+      "description": "per-segment radius, lognormal 10%",
+      "n": 400,
+      "spearman_mean": 0.8427091625897407,
+      "spearman_p05": 0.7787712772116722,
+      "top10_overlap_mean": 0.6327884615384616,
+      "top10_overlap_p05": 0.5
+    },
+    {
+      "perturbation": "radius_noise_20pct",
+      "group": "geometry error",
+      "description": "per-segment radius, lognormal 20%",
+      "n": 400,
+      "spearman_mean": 0.6075441791628069,
+      "spearman_p05": 0.4699870455071793,
+      "top10_overlap_mean": 0.4225,
+      "top10_overlap_p05": 0.23076923076923078
+    },
+    {
+      "perturbation": "radius_additive_bias",
+      "group": "geometry error",
+      "description": "all radii +/- up to 3 um",
+      "n": 400,
+      "spearman_mean": 0.9801641095414544,
+      "spearman_p05": 0.9454650590551181,
+      "top10_overlap_mean": 0.8729807692307694,
+      "top10_overlap_p05": 0.7307692307692307
+    },
+    {
+      "perturbation": "length_noise_10pct",
+      "group": "geometry error",
+      "description": "per-segment length, lognormal 10%",
+      "n": 400,
+      "spearman_mean": 0.9833556261579435,
+      "spearman_p05": 0.976294110409912,
+      "top10_overlap_mean": 0.8768269230769231,
+      "top10_overlap_p05": 0.7692307692307693
+    },
+    {
+      "perturbation": "pries_viscosity",
+      "group": "rheology",
+      "description": "F\u00e5hr\u00e6us\u2013Lindqvist, Hd 0.45",
+      "n": 20,
+      "spearman_mean": 0.9810754038327929,
+      "spearman_p05": 0.9766880644974525,
+      "top10_overlap_mean": 0.8403846153846153,
+      "top10_overlap_p05": 0.7673076923076924
+    },
+    {
+      "perturbation": "pries_uncertain_hd_and_scale",
+      "group": "rheology",
+      "description": "F\u00e5hr\u00e6us\u2013Lindqvist, Hd 0.30\u20130.50, scale x0.8\u20131.2",
+      "n": 400,
+      "spearman_mean": 0.9838873411446272,
+      "spearman_p05": 0.9753921448008338,
+      "top10_overlap_mean": 0.8536538461538463,
+      "top10_overlap_p05": 0.7692307692307693
+    },
+    {
+      "perturbation": "carreau_yasuda",
+      "group": "rheology",
+      "description": "shear-thinning (Cho & Kensey)",
+      "n": 20,
+      "spearman_mean": 0.999834160780454,
+      "spearman_p05": 0.9997522000926355,
+      "top10_overlap_mean": 0.9961538461538462,
+      "top10_overlap_p05": 0.9615384615384616
+    }
+  ]
+}

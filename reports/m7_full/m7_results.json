@@ -1,0 +1,1988 @@
+{
+  "source": "IDRiD segmentation set, model /content/drive/MyDrive/dr-pinn/checkpoints/m5_full/final.pt",
+  "drpinn_version": "0.11.0",
+  "config": {
+    "fov_diameter_px": 540,
+    "patch_px": 32,
+    "threshold": 0.5,
+    "mc": {
+      "n_samples": 50,
+      "radius_sigma": 0.258,
+      "levels": [
+        2.0,
+        10.0
+      ],
+      "length_to_radius": 20.0,
+      "outlet_jitter_mmhg": 3.0,
+      "p_pries": 0.5,
+      "hd_range": [
+        0.3,
+        0.5
+      ],
+      "disc_um_range": [
+        1500.0,
+        2100.0
+      ],
+      "top_fraction": 0.1,
+      "seed": 0,
+      "artery_disc_mmhg": 40.0,
+      "artery_bed_mmhg": 25.0,
+      "vein_disc_mmhg": 15.0,
+      "vein_bed_mmhg": 25.0
+    }
+  },
+  "model": {
+    "checkpoint": "/content/drive/MyDrive/dr-pinn/checkpoints/m5_full/final.pt",
+    "trained_on": [
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40"
+    ],
+    "drpinn_version_at_training": "0.6.0"
+  },
+  "images": 81,
+  "test_images": 27,
+  "patches": 13185,
+  "primary": {
+    "available": true,
+    "score": "high_shear_mc",
+    "label": "red_lesion",
+    "images": 27,
+    "within_image_auroc": 0.5143244654922101,
+    "ci": [
+      0.477186983312916,
+      0.5514619476715042
+    ],
+    "p_vs_0.5": 0.4350422634036314,
+    "verdict": "no evidence of association (CI includes 0.5)",
+    "vs_baselines": {
+      "vessel_density": {
+        "difference": 0.11346725149911882,
+        "ci": [
+          0.06780164011641704,
+          0.1591328628818206
+        ],
+        "p_value": 2.531313368565614e-05,
+        "images": 27
+      },
+      "near_fovea": {
+        "difference": -0.0923381959107097,
+        "ci": [
+          -0.1513290077500938,
+          -0.03334738407132559
+        ],
+        "p_value": 0.0034495487598732106,
+        "images": 27
+      },
+      "high_shear_deterministic": {
+        "difference": -0.025457595120406035,
+        "ci": [
+          -0.05443087707364556,
+          0.0035156868328334867
+        ],
+        "p_value": 0.0824920852535814,
+        "images": 27
+      },
+      "thinness": {
+        "difference": -0.057654808088922566,
+        "ci": [
+          -0.11504352059694789,
+          -0.000266095580897234
+        ],
+        "p_value": 0.04902218394463322,
+        "images": 27
+      }
+    }
+  },
+  "median_rank_stability": {
+    "artery": 0.7808270628336228,
+    "vein": 0.7110171277997364
+  },
+  "red_lesion_pixels_labelled_vessel_median": 0.14301162476344959,
+  "results": {
+    "single_scores": {
+      "test": {
+        "red_lesion": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.5143244654922101,
+            "within_ci": [
+              0.477186983312916,
+              0.5514619476715042
+            ],
+            "p_vs_0.5": 0.4350422634036314,
+            "images_scored": 27,
+            "pooled_auroc": 0.520969017898787,
+            "pooled_ci": [
+              0.4826866929827864,
+              0.5592170905434837
+            ],
+            "average_precision": 0.2467295583225904,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.4687903965274342,
+            "within_ci": [
+              0.4274902991559028,
+              0.5100904938989655
+            ],
+            "p_vs_0.5": 0.1324358972099376,
+            "images_scored": 27,
+            "pooled_auroc": 0.46107050534230626,
+            "pooled_ci": [
+              0.43140162153221084,
+              0.4937338622105963
+            ],
+            "average_precision": 0.22814446004599592,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.539782060612616,
+            "within_ci": [
+              0.49561872446994176,
+              0.5839453967552903
+            ],
+            "p_vs_0.5": 0.075471761064119,
+            "images_scored": 27,
+            "pooled_auroc": 0.551985563745724,
+            "pooled_ci": [
+              0.5136915224227744,
+              0.5860482558364007
+            ],
+            "average_precision": 0.2719596189437403,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.46287398349832476,
+            "within_ci": [
+              0.41933700257471523,
+              0.5064109644219343
+            ],
+            "p_vs_0.5": 0.09141421883474576,
+            "images_scored": 27,
+            "pooled_auroc": 0.4588609667761743,
+            "pooled_ci": [
+              0.4291465057017937,
+              0.4895356329549138
+            ],
+            "average_precision": 0.22876237267713428,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.5116136701443147,
+            "within_ci": [
+              0.46858012154929,
+              0.5546472187393394
+            ],
+            "p_vs_0.5": 0.5838166576473804,
+            "images_scored": 27,
+            "pooled_auroc": 0.5265260384492461,
+            "pooled_ci": [
+              0.4895116978283935,
+              0.5634806263437436
+            ],
+            "average_precision": 0.2579768196887507,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "thinness": {
+            "within_image_auroc": 0.5719792735811325,
+            "within_ci": [
+              0.5416702046735095,
+              0.6022883424887556
+            ],
+            "p_vs_0.5": 4.593733572131993e-05,
+            "images_scored": 27,
+            "pooled_auroc": 0.5325880116863302,
+            "pooled_ci": [
+              0.5069606908582233,
+              0.5613550438047312
+            ],
+            "average_precision": 0.26112826965232455,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.47255486389880913,
+            "within_ci": [
+              0.43855681872413615,
+              0.506552909073482
+            ],
+            "p_vs_0.5": 0.10906364532744613,
+            "images_scored": 27,
+            "pooled_auroc": 0.4810510751807779,
+            "pooled_ci": [
+              0.44594926893451836,
+              0.5135666697449964
+            ],
+            "average_precision": 0.23269413781500597,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.40085721399309127,
+            "within_ci": [
+              0.363429518106368,
+              0.43828490987981455
+            ],
+            "p_vs_0.5": 1.042717943615849e-05,
+            "images_scored": 27,
+            "pooled_auroc": 0.4305158563895925,
+            "pooled_ci": [
+              0.3975947955641501,
+              0.4622866703669451
+            ],
+            "average_precision": 0.20391256118809317,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.6066626614029197,
+            "within_ci": [
+              0.5541498904265103,
+              0.6591754323793291
+            ],
+            "p_vs_0.5": 0.0002957101677720759,
+            "images_scored": 27,
+            "pooled_auroc": 0.5883389103524759,
+            "pooled_ci": [
+              0.5545715695393482,
+              0.6287658185562361
+            ],
+            "average_precision": 0.30709893784536296,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          },
+          "near_disc": {
+            "within_image_auroc": 0.3688587574193162,
+            "within_ci": [
+              0.320933096945475,
+              0.41678441789315734
+            ],
+            "p_vs_0.5": 6.518222694101083e-06,
+            "images_scored": 27,
+            "pooled_auroc": 0.3615345479678231,
+            "pooled_ci": [
+              0.312581597881153,
+              0.4165101397764395
+            ],
+            "average_precision": 0.1792097280090473,
+            "prevalence": 0.24186575654152445,
+            "patches": 4395
+          }
+        },
+        "MA": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.46490670448010823,
+            "within_ci": [
+              0.42887171782738537,
+              0.500941691132831
+            ],
+            "p_vs_0.5": 0.05584096367503313,
+            "images_scored": 27,
+            "pooled_auroc": 0.4528481004284191,
+            "pooled_ci": [
+              0.42633669616273967,
+              0.4819578797335897
+            ],
+            "average_precision": 0.11869349921444426,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.4853597231393977,
+            "within_ci": [
+              0.43425667714484495,
+              0.5364627691339504
+            ],
+            "p_vs_0.5": 0.5610242419976128,
+            "images_scored": 27,
+            "pooled_auroc": 0.47399781953474585,
+            "pooled_ci": [
+              0.43741199258631935,
+              0.5088625713078483
+            ],
+            "average_precision": 0.12875963822758923,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.4862138491885982,
+            "within_ci": [
+              0.4464682975139256,
+              0.5259594008632709
+            ],
+            "p_vs_0.5": 0.4822079036013218,
+            "images_scored": 27,
+            "pooled_auroc": 0.4944659227328498,
+            "pooled_ci": [
+              0.4616377487125524,
+              0.5251031867437026
+            ],
+            "average_precision": 0.1330213644890513,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.4857868424853506,
+            "within_ci": [
+              0.4356285681241776,
+              0.5359451168465236
+            ],
+            "p_vs_0.5": 0.5652694095034436,
+            "images_scored": 27,
+            "pooled_auroc": 0.46746061358221686,
+            "pooled_ci": [
+              0.4360091516282712,
+              0.49798188621965167
+            ],
+            "average_precision": 0.12831454743629359,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.4759255201291025,
+            "within_ci": [
+              0.4431161562292808,
+              0.5087348840289242
+            ],
+            "p_vs_0.5": 0.14353866599186663,
+            "images_scored": 27,
+            "pooled_auroc": 0.4826782234853396,
+            "pooled_ci": [
+              0.4524327475015882,
+              0.5134485983183484
+            ],
+            "average_precision": 0.1274141002192846,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "thinness": {
+            "within_image_auroc": 0.5972359295680286,
+            "within_ci": [
+              0.5559036099409377,
+              0.6385682491951196
+            ],
+            "p_vs_0.5": 5.184889478914267e-05,
+            "images_scored": 27,
+            "pooled_auroc": 0.5548721755168682,
+            "pooled_ci": [
+              0.5256293872999317,
+              0.5850166892309282
+            ],
+            "average_precision": 0.15885406290858894,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.46136431880966805,
+            "within_ci": [
+              0.42450019591138544,
+              0.49822844170795066
+            ],
+            "p_vs_0.5": 0.04065937252704934,
+            "images_scored": 27,
+            "pooled_auroc": 0.5001997877751051,
+            "pooled_ci": [
+              0.4644417067778603,
+              0.5342829090132658
+            ],
+            "average_precision": 0.1321718669361726,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.37922255796916915,
+            "within_ci": [
+              0.3463620644802844,
+              0.4120830514580539
+            ],
+            "p_vs_0.5": 5.084931291755916e-08,
+            "images_scored": 27,
+            "pooled_auroc": 0.41070765447387897,
+            "pooled_ci": [
+              0.3886549449807042,
+              0.43237201868786523
+            ],
+            "average_precision": 0.10816447132807032,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.6294970753013575,
+            "within_ci": [
+              0.577999830802886,
+              0.6809943197998289
+            ],
+            "p_vs_0.5": 2.1529721218854834e-05,
+            "images_scored": 27,
+            "pooled_auroc": 0.6159801111931432,
+            "pooled_ci": [
+              0.5793521892277284,
+              0.6595908245072594
+            ],
+            "average_precision": 0.19327752240549315,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          },
+          "near_disc": {
+            "within_image_auroc": 0.38100402198461475,
+            "within_ci": [
+              0.3367909901411028,
+              0.4252170538281267
+            ],
+            "p_vs_0.5": 8.295738023718494e-06,
+            "images_scored": 27,
+            "pooled_auroc": 0.3619656118048554,
+            "pooled_ci": [
+              0.3237013830658025,
+              0.4013501288326159
+            ],
+            "average_precision": 0.09806254119466232,
+            "prevalence": 0.13583617747440274,
+            "patches": 4395
+          }
+        },
+        "HE": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.5583962698916818,
+            "within_ci": [
+              0.49722742212240495,
+              0.6195651176609587
+            ],
+            "p_vs_0.5": 0.060474606346942766,
+            "images_scored": 26,
+            "pooled_auroc": 0.5820438765661995,
+            "pooled_ci": [
+              0.5397565875063961,
+              0.6179035263043452
+            ],
+            "average_precision": 0.16988328598811128,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.46519908988908537,
+            "within_ci": [
+              0.40612989439431085,
+              0.5242682853838598
+            ],
+            "p_vs_0.5": 0.23632186504341868,
+            "images_scored": 26,
+            "pooled_auroc": 0.44820711536726643,
+            "pooled_ci": [
+              0.4209206332532222,
+              0.47714393109244546
+            ],
+            "average_precision": 0.13036325985107833,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.602748271530898,
+            "within_ci": [
+              0.5422918288906962,
+              0.6632047141710999
+            ],
+            "p_vs_0.5": 0.0017642889647416706,
+            "images_scored": 26,
+            "pooled_auroc": 0.6097541826315046,
+            "pooled_ci": [
+              0.5771454662792476,
+              0.6394956838501404
+            ],
+            "average_precision": 0.19115388208820885,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.45192324943785533,
+            "within_ci": [
+              0.3916738103839323,
+              0.5121726884917784
+            ],
+            "p_vs_0.5": 0.11281278914382067,
+            "images_scored": 26,
+            "pooled_auroc": 0.4443627880692234,
+            "pooled_ci": [
+              0.41144261920446223,
+              0.47391877374001584
+            ],
+            "average_precision": 0.1304344121935971,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.572517334886597,
+            "within_ci": [
+              0.519246875616925,
+              0.625787794156269
+            ],
+            "p_vs_0.5": 0.00962671387831309,
+            "images_scored": 26,
+            "pooled_auroc": 0.5692159768097785,
+            "pooled_ci": [
+              0.5206711257562219,
+              0.6077810480134204
+            ],
+            "average_precision": 0.17625724783795746,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "thinness": {
+            "within_image_auroc": 0.5389330186681268,
+            "within_ci": [
+              0.5002000410291971,
+              0.5776659963070565
+            ],
+            "p_vs_0.5": 0.04891516233095782,
+            "images_scored": 26,
+            "pooled_auroc": 0.49450266302858437,
+            "pooled_ci": [
+              0.4652543092651607,
+              0.5300754068987067
+            ],
+            "average_precision": 0.13789280791687986,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.48084342573784183,
+            "within_ci": [
+              0.4325196216500963,
+              0.5291672298255874
+            ],
+            "p_vs_0.5": 0.4219578901027812,
+            "images_scored": 26,
+            "pooled_auroc": 0.4539336055653808,
+            "pooled_ci": [
+              0.42020503415794697,
+              0.49228785978870815
+            ],
+            "average_precision": 0.13180960552724502,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.4278961908750899,
+            "within_ci": [
+              0.38015868172272005,
+              0.47563370002745975
+            ],
+            "p_vs_0.5": 0.004620038295861146,
+            "images_scored": 26,
+            "pooled_auroc": 0.45666323114134905,
+            "pooled_ci": [
+              0.4129338927544578,
+              0.49462453948811796
+            ],
+            "average_precision": 0.1241493877587352,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.5858326892366879,
+            "within_ci": [
+              0.5236289382203655,
+              0.6480364402530102
+            ],
+            "p_vs_0.5": 0.008798683755907744,
+            "images_scored": 26,
+            "pooled_auroc": 0.5604496424613907,
+            "pooled_ci": [
+              0.5193671020262698,
+              0.6085643798385852
+            ],
+            "average_precision": 0.17034755063636503,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          },
+          "near_disc": {
+            "within_image_auroc": 0.3725042287730549,
+            "within_ci": [
+              0.31617690249423974,
+              0.42883155505187004
+            ],
+            "p_vs_0.5": 8.95439164738482e-05,
+            "images_scored": 26,
+            "pooled_auroc": 0.37364827256340116,
+            "pooled_ci": [
+              0.295438300693335,
+              0.4551005013700822
+            ],
+            "average_precision": 0.10468405680954052,
+            "prevalence": 0.14175199089874857,
+            "patches": 4395
+          }
+        },
+        "exudate": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.46122192938056267,
+            "within_ci": [
+              0.42984362684900235,
+              0.492600231912123
+            ],
+            "p_vs_0.5": 0.01739199853788937,
+            "images_scored": 27,
+            "pooled_auroc": 0.4485087055701307,
+            "pooled_ci": [
+              0.42019807415647686,
+              0.4819118105526621
+            ],
+            "average_precision": 0.1769720626025854,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.4491801108593338,
+            "within_ci": [
+              0.4073522803553793,
+              0.4910079413632883
+            ],
+            "p_vs_0.5": 0.01916892052352075,
+            "images_scored": 27,
+            "pooled_auroc": 0.4489006839514005,
+            "pooled_ci": [
+              0.4162508342192856,
+              0.4848966663067466
+            ],
+            "average_precision": 0.18387615909518376,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.5182438116365701,
+            "within_ci": [
+              0.4867616427447969,
+              0.5497259805283432
+            ],
+            "p_vs_0.5": 0.2443469761389056,
+            "images_scored": 27,
+            "pooled_auroc": 0.5067096620813648,
+            "pooled_ci": [
+              0.4815493426402487,
+              0.5358608886105712
+            ],
+            "average_precision": 0.19927563558130376,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.43315472761308227,
+            "within_ci": [
+              0.3839350992435713,
+              0.48237435598259326
+            ],
+            "p_vs_0.5": 0.009699597217221028,
+            "images_scored": 27,
+            "pooled_auroc": 0.4415039695280819,
+            "pooled_ci": [
+              0.4010062416467474,
+              0.48314767613182785
+            ],
+            "average_precision": 0.18447028947084732,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.480089289768802,
+            "within_ci": [
+              0.4493924909502989,
+              0.5107860885873051
+            ],
+            "p_vs_0.5": 0.19400875648336588,
+            "images_scored": 27,
+            "pooled_auroc": 0.46959123131279,
+            "pooled_ci": [
+              0.4483972031172814,
+              0.49116710210904857
+            ],
+            "average_precision": 0.19192748237529608,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "thinness": {
+            "within_image_auroc": 0.588749057008275,
+            "within_ci": [
+              0.554621984418071,
+              0.6228761295984789
+            ],
+            "p_vs_0.5": 1.3533243281318434e-05,
+            "images_scored": 27,
+            "pooled_auroc": 0.5805705344666413,
+            "pooled_ci": [
+              0.5537560450884031,
+              0.6103438168848869
+            ],
+            "average_precision": 0.23648380509691488,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.4495581052416658,
+            "within_ci": [
+              0.40592071623846965,
+              0.4931954942448619
+            ],
+            "p_vs_0.5": 0.025151692645667918,
+            "images_scored": 27,
+            "pooled_auroc": 0.4612614888265973,
+            "pooled_ci": [
+              0.422711336520498,
+              0.5053597802092761
+            ],
+            "average_precision": 0.18114892026322948,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.38953568643735575,
+            "within_ci": [
+              0.35364240986834794,
+              0.42542896300636357
+            ],
+            "p_vs_0.5": 1.0674791284188318e-06,
+            "images_scored": 27,
+            "pooled_auroc": 0.3966816373229314,
+            "pooled_ci": [
+              0.36836682504547447,
+              0.42330622839426857
+            ],
+            "average_precision": 0.15632232166097582,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.705526560939262,
+            "within_ci": [
+              0.6618055769598922,
+              0.7492475449186319
+            ],
+            "p_vs_0.5": 4.309771421191973e-10,
+            "images_scored": 27,
+            "pooled_auroc": 0.6860900810573177,
+            "pooled_ci": [
+              0.650251812280197,
+              0.7189472212008704
+            ],
+            "average_precision": 0.3463615431937014,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          },
+          "near_disc": {
+            "within_image_auroc": 0.39353400010783735,
+            "within_ci": [
+              0.34929738722471787,
+              0.4377706129909568
+            ],
+            "p_vs_0.5": 3.863652394412157e-05,
+            "images_scored": 27,
+            "pooled_auroc": 0.3974948269190144,
+            "pooled_ci": [
+              0.3572668177041604,
+              0.4382987759683702
+            ],
+            "average_precision": 0.15400675371355232,
+            "prevalence": 0.20045506257110352,
+            "patches": 4395
+          }
+        },
+        "any_lesion": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.4828946260270857,
+            "within_ci": [
+              0.44603622673246107,
+              0.5197530253217104
+            ],
+            "p_vs_0.5": 0.3489008915405398,
+            "images_scored": 27,
+            "pooled_auroc": 0.4834460015357613,
+            "pooled_ci": [
+              0.4504168119416946,
+              0.519704046289295
+            ],
+            "average_precision": 0.35522577450653936,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.46286743998612717,
+            "within_ci": [
+              0.42535031307266774,
+              0.5003845668995865
+            ],
+            "p_vs_0.5": 0.05222328168002508,
+            "images_scored": 27,
+            "pooled_auroc": 0.4554259879828448,
+            "pooled_ci": [
+              0.42792002212798935,
+              0.484600306950405
+            ],
+            "average_precision": 0.353159221586995,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.525035301563545,
+            "within_ci": [
+              0.48788095496819783,
+              0.5621896481588923
+            ],
+            "p_vs_0.5": 0.17780584920126577,
+            "images_scored": 27,
+            "pooled_auroc": 0.5280377066554375,
+            "pooled_ci": [
+              0.49894459141125486,
+              0.5583699742784715
+            ],
+            "average_precision": 0.3894004326597212,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.4532266842885018,
+            "within_ci": [
+              0.41288997317023435,
+              0.4935633954067693
+            ],
+            "p_vs_0.5": 0.024738380720394252,
+            "images_scored": 27,
+            "pooled_auroc": 0.4512158036561027,
+            "pooled_ci": [
+              0.4209432306102146,
+              0.4794725569767151
+            ],
+            "average_precision": 0.3544351788377278,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.4889803055095952,
+            "within_ci": [
+              0.45333263108411204,
+              0.5246279799350784
+            ],
+            "p_vs_0.5": 0.5307067077056817,
+            "images_scored": 27,
+            "pooled_auroc": 0.49528865854435306,
+            "pooled_ci": [
+              0.4657056747413893,
+              0.5266356326737685
+            ],
+            "average_precision": 0.3701464219385108,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "thinness": {
+            "within_image_auroc": 0.5815409084592859,
+            "within_ci": [
+              0.5523260530574942,
+              0.6107557638610775
+            ],
+            "p_vs_0.5": 4.862879888531657e-06,
+            "images_scored": 27,
+            "pooled_auroc": 0.5594606567325794,
+            "pooled_ci": [
+              0.5352366106529365,
+              0.5823195473655174
+            ],
+            "average_precision": 0.41341613953799866,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.4757482136758781,
+            "within_ci": [
+              0.4383042278897098,
+              0.5131921994620464
+            ],
+            "p_vs_0.5": 0.1946369703371444,
+            "images_scored": 27,
+            "pooled_auroc": 0.4762756505753797,
+            "pooled_ci": [
+              0.4411093483210528,
+              0.5116428981161574
+            ],
+            "average_precision": 0.35800004067710056,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.39354069243925793,
+            "within_ci": [
+              0.36221405014128083,
+              0.42486733473723504
+            ],
+            "p_vs_0.5": 2.0384838301329058e-07,
+            "images_scored": 27,
+            "pooled_auroc": 0.4059843822984048,
+            "pooled_ci": [
+              0.3787371976622176,
+              0.4331428888124447
+            ],
+            "average_precision": 0.30902671374957486,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.6652630339718045,
+            "within_ci": [
+              0.6279034673528794,
+              0.7026226005907297
+            ],
+            "p_vs_0.5": 1.4779408691122637e-09,
+            "images_scored": 27,
+            "pooled_auroc": 0.6392192830047134,
+            "pooled_ci": [
+              0.6077918145837559,
+              0.6744629470443553
+            ],
+            "average_precision": 0.5089574141671901,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          },
+          "near_disc": {
+            "within_image_auroc": 0.366829759628089,
+            "within_ci": [
+              0.3211105675588064,
+              0.4125489516973716
+            ],
+            "p_vs_0.5": 2.543823984021506e-06,
+            "images_scored": 27,
+            "pooled_auroc": 0.36032666775184363,
+            "pooled_ci": [
+              0.3162746420833889,
+              0.4075230794430139
+            ],
+            "average_precision": 0.28545848887968894,
+            "prevalence": 0.3738339021615472,
+            "patches": 4395
+          }
+        }
+      },
+      "all": {
+        "red_lesion": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.5040202743040412,
+            "within_ci": [
+              0.48368675514520365,
+              0.5243537934628787
+            ],
+            "p_vs_0.5": 0.6949770942418154,
+            "images_scored": 80,
+            "pooled_auroc": 0.5139584753806105,
+            "pooled_ci": [
+              0.493646926868391,
+              0.5356630029297061
+            ],
+            "average_precision": 0.24027918807947318,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.45648932432451755,
+            "within_ci": [
+              0.4366753981681609,
+              0.4763032504808742
+            ],
+            "p_vs_0.5": 3.728409918179918e-05,
+            "images_scored": 80,
+            "pooled_auroc": 0.456455689062528,
+            "pooled_ci": [
+              0.44123659296279943,
+              0.47266663110264945
+            ],
+            "average_precision": 0.22123037749688426,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.5368128146737691,
+            "within_ci": [
+              0.5147838380021086,
+              0.5588417913454296
+            ],
+            "p_vs_0.5": 0.0013374391556952977,
+            "images_scored": 80,
+            "pooled_auroc": 0.5430516157087741,
+            "pooled_ci": [
+              0.5217189819585644,
+              0.5643990798121195
+            ],
+            "average_precision": 0.2614239552003364,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.4480415489866969,
+            "within_ci": [
+              0.4284117092606367,
+              0.4676713887127571
+            ],
+            "p_vs_0.5": 1.1605109238194627e-06,
+            "images_scored": 80,
+            "pooled_auroc": 0.4516510609986738,
+            "pooled_ci": [
+              0.43617147490731206,
+              0.468270611875967
+            ],
+            "average_precision": 0.21792520632523357,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.49253644641562555,
+            "within_ci": [
+              0.47118922590980217,
+              0.5138836669214489
+            ],
+            "p_vs_0.5": 0.48852492768993616,
+            "images_scored": 80,
+            "pooled_auroc": 0.5098384532603002,
+            "pooled_ci": [
+              0.48805763954063586,
+              0.5316560004444905
+            ],
+            "average_precision": 0.2470741371405825,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "thinness": {
+            "within_image_auroc": 0.5554811132774667,
+            "within_ci": [
+              0.5352399244033554,
+              0.575722302151578
+            ],
+            "p_vs_0.5": 5.428528202157261e-07,
+            "images_scored": 80,
+            "pooled_auroc": 0.5293938136814855,
+            "pooled_ci": [
+              0.5080654915623976,
+              0.5513732221110811
+            ],
+            "average_precision": 0.254053991255036,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.47650915945157957,
+            "within_ci": [
+              0.4605532953415553,
+              0.4924650235616038
+            ],
+            "p_vs_0.5": 0.004424275262255449,
+            "images_scored": 80,
+            "pooled_auroc": 0.47318647629885996,
+            "pooled_ci": [
+              0.4540924405456398,
+              0.4911271828579006
+            ],
+            "average_precision": 0.2271805543527513,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.4163860082124115,
+            "within_ci": [
+              0.39665898156326784,
+              0.43611303486155517
+            ],
+            "p_vs_0.5": 1.226308148382383e-12,
+            "images_scored": 80,
+            "pooled_auroc": 0.4292706351102884,
+            "pooled_ci": [
+              0.4107119886592851,
+              0.4472322015296282
+            ],
+            "average_precision": 0.19822413333539607,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.5998678389475707,
+            "within_ci": [
+              0.5706874969442277,
+              0.6290481809509136
+            ],
+            "p_vs_0.5": 1.7046411370408072e-09,
+            "images_scored": 80,
+            "pooled_auroc": 0.5864628833720236,
+            "pooled_ci": [
+              0.5616732229211979,
+              0.6131527074223243
+            ],
+            "average_precision": 0.29881180651301564,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          },
+          "near_disc": {
+            "within_image_auroc": 0.3838938996676097,
+            "within_ci": [
+              0.36010676472001946,
+              0.4076810346151999
+            ],
+            "p_vs_0.5": 3.928151052881266e-15,
+            "images_scored": 80,
+            "pooled_auroc": 0.3802306904949108,
+            "pooled_ci": [
+              0.35434498030496236,
+              0.4065319691418303
+            ],
+            "average_precision": 0.1804654408882517,
+            "prevalence": 0.23754266211604094,
+            "patches": 13185
+          }
+        },
+        "MA": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.4650760501950053,
+            "within_ci": [
+              0.44427204081224886,
+              0.48588005957776176
+            ],
+            "p_vs_0.5": 0.001275224125575326,
+            "images_scored": 80,
+            "pooled_auroc": 0.4668617792514836,
+            "pooled_ci": [
+              0.4499345799232963,
+              0.48549455615752735
+            ],
+            "average_precision": 0.13019170737857708,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.48144921835264193,
+            "within_ci": [
+              0.45498164580104355,
+              0.5079167909042404
+            ],
+            "p_vs_0.5": 0.16690126152633766,
+            "images_scored": 80,
+            "pooled_auroc": 0.4751376030692018,
+            "pooled_ci": [
+              0.456629877495225,
+              0.49287957847431885
+            ],
+            "average_precision": 0.13604325552362034,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.48633903026733744,
+            "within_ci": [
+              0.46618472143059214,
+              0.5064933391040827
+            ],
+            "p_vs_0.5": 0.18113835210381785,
+            "images_scored": 80,
+            "pooled_auroc": 0.4941368262849334,
+            "pooled_ci": [
+              0.4731982048173572,
+              0.5143570197568937
+            ],
+            "average_precision": 0.1408091700753784,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.47880030749199654,
+            "within_ci": [
+              0.45306678014563945,
+              0.5045338348383537
+            ],
+            "p_vs_0.5": 0.10503039876708835,
+            "images_scored": 80,
+            "pooled_auroc": 0.47194357822213795,
+            "pooled_ci": [
+              0.4541474340631092,
+              0.4897829629757691
+            ],
+            "average_precision": 0.13441883221186718,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.48397224505150777,
+            "within_ci": [
+              0.46311907847642697,
+              0.5048254116265886
+            ],
+            "p_vs_0.5": 0.1300456801565813,
+            "images_scored": 80,
+            "pooled_auroc": 0.49321669611985514,
+            "pooled_ci": [
+              0.4742673669433163,
+              0.5128713489065447
+            ],
+            "average_precision": 0.13734047426193424,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "thinness": {
+            "within_image_auroc": 0.584058799659394,
+            "within_ci": [
+              0.5589703134265798,
+              0.6091472858922082
+            ],
+            "p_vs_0.5": 3.1861012915477105e-09,
+            "images_scored": 80,
+            "pooled_auroc": 0.5546777755556298,
+            "pooled_ci": [
+              0.534276059275391,
+              0.5759316713863326
+            ],
+            "average_precision": 0.1631506898608091,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.4831607462135608,
+            "within_ci": [
+              0.4621816555961506,
+              0.5041398368309711
+            ],
+            "p_vs_0.5": 0.11410853436085844,
+            "images_scored": 80,
+            "pooled_auroc": 0.48934283123337197,
+            "pooled_ci": [
+              0.4725500419521725,
+              0.5061864674796503
+            ],
+            "average_precision": 0.13754411688711896,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.4102202634061042,
+            "within_ci": [
+              0.3897962707978061,
+              0.43064425601440226
+            ],
+            "p_vs_0.5": 2.999866355217211e-13,
+            "images_scored": 80,
+            "pooled_auroc": 0.4212947262623407,
+            "pooled_ci": [
+              0.405865098505765,
+              0.43645300735199305
+            ],
+            "average_precision": 0.11407033657114168,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.6379476547470061,
+            "within_ci": [
+              0.6109354287306725,
+              0.6649598807633397
+            ],
+            "p_vs_0.5": 5.294098012553421e-16,
+            "images_scored": 80,
+            "pooled_auroc": 0.631137975229034,
+            "pooled_ci": [
+              0.6078615211788477,
+              0.6560786662249904
+            ],
+            "average_precision": 0.20565462911996066,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          },
+          "near_disc": {
+            "within_image_auroc": 0.3784354115752504,
+            "within_ci": [
+              0.3561046798354921,
+              0.4007661433150087
+            ],
+            "p_vs_0.5": 2.729692432386968e-17,
+            "images_scored": 80,
+            "pooled_auroc": 0.37168209145496606,
+            "pooled_ci": [
+              0.3494094476389943,
+              0.3946124578743717
+            ],
+            "average_precision": 0.10372767936422424,
+            "prevalence": 0.1416003033750474,
+            "patches": 13185
+          }
+        },
+        "HE": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.5526236922284187,
+            "within_ci": [
+              0.5232645150979015,
+              0.5819828693589358
+            ],
+            "p_vs_0.5": 0.0006181039831511145,
+            "images_scored": 79,
+            "pooled_auroc": 0.5668628619797565,
+            "pooled_ci": [
+              0.5431691649239356,
+              0.5906696710852736
+            ],
+            "average_precision": 0.16085268211446002,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.45201660559847573,
+            "within_ci": [
+              0.4228875440217001,
+              0.48114566717525137
+            ],
+            "p_vs_0.5": 0.0015556336518320615,
+            "images_scored": 79,
+            "pooled_auroc": 0.44239812110301746,
+            "pooled_ci": [
+              0.42492579462207813,
+              0.4596983293751015
+            ],
+            "average_precision": 0.12654191126283676,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.5919244898731211,
+            "within_ci": [
+              0.5645115311137399,
+              0.6193374486325023
+            ],
+            "p_vs_0.5": 3.2364664249960413e-09,
+            "images_scored": 79,
+            "pooled_auroc": 0.5968904970254771,
+            "pooled_ci": [
+              0.5732954269891011,
+              0.620917011942209
+            ],
+            "average_precision": 0.18020349718606368,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.43357203623746926,
+            "within_ci": [
+              0.40422124345395816,
+              0.46292282902098036
+            ],
+            "p_vs_0.5": 2.2905044924306915e-05,
+            "images_scored": 79,
+            "pooled_auroc": 0.4322914913148702,
+            "pooled_ci": [
+              0.41461040636198426,
+              0.4502556409308468
+            ],
+            "average_precision": 0.12436819929491914,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.5111407021112631,
+            "within_ci": [
+              0.48028141868326896,
+              0.5419999855392571
+            ],
+            "p_vs_0.5": 0.47445608013570173,
+            "images_scored": 79,
+            "pooled_auroc": 0.5335958225539169,
+            "pooled_ci": [
+              0.5022788656252739,
+              0.5643483856306702
+            ],
+            "average_precision": 0.16140472496691632,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "thinness": {
+            "within_image_auroc": 0.5423402873482366,
+            "within_ci": [
+              0.5188228195739109,
+              0.5658577551225623
+            ],
+            "p_vs_0.5": 0.000586767767537306,
+            "images_scored": 79,
+            "pooled_auroc": 0.5105914710475804,
+            "pooled_ci": [
+              0.48501466860885745,
+              0.5367769016894609
+            ],
+            "average_precision": 0.14332940700966004,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.475716523503177,
+            "within_ci": [
+              0.45088549800610156,
+              0.5005475490002524
+            ],
+            "p_vs_0.5": 0.055140955181018046,
+            "images_scored": 79,
+            "pooled_auroc": 0.4539844061087996,
+            "pooled_ci": [
+              0.43131291200001814,
+              0.4763374807762988
+            ],
+            "average_precision": 0.12998729679491114,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.43223834042977066,
+            "within_ci": [
+              0.40783611604137465,
+              0.45664056481816667
+            ],
+            "p_vs_0.5": 4.140477923050701e-07,
+            "images_scored": 79,
+            "pooled_auroc": 0.44489383516732434,
+            "pooled_ci": [
+              0.42050406193180906,
+              0.46859047611268534
+            ],
+            "average_precision": 0.11925223162294306,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.5715221533271845,
+            "within_ci": [
+              0.5352276300446225,
+              0.6078166766097465
+            ],
+            "p_vs_0.5": 0.00018688561838069243,
+            "images_scored": 79,
+            "pooled_auroc": 0.5527700139486641,
+            "pooled_ci": [
+              0.5230044199769641,
+              0.5827321302080656
+            ],
+            "average_precision": 0.16444877069603436,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          },
+          "near_disc": {
+            "within_image_auroc": 0.39117869261021615,
+            "within_ci": [
+              0.36093594206092594,
+              0.42142144315950636
+            ],
+            "p_vs_0.5": 3.8407824149920556e-10,
+            "images_scored": 79,
+            "pooled_auroc": 0.3914215000178829,
+            "pooled_ci": [
+              0.35505813287123367,
+              0.42484721359941363
+            ],
+            "average_precision": 0.10641280546492358,
+            "prevalence": 0.1403109594235874,
+            "patches": 13185
+          }
+        },
+        "exudate": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.4560138463448328,
+            "within_ci": [
+              0.43707655024550274,
+              0.4749511424441628
+            ],
+            "p_vs_0.5": 1.4354038708446376e-05,
+            "images_scored": 81,
+            "pooled_auroc": 0.45844238419789796,
+            "pooled_ci": [
+              0.4396734854858062,
+              0.47670308622138574
+            ],
+            "average_precision": 0.15682377932347116,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.43155332293029725,
+            "within_ci": [
+              0.4059203834404061,
+              0.4571862624201884
+            ],
+            "p_vs_0.5": 9.445458585993744e-07,
+            "images_scored": 81,
+            "pooled_auroc": 0.4436687376468108,
+            "pooled_ci": [
+              0.4248033085376259,
+              0.4625968265209672
+            ],
+            "average_precision": 0.15836855577723488,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.5115723571586789,
+            "within_ci": [
+              0.4895585225680988,
+              0.533586191749259
+            ],
+            "p_vs_0.5": 0.29864341929990246,
+            "images_scored": 81,
+            "pooled_auroc": 0.501962955546592,
+            "pooled_ci": [
+              0.4840384409785103,
+              0.5212248823490866
+            ],
+            "average_precision": 0.17357870327628924,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.4218227607174878,
+            "within_ci": [
+              0.3956929597265537,
+              0.4479525617084219
+            ],
+            "p_vs_0.5": 6.636692899782946e-08,
+            "images_scored": 81,
+            "pooled_auroc": 0.4410534961264685,
+            "pooled_ci": [
+              0.4214402538156291,
+              0.46151467118736056
+            ],
+            "average_precision": 0.1568249611194496,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.5020982653830939,
+            "within_ci": [
+              0.48034045809419185,
+              0.5238560726719959
+            ],
+            "p_vs_0.5": 0.8482939508486168,
+            "images_scored": 81,
+            "pooled_auroc": 0.48646345167338034,
+            "pooled_ci": [
+              0.46765626712510144,
+              0.5051530341313796
+            ],
+            "average_precision": 0.16992009124358942,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "thinness": {
+            "within_image_auroc": 0.5917170147755034,
+            "within_ci": [
+              0.5689694165561143,
+              0.6144646129948925
+            ],
+            "p_vs_0.5": 7.2638948998323e-12,
+            "images_scored": 81,
+            "pooled_auroc": 0.5609613192238415,
+            "pooled_ci": [
+              0.5375513548873613,
+              0.5826084668377824
+            ],
+            "average_precision": 0.19776424346779434,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.45606216940176075,
+            "within_ci": [
+              0.43324297517714755,
+              0.47888136362637396
+            ],
+            "p_vs_0.5": 0.0002519334580127161,
+            "images_scored": 81,
+            "pooled_auroc": 0.4578396789154432,
+            "pooled_ci": [
+              0.43493095134320264,
+              0.48005728849971047
+            ],
+            "average_precision": 0.16100941579909786,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.3773563720143533,
+            "within_ci": [
+              0.3551423465489901,
+              0.3995703974797165
+            ],
+            "p_vs_0.5": 1.1918317918882658e-17,
+            "images_scored": 81,
+            "pooled_auroc": 0.391142833334986,
+            "pooled_ci": [
+              0.3737374274888157,
+              0.4076651436388825
+            ],
+            "average_precision": 0.13371492709975538,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.7109881754023093,
+            "within_ci": [
+              0.6792689977834638,
+              0.7427073530211548
+            ],
+            "p_vs_0.5": 7.493862853870093e-22,
+            "images_scored": 81,
+            "pooled_auroc": 0.6721765075808876,
+            "pooled_ci": [
+              0.6438707362888179,
+              0.7012366568888146
+            ],
+            "average_precision": 0.2984657900859057,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          },
+          "near_disc": {
+            "within_image_auroc": 0.4033219773523859,
+            "within_ci": [
+              0.37917469866727543,
+              0.42746925603749636
+            ],
+            "p_vs_0.5": 9.36116620797057e-12,
+            "images_scored": 81,
+            "pooled_auroc": 0.3897743662707995,
+            "pooled_ci": [
+              0.36671852078295647,
+              0.41465460048539504
+            ],
+            "average_precision": 0.13161523472252845,
+            "prevalence": 0.17421312097080016,
+            "patches": 13185
+          }
+        },
+        "any_lesion": {
+          "high_shear_mc": {
+            "within_image_auroc": 0.4762212141587974,
+            "within_ci": [
+              0.45791266555161053,
+              0.4945297627659843
+            ],
+            "p_vs_0.5": 0.011564603724836654,
+            "images_scored": 81,
+            "pooled_auroc": 0.48363147231644643,
+            "pooled_ci": [
+              0.4649399735090731,
+              0.5027725361382356
+            ],
+            "average_precision": 0.32236110806435103,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "low_shear_mc": {
+            "within_image_auroc": 0.4421150118460715,
+            "within_ci": [
+              0.4224564700141364,
+              0.4617735536780066
+            ],
+            "p_vs_0.5": 9.880623730120001e-08,
+            "images_scored": 81,
+            "pooled_auroc": 0.44642230654943765,
+            "pooled_ci": [
+              0.43116067266776653,
+              0.46215271557097287
+            ],
+            "average_precision": 0.3136713537789358,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "high_shear_deterministic": {
+            "within_image_auroc": 0.523136393434957,
+            "within_ci": [
+              0.5047846202323762,
+              0.5414881666375377
+            ],
+            "p_vs_0.5": 0.01413077472880279,
+            "images_scored": 81,
+            "pooled_auroc": 0.5207093321536963,
+            "pooled_ci": [
+              0.5022771520175239,
+              0.5399642557834211
+            ],
+            "average_precision": 0.3487316235997215,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "low_shear_deterministic": {
+            "within_image_auroc": 0.4357173673976414,
+            "within_ci": [
+              0.4162535988782472,
+              0.4551811359170356
+            ],
+            "p_vs_0.5": 4.641826312029932e-09,
+            "images_scored": 81,
+            "pooled_auroc": 0.4441538064584714,
+            "pooled_ci": [
+              0.42906243139322775,
+              0.45946397361791236
+            ],
+            "average_precision": 0.31114773942408974,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "tortuosity": {
+            "within_image_auroc": 0.4910488251443761,
+            "within_ci": [
+              0.47338217469862454,
+              0.5087154755901276
+            ],
+            "p_vs_0.5": 0.3163472009447249,
+            "images_scored": 81,
+            "pooled_auroc": 0.49521475375334606,
+            "pooled_ci": [
+              0.47665534014351585,
+              0.5141877175951903
+            ],
+            "average_precision": 0.338368627984947,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "thinness": {
+            "within_image_auroc": 0.5811794443013021,
+            "within_ci": [
+              0.5621000916057132,
+              0.600258796996891
+            ],
+            "p_vs_0.5": 9.786187695604783e-13,
+            "images_scored": 81,
+            "pooled_auroc": 0.5468743057601398,
+            "pooled_ci": [
+              0.5266169532979673,
+              0.567240059958731
+            ],
+            "average_precision": 0.36911982282543426,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "murray_deviation": {
+            "within_image_auroc": 0.46788720476435774,
+            "within_ci": [
+              0.44981678619997323,
+              0.48595762332874226
+            ],
+            "p_vs_0.5": 0.0006778188221129048,
+            "images_scored": 81,
+            "pooled_auroc": 0.4617879478369782,
+            "pooled_ci": [
+              0.4432019939893379,
+              0.47975377186370033
+            ],
+            "average_precision": 0.3176102519936038,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "vessel_density": {
+            "within_image_auroc": 0.38971697311290154,
+            "within_ci": [
+              0.3710445319622951,
+              0.408389414263508
+            ],
+            "p_vs_0.5": 4.1558827314576563e-19,
+            "images_scored": 81,
+            "pooled_auroc": 0.4022297740127082,
+            "pooled_ci": [
+              0.38626133635348264,
+              0.4175300107014713
+            ],
+            "average_precision": 0.2759837488404805,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "near_fovea": {
+            "within_image_auroc": 0.6648919907893596,
+            "within_ci": [
+              0.6385205671688405,
+              0.6912634144098786
+            ],
+            "p_vs_0.5": 2.13778430475356e-20,
+            "images_scored": 81,
+            "pooled_auroc": 0.6236609668323556,
+            "pooled_ci": [
+              0.5999855923295301,
+              0.6494742396021689
+            ],
+            "average_precision": 0.4574703264842188,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          },
+          "near_disc": {
+            "within_image_auroc": 0.37130475116119754,
+            "within_ci": [
+              0.34817635936441393,
+              0.39443314295798115
+            ],
+            "p_vs_0.5": 8.144258023229736e-18,
+            "images_scored": 81,
+            "pooled_auroc": 0.3684877158601761,
+            "pooled_ci": [
+              0.34581699362120893,
+              0.39246121510329207
+            ],
+            "average_precision": 0.25963091634396845,
+            "prevalence": 0.33947667804323095,
+            "patches": 13185
+          }
+        }
+      }
+    },
+    "paired_vs_baselines": {
+      "test": {
+        "vessel_density": {
+          "difference": 0.11346725149911882,
+          "ci": [
+            0.06780164011641704,
+            0.1591328628818206
+          ],
+          "p_value": 2.531313368565614e-05,
+          "images": 27
+        },
+        "near_fovea": {
+          "difference": -0.0923381959107097,
+          "ci": [
+            -0.1513290077500938,
+            -0.03334738407132559
+          ],
+          "p_value": 0.0034495487598732106,
+          "images": 27
+        },
+        "high_shear_deterministic": {
+          "difference": -0.025457595120406035,
+          "ci": [
+            -0.05443087707364556,
+            0.0035156868328334867
+          ],
+          "p_value": 0.0824920852535814,
+          "images": 27
+        },
+        "thinness": {
+          "difference": -0.057654808088922566,
+          "ci": [
+            -0.11504352059694789,
+            -0.000266095580897234
+          ],
+          "p_value": 0.04902218394463322,
+          "images": 27
+        }
+      },
+      "all": {
+        "vessel_density": {
+          "difference": 0.0876342660916298,
+          "ci": [
+            0.06422799543119333,
+            0.11104053675206628
+          ],
+          "p_value": 1.0081300022807342e-10,
+          "images": 80
+        },
+        "near_fovea": {
+          "difference": -0.0958475646435294,
+          "ci": [
+            -0.13456367848358852,
+            -0.05713145080347029
+          ],
+          "p_value": 4.492123714894819e-06,
+          "images": 80
+        },
+        "high_shear_deterministic": {
+          "difference": -0.032792540369727875,
+          "ci": [
+            -0.04752696715741715,
+            -0.018058113582038602
+          ],
+          "p_value": 2.998297580445762e-05,
+          "images": 80
+        },
+        "thinness": {
+          "difference": -0.051460838973425474,
+          "ci": [
+            -0.08461174569013996,
+            -0.018309932256710987
+          ],
+          "p_value": 0.0027649634315301138,
+          "images": 80
+        }
+      }
+    },
+    "combined_models": {
+      "position + density": {
+        "within_image_auroc": 0.6743626394220035,
+        "within_ci": [
+          0.6299734918948212,
+          0.7187517869491857
+        ],
+        "p_vs_0.5": 1.4870346464993021e-08,
+        "images_scored": 27,
+        "pooled_auroc": 0.6590670134469592,
+        "pooled_ci": [
+          0.6074276702312487,
+          0.7032583248406046
+        ],
+        "average_precision": 0.3507098967907834,
+        "prevalence": 0.24186575654152445,
+        "patches": 4395
+      },
+      "+ geometry": {
+        "within_image_auroc": 0.675780637649887,
+        "within_ci": [
+          0.6301957333566701,
+          0.721365541943104
+        ],
+        "p_vs_0.5": 2.102922873399857e-08,
+        "images_scored": 27,
+        "pooled_auroc": 0.6634005436605498,
+        "pooled_ci": [
+          0.6109627381446433,
+          0.708834749115074
+        ],
+        "average_precision": 0.36405514837222686,
+        "prevalence": 0.24186575654152445,
+        "patches": 4395
+      },
+      "+ geometry + physics": {
+        "within_image_auroc": 0.676521908838547,
+        "within_ci": [
+          0.6297352697561521,
+          0.7233085479209419
+        ],
+        "p_vs_0.5": 3.151099236413257e-08,
+        "images_scored": 27,
+        "pooled_auroc": 0.6686756546456777,
+        "pooled_ci": [
+          0.6175351098185263,
+          0.7152505704787363
+        ],
+        "average_precision": 0.37422581067896915,
+        "prevalence": 0.24186575654152445,
+        "patches": 4395
+      },
+      "physics added (paired)": {
+        "difference": 0.0007412711886601596,
+        "ci": [
+          -0.008969069629998608,
+          0.01045161200731893
+        ],
+        "p_value": 0.8765234693501318,
+        "images": 27
+      }
+    }
+  },
+  "runtime_s": 3010.9813608120003
+}

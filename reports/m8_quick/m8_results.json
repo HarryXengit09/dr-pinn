@@ -1,0 +1,187 @@
+{
+  "note": "numerical comparison on identical networks and boundary conditions; synthetic + DRIVE-geometry graphs",
+  "settings": {
+    "steps": 30,
+    "gnn_iters": 200,
+    "pinn_adam": 1500,
+    "pinn_lbfgs": 300,
+    "nodal_lbfgs": 1000,
+    "coordinate_sigma": 10.0,
+    "sigma_tuning": {},
+    "seed": 0
+  },
+  "gnn_training": {
+    "seconds": 47.09411582400003,
+    "untrained_loss": 0.00011286815424682572,
+    "hidden": 32,
+    "steps": 30,
+    "iterations": 200,
+    "batch": 8
+  },
+  "gnn_history": [
+    [
+      0,
+      0.00021717663912568241
+    ],
+    [
+      33,
+      5.350489300326444e-05
+    ],
+    [
+      66,
+      3.7752233765786514e-05
+    ],
+    [
+      99,
+      5.222769686952233e-05
+    ],
+    [
+      132,
+      2.3408130800817162e-05
+    ],
+    [
+      165,
+      2.4400951588177122e-05
+    ],
+    [
+      198,
+      1.682305446593091e-05
+    ],
+    [
+      199,
+      1.6163301552296616e-05
+    ]
+  ],
+  "environment": {
+    "python": "3.13.18",
+    "torch": "2.11.0+cpu",
+    "threads": 1
+  },
+  "summary": {
+    "DRIVE": {
+      "direct solve (reference)": {
+        "networks": 4,
+        "pressure_error_median": 0.0,
+        "pressure_error_worst": 0.0,
+        "wss_median_rel_error": 0.0,
+        "wss_spearman_median": 1.0,
+        "wss_top10_overlap_median": 1.0,
+        "conservation_error_worst": 7.50053478738569e-14,
+        "seconds_median": 0.004455908000068121
+      },
+      "Jacobi(30)": {
+        "networks": 4,
+        "pressure_error_median": 0.2665864408097624,
+        "pressure_error_worst": 0.37570251053845255,
+        "wss_median_rel_error": 0.8570975454935473,
+        "wss_spearman_median": 0.8311091336236696,
+        "wss_top10_overlap_median": 0.7068181818181818,
+        "conservation_error_worst": 0.556962947418361,
+        "seconds_median": 0.0018058545000485537
+      },
+      "CG(30)": {
+        "networks": 4,
+        "pressure_error_median": 0.19532778835603737,
+        "pressure_error_worst": 0.3064600166284303,
+        "wss_median_rel_error": 0.720007568699732,
+        "wss_spearman_median": 0.6551655415168041,
+        "wss_top10_overlap_median": 0.710344827586207,
+        "conservation_error_worst": 0.2734053616372627,
+        "seconds_median": 0.0032439520000480115
+      },
+      "PI-GNN(30)": {
+        "networks": 4,
+        "pressure_error_median": 0.28794882428197044,
+        "pressure_error_worst": 0.3293079563960858,
+        "wss_median_rel_error": 0.9131026586016165,
+        "wss_spearman_median": 0.6817825322270543,
+        "wss_top10_overlap_median": 0.5845959595959596,
+        "conservation_error_worst": 0.45071328686816603,
+        "seconds_median": 0.025475118000031216
+      },
+      "nodal PINN": {
+        "networks": 4,
+        "pressure_error_median": 0.2588087019471213,
+        "pressure_error_worst": 0.3460739980423466,
+        "wss_median_rel_error": 0.6503133559055003,
+        "wss_spearman_median": 0.8321644985145168,
+        "wss_top10_overlap_median": 0.6772727272727272,
+        "conservation_error_worst": 0.39530448711385996,
+        "seconds_median": 2.2598388319999003
+      },
+      "coordinate PINN": {
+        "networks": 4,
+        "pressure_error_median": 0.2392719362038767,
+        "pressure_error_worst": 0.36693061119605785,
+        "wss_median_rel_error": 0.4957512800800573,
+        "wss_spearman_median": 0.7546451045980249,
+        "wss_top10_overlap_median": 0.7638888888888888,
+        "conservation_error_worst": 0.24112894363716,
+        "seconds_median": 8.656798378000076
+      }
+    },
+    "synthetic": {
+      "direct solve (reference)": {
+        "networks": 8,
+        "pressure_error_median": 0.0,
+        "pressure_error_worst": 0.0,
+        "wss_median_rel_error": 0.0,
+        "wss_spearman_median": 0.9999999999999999,
+        "wss_top10_overlap_median": 1.0,
+        "conservation_error_worst": 1.4445625651991307e-14,
+        "seconds_median": 0.004118478000009418
+      },
+      "Jacobi(30)": {
+        "networks": 8,
+        "pressure_error_median": 0.14223271317831832,
+        "pressure_error_worst": 0.28118328217952393,
+        "wss_median_rel_error": 0.2674984401318547,
+        "wss_spearman_median": 0.9333138167606478,
+        "wss_top10_overlap_median": 0.7596153846153846,
+        "conservation_error_worst": 0.266744084455577,
+        "seconds_median": 0.0018275725000194143
+      },
+      "CG(30)": {
+        "networks": 8,
+        "pressure_error_median": 0.028350413362432172,
+        "pressure_error_worst": 0.2609927929483497,
+        "wss_median_rel_error": 0.010531633760821323,
+        "wss_spearman_median": 0.9977458193709936,
+        "wss_top10_overlap_median": 1.0,
+        "conservation_error_worst": 0.027362378945591844,
+        "seconds_median": 0.0029832604999455725
+      },
+      "PI-GNN(30)": {
+        "networks": 8,
+        "pressure_error_median": 0.029533886382423463,
+        "pressure_error_worst": 0.4198697186498761,
+        "wss_median_rel_error": 0.03316466947395975,
+        "wss_spearman_median": 0.9969778859838188,
+        "wss_top10_overlap_median": 0.9807692307692308,
+        "conservation_error_worst": Infinity,
+        "seconds_median": 0.02818729400007669
+      },
+      "nodal PINN": {
+        "networks": 8,
+        "pressure_error_median": 9.400372345036434e-06,
+        "pressure_error_worst": 0.005043106675148068,
+        "wss_median_rel_error": 1.1338120044905229e-05,
+        "wss_spearman_median": 0.9999999999999998,
+        "wss_top10_overlap_median": 1.0,
+        "conservation_error_worst": 0.0030981833827145376,
+        "seconds_median": 1.8491134895000414
+      },
+      "coordinate PINN": {
+        "networks": 8,
+        "pressure_error_median": 0.02310520624875384,
+        "pressure_error_worst": 0.33731587203504915,
+        "wss_median_rel_error": 0.007950287254382973,
+        "wss_spearman_median": 0.9992926886108255,
+        "wss_top10_overlap_median": 0.9423076923076923,
+        "conservation_error_worst": 0.22875432637759585,
+        "seconds_median": 9.44997571600004
+      }
+    }
+  },
+  "runtime_s": 186.79413641200017
+}

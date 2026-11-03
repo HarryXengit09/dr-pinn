@@ -1,0 +1,528 @@
+kind,similarity,a_dataset,a_part,a_id,a_grade,b_dataset,b_part,b_id,b_grade,a_rel_path,b_rel_path
+duplicate,1.0001,APTOS2019,grading,6253f23229b1,3,APTOS2019,grading,76cfe8967f7d,2,APTOS2019/train_images/6253f23229b1.jpg,APTOS2019/train_images/76cfe8967f7d.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_093,2,IDRiD,grading,IDRiD_093,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_093.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_093.jpg
+duplicate,1.0001,APTOS2019,grading,7d261f986bef,2,APTOS2019,grading,91cbe1c775ef,2,APTOS2019/train_images/7d261f986bef.jpg,APTOS2019/train_images/91cbe1c775ef.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_087,2,IDRiD,grading,IDRiD_087,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_087.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_087.jpg
+duplicate,1.0001,APTOS2019,grading,9e3510963315,4,APTOS2019,grading,b187b3c93afb,2,APTOS2019/train_images/9e3510963315.jpg,APTOS2019/train_images/b187b3c93afb.jpg
+duplicate,1.0001,APTOS2019,grading,bacfb1029f6b,1,APTOS2019,grading,e12d41e7b221,2,APTOS2019/train_images/bacfb1029f6b.jpg,APTOS2019/train_images/e12d41e7b221.jpg
+duplicate,1.0001,APTOS2019,grading,7a0cff4c24b2,2,APTOS2019,grading,86baef833ae0,2,APTOS2019/train_images/7a0cff4c24b2.jpg,APTOS2019/train_images/86baef833ae0.jpg
+duplicate,1.0001,APTOS2019,grading,30cab14951ac,1,APTOS2019,grading,c546670d9684,0,APTOS2019/train_images/30cab14951ac.jpg,APTOS2019/train_images/c546670d9684.jpg
+duplicate,1.0001,APTOS2019,grading,8fc09fecd22f,1,APTOS2019,grading,d1cad012a254,1,APTOS2019/train_images/8fc09fecd22f.jpg,APTOS2019/train_images/d1cad012a254.jpg
+duplicate,1.0001,APTOS2019,grading,1e9224ccca95,4,APTOS2019,grading,f6f3ea0d2693,4,APTOS2019/train_images/1e9224ccca95.jpg,APTOS2019/train_images/f6f3ea0d2693.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_037,2,IDRiD,grading,IDRiD_037,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_037.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_037.jpg
+duplicate,1.0001,APTOS2019,grading,026dcd9af143,2,APTOS2019,grading,98e8adcf085c,2,APTOS2019/train_images/026dcd9af143.jpg,APTOS2019/train_images/98e8adcf085c.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_030,4,IDRiD,grading,IDRiD_030,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_030.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_030.jpg
+duplicate,1.0001,DRIVE,vessels,40,,RITE,av,40,,DRIVE/archive(1)/DRIVE/training/images/40_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/40_training.tif
+duplicate,1.0001,APTOS2019,grading,42985aa2e32f,0,APTOS2019,grading,6165081b9021,1,APTOS2019/train_images/42985aa2e32f.jpg,APTOS2019/train_images/6165081b9021.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_035,3,IDRiD,grading,IDRiD_035,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_035.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_035.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_068,2,IDRiD,grading,IDRiD_068,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_068.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_068.jpg
+duplicate,1.0001,APTOS2019,grading,3a1d3ce00f0c,2,APTOS2019,grading,a19507501b40,2,APTOS2019/train_images/3a1d3ce00f0c.jpg,APTOS2019/train_images/a19507501b40.jpg
+duplicate,1.0001,DRIVE,vessels,39,,RITE,av,39,,DRIVE/archive(1)/DRIVE/training/images/39_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/39_training.tif
+duplicate,1.0001,DRIVE,vessels,25,,RITE,av,25,,DRIVE/archive(1)/DRIVE/training/images/25_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/25_training.tif
+duplicate,1.0001,DRIVE,vessels,37,,RITE,av,37,,DRIVE/archive(1)/DRIVE/training/images/37_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/37_training.tif
+duplicate,1.0001,APTOS2019,grading,a505981d1cab,2,APTOS2019,grading,d994203deb64,2,APTOS2019/train_images/a505981d1cab.jpg,APTOS2019/train_images/d994203deb64.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_034,3,IDRiD,grading,IDRiD_034,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_034.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_034.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_047,2,IDRiD,grading,IDRiD_047,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_047.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_047.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_055,3,IDRiD,grading,IDRiD_055,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_055.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_055.jpg
+duplicate,1.0001,IDRiD,grading,IDRiD_036,3,IDRiD,grading,IDRiD_036,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_036.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_036.jpg
+duplicate,1.0000,APTOS2019,grading,64678182d8a8,1,APTOS2019,grading,6b00cb764237,1,APTOS2019/train_images/64678182d8a8.jpg,APTOS2019/train_images/6b00cb764237.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_085,2,IDRiD,grading,IDRiD_085,1,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_085.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_085.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_065,3,IDRiD,grading,IDRiD_065,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_065.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_065.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_012,3,IDRiD,grading,IDRiD_012,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_012.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_012.jpg
+duplicate,1.0000,DRIVE,vessels,21,,RITE,av,21,,DRIVE/archive(1)/DRIVE/training/images/21_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/21_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_091,2,IDRiD,grading,IDRiD_091,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_091.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_091.jpg
+duplicate,1.0000,APTOS2019,grading,1411c8ab7161,2,APTOS2019,grading,8acffaf1f4b9,2,APTOS2019/train_images/1411c8ab7161.jpg,APTOS2019/train_images/8acffaf1f4b9.jpg
+duplicate,1.0000,APTOS2019,grading,1b4625877527,2,APTOS2019,grading,86b3a7929bec,2,APTOS2019/train_images/1b4625877527.jpg,APTOS2019/train_images/86b3a7929bec.jpg
+duplicate,1.0000,APTOS2019,grading,23d7ca170bdb,2,APTOS2019,grading,ea9e0fb6fb0b,2,APTOS2019/train_images/23d7ca170bdb.jpg,APTOS2019/train_images/ea9e0fb6fb0b.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_019,2,IDRiD,grading,IDRiD_019,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_019.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_019.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_043,2,IDRiD,grading,IDRiD_043,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_043.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_043.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_057,3,IDRiD,grading,IDRiD_057,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_057.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_057.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_070,4,IDRiD,grading,IDRiD_070,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_070.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_070.jpg
+duplicate,1.0000,APTOS2019,grading,840527bc6628,2,APTOS2019,grading,857002ed4e49,2,APTOS2019/train_images/840527bc6628.jpg,APTOS2019/train_images/857002ed4e49.jpg
+duplicate,1.0000,APTOS2019,grading,7a3ea1779b13,1,APTOS2019,grading,a8582e346df0,1,APTOS2019/train_images/7a3ea1779b13.jpg,APTOS2019/train_images/a8582e346df0.jpg
+duplicate,1.0000,APTOS2019,grading,7a3ea1779b13,1,APTOS2019,grading,c027e5482e8c,1,APTOS2019/train_images/7a3ea1779b13.jpg,APTOS2019/train_images/c027e5482e8c.jpg
+duplicate,1.0000,APTOS2019,grading,7a3ea1779b13,1,APTOS2019,grading,ca6842bfcbc9,1,APTOS2019/train_images/7a3ea1779b13.jpg,APTOS2019/train_images/ca6842bfcbc9.jpg
+duplicate,1.0000,APTOS2019,grading,a8582e346df0,1,APTOS2019,grading,c027e5482e8c,1,APTOS2019/train_images/a8582e346df0.jpg,APTOS2019/train_images/c027e5482e8c.jpg
+duplicate,1.0000,APTOS2019,grading,a8582e346df0,1,APTOS2019,grading,ca6842bfcbc9,1,APTOS2019/train_images/a8582e346df0.jpg,APTOS2019/train_images/ca6842bfcbc9.jpg
+duplicate,1.0000,APTOS2019,grading,c027e5482e8c,1,APTOS2019,grading,ca6842bfcbc9,1,APTOS2019/train_images/c027e5482e8c.jpg,APTOS2019/train_images/ca6842bfcbc9.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_089,4,IDRiD,grading,IDRiD_089,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_089.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_089.jpg
+duplicate,1.0000,APTOS2019,grading,bb7e0a2544cd,3,APTOS2019,grading,e76a9cbb2a8c,3,APTOS2019/train_images/bb7e0a2544cd.jpg,APTOS2019/train_images/e76a9cbb2a8c.jpg
+duplicate,1.0000,APTOS2019,grading,1c4d87baaffc,2,APTOS2019,grading,35aa7f5c2ec0,1,APTOS2019/train_images/1c4d87baaffc.jpg,APTOS2019/train_images/35aa7f5c2ec0.jpg
+duplicate,1.0000,APTOS2019,grading,36041171f441,1,APTOS2019,grading,595446774178,1,APTOS2019/train_images/36041171f441.jpg,APTOS2019/train_images/595446774178.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_083,2,IDRiD,grading,IDRiD_083,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_083.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_083.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_369,3,IDRiD,segmentation,IDRiD_03,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_369.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_03.jpg
+duplicate,1.0000,DRIVE,vessels,38,,RITE,av,38,,DRIVE/archive(1)/DRIVE/training/images/38_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/38_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_041,2,IDRiD,grading,IDRiD_041,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_041.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_041.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_062,4,IDRiD,grading,IDRiD_062,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_062.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_062.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_002,3,IDRiD,grading,IDRiD_002,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_002.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_002.jpg
+duplicate,1.0000,APTOS2019,grading,aeed1f251ceb,4,APTOS2019,grading,c0e509786f7f,4,APTOS2019/train_images/aeed1f251ceb.jpg,APTOS2019/train_images/c0e509786f7f.jpg
+duplicate,1.0000,APTOS2019,grading,9b418ce42c13,2,APTOS2019,grading,be161517d3ac,2,APTOS2019/train_images/9b418ce42c13.jpg,APTOS2019/train_images/be161517d3ac.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_050,2,IDRiD,grading,IDRiD_050,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_050.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_050.jpg
+duplicate,1.0000,APTOS2019,grading,e8d1c6c07cf2,3,APTOS2019,grading,f23902998c21,2,APTOS2019/train_images/e8d1c6c07cf2.jpg,APTOS2019/train_images/f23902998c21.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_015,4,IDRiD,grading,IDRiD_015,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_015.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_015.jpg
+duplicate,1.0000,APTOS2019,grading,7550966ef777,2,APTOS2019,grading,8d7bb0649a02,2,APTOS2019/train_images/7550966ef777.jpg,APTOS2019/train_images/8d7bb0649a02.jpg
+duplicate,1.0000,APTOS2019,grading,68332fdcaa70,1,APTOS2019,grading,d801c0a66738,1,APTOS2019/train_images/68332fdcaa70.jpg,APTOS2019/train_images/d801c0a66738.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_039,3,IDRiD,grading,IDRiD_039,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_039.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_039.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_103,2,IDRiD,grading,IDRiD_103,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_103.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_103.jpg
+duplicate,1.0000,DRIVE,vessels,33,,RITE,av,33,,DRIVE/archive(1)/DRIVE/training/images/33_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/33_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_032,4,IDRiD,grading,IDRiD_032,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_032.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_032.jpg
+duplicate,1.0000,DRIVE,vessels,26,,RITE,av,26,,DRIVE/archive(1)/DRIVE/training/images/26_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/26_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_010,4,IDRiD,grading,IDRiD_010,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_010.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_010.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_052,2,IDRiD,grading,IDRiD_052,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_052.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_052.jpg
+duplicate,1.0000,APTOS2019,grading,a8b637abd96b,0,APTOS2019,grading,e2c3b037413b,0,APTOS2019/train_images/a8b637abd96b.jpg,APTOS2019/train_images/e2c3b037413b.jpg
+duplicate,1.0000,DRIVE,vessels,36,,RITE,av,36,,DRIVE/archive(1)/DRIVE/training/images/36_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/36_training.tif
+duplicate,1.0000,APTOS2019,grading,b8ac328009e0,2,APTOS2019,grading,ff0740cb484a,2,APTOS2019/train_images/b8ac328009e0.jpg,APTOS2019/train_images/ff0740cb484a.jpg
+duplicate,1.0000,APTOS2019,grading,2df07eb5779f,4,APTOS2019,grading,b91ef82e723a,2,APTOS2019/train_images/2df07eb5779f.jpg,APTOS2019/train_images/b91ef82e723a.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_069,2,IDRiD,grading,IDRiD_069,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_069.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_069.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_021,1,IDRiD,grading,IDRiD_021,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_021.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_021.jpg
+duplicate,1.0000,APTOS2019,grading,98f7136d2e7a,2,APTOS2019,grading,e740af6ac6ea,4,APTOS2019/train_images/98f7136d2e7a.jpg,APTOS2019/train_images/e740af6ac6ea.jpg
+duplicate,1.0000,APTOS2019,grading,5dc23e440de3,2,APTOS2019,grading,f4d3777f2710,2,APTOS2019/train_images/5dc23e440de3.jpg,APTOS2019/train_images/f4d3777f2710.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_033,4,IDRiD,grading,IDRiD_033,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_033.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_033.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_023,3,IDRiD,grading,IDRiD_023,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_023.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_023.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_027,4,IDRiD,grading,IDRiD_027,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_027.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_027.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_099,3,IDRiD,grading,IDRiD_099,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_099.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_099.jpg
+duplicate,1.0000,APTOS2019,grading,2f7789c1e046,4,APTOS2019,grading,a8e88d4891c4,3,APTOS2019/train_images/2f7789c1e046.jpg,APTOS2019/train_images/a8e88d4891c4.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_075,3,IDRiD,grading,IDRiD_075,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_075.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_075.jpg
+duplicate,1.0000,APTOS2019,grading,4d7d6928534a,1,APTOS2019,grading,94b1d8ad35ec,1,APTOS2019/train_images/4d7d6928534a.jpg,APTOS2019/train_images/94b1d8ad35ec.jpg
+duplicate,1.0000,APTOS2019,grading,ca0f1a17c8e5,2,APTOS2019,grading,ea05c22d92e9,2,APTOS2019/train_images/ca0f1a17c8e5.jpg,APTOS2019/train_images/ea05c22d92e9.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_073,2,IDRiD,grading,IDRiD_073,1,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_073.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_073.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_077,3,IDRiD,grading,IDRiD_077,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_077.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_077.jpg
+duplicate,1.0000,APTOS2019,grading,b9127e38d9b9,2,APTOS2019,grading,e39b627cf648,4,APTOS2019/train_images/b9127e38d9b9.jpg,APTOS2019/train_images/e39b627cf648.jpg
+duplicate,1.0000,APTOS2019,grading,5b76117c4bcb,4,APTOS2019,grading,e037643244b7,4,APTOS2019/train_images/5b76117c4bcb.jpg,APTOS2019/train_images/e037643244b7.jpg
+duplicate,1.0000,APTOS2019,grading,1ae8c165fd53,2,APTOS2019,grading,5a36cea278ae,2,APTOS2019/train_images/1ae8c165fd53.jpg,APTOS2019/train_images/5a36cea278ae.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_007,4,IDRiD,grading,IDRiD_007,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_007.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_007.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_063,2,IDRiD,grading,IDRiD_063,1,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_063.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_063.jpg
+duplicate,1.0000,APTOS2019,grading,1c9c583c10bf,0,APTOS2019,grading,ea15a290eb96,1,APTOS2019/train_images/1c9c583c10bf.jpg,APTOS2019/train_images/ea15a290eb96.jpg
+duplicate,1.0000,DRIVE,vessels,23,,RITE,av,23,,DRIVE/archive(1)/DRIVE/training/images/23_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/23_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_079,1,IDRiD,grading,IDRiD_079,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_079.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_079.jpg
+duplicate,1.0000,APTOS2019,grading,012a242ac6ff,2,APTOS2019,grading,1f07dae3cadb,2,APTOS2019/train_images/012a242ac6ff.jpg,APTOS2019/train_images/1f07dae3cadb.jpg
+duplicate,1.0000,APTOS2019,grading,111898ab463d,1,APTOS2019,grading,33105f9b3a04,1,APTOS2019/train_images/111898ab463d.jpg,APTOS2019/train_images/33105f9b3a04.jpg
+duplicate,1.0000,APTOS2019,grading,521d3e264d71,2,APTOS2019,grading,fe0fc67c7980,3,APTOS2019/train_images/521d3e264d71.jpg,APTOS2019/train_images/fe0fc67c7980.jpg
+duplicate,1.0000,APTOS2019,grading,7e160c8b611e,3,APTOS2019,grading,91b6ebaa3678,3,APTOS2019/train_images/7e160c8b611e.jpg,APTOS2019/train_images/91b6ebaa3678.jpg
+duplicate,1.0000,DRIVE,vessels,24,,RITE,av,24,,DRIVE/archive(1)/DRIVE/training/images/24_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/24_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_024,4,IDRiD,grading,IDRiD_024,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_024.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_024.jpg
+duplicate,1.0000,APTOS2019,grading,ce887b196c23,2,APTOS2019,grading,e7a7187066ad,2,APTOS2019/train_images/ce887b196c23.jpg,APTOS2019/train_images/e7a7187066ad.jpg
+duplicate,1.0000,APTOS2019,grading,144b01e7b993,2,APTOS2019,grading,1e143fa3de57,2,APTOS2019/train_images/144b01e7b993.jpg,APTOS2019/train_images/1e143fa3de57.jpg
+duplicate,1.0000,APTOS2019,grading,3fd7df6099e3,2,APTOS2019,grading,a3b2e93d058b,2,APTOS2019/train_images/3fd7df6099e3.jpg,APTOS2019/train_images/a3b2e93d058b.jpg
+duplicate,1.0000,APTOS2019,grading,42a850acd2ac,2,APTOS2019,grading,51131b48f9d4,1,APTOS2019/train_images/42a850acd2ac.jpg,APTOS2019/train_images/51131b48f9d4.jpg
+duplicate,1.0000,APTOS2019,grading,42a850acd2ac,2,APTOS2019,grading,8cb6b0efaaac,2,APTOS2019/train_images/42a850acd2ac.jpg,APTOS2019/train_images/8cb6b0efaaac.jpg
+duplicate,1.0000,APTOS2019,grading,51131b48f9d4,1,APTOS2019,grading,8cb6b0efaaac,2,APTOS2019/train_images/51131b48f9d4.jpg,APTOS2019/train_images/8cb6b0efaaac.jpg
+duplicate,1.0000,APTOS2019,grading,9c5dd3612f0c,2,APTOS2019,grading,c9f0dc2c8b43,2,APTOS2019/train_images/9c5dd3612f0c.jpg,APTOS2019/train_images/c9f0dc2c8b43.jpg
+duplicate,1.0000,APTOS2019,grading,1c5e6cdc7ee1,2,APTOS2019,grading,3c53198519f7,2,APTOS2019/train_images/1c5e6cdc7ee1.jpg,APTOS2019/train_images/3c53198519f7.jpg
+duplicate,1.0000,APTOS2019,grading,22895c89792f,4,APTOS2019,grading,bd5013540a13,4,APTOS2019/train_images/22895c89792f.jpg,APTOS2019/train_images/bd5013540a13.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_053,4,IDRiD,grading,IDRiD_053,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_053.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_053.jpg
+duplicate,1.0000,APTOS2019,grading,26e231747848,2,APTOS2019,grading,36ec36c301c1,2,APTOS2019/train_images/26e231747848.jpg,APTOS2019/train_images/36ec36c301c1.jpg
+duplicate,1.0000,APTOS2019,grading,ba735b286d62,4,APTOS2019,grading,ed3a0fc5b546,4,APTOS2019/train_images/ba735b286d62.jpg,APTOS2019/train_images/ed3a0fc5b546.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_056,2,IDRiD,grading,IDRiD_056,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_056.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_056.jpg
+duplicate,1.0000,DRIVE,vessels,34,,RITE,av,34,,DRIVE/archive(1)/DRIVE/training/images/34_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/34_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_022,4,IDRiD,grading,IDRiD_022,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_022.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_022.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_025,3,IDRiD,grading,IDRiD_025,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_025.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_025.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_028,4,IDRiD,grading,IDRiD_028,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_028.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_028.jpg
+duplicate,1.0000,APTOS2019,grading,1632c4311fc9,2,APTOS2019,grading,a75bab2463d4,1,APTOS2019/train_images/1632c4311fc9.jpg,APTOS2019/train_images/a75bab2463d4.jpg
+duplicate,1.0000,APTOS2019,grading,034cb07a550f,4,APTOS2019,grading,c8d2d32f7f29,4,APTOS2019/train_images/034cb07a550f.jpg,APTOS2019/train_images/c8d2d32f7f29.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_044,2,IDRiD,grading,IDRiD_044,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_044.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_044.jpg
+duplicate,1.0000,APTOS2019,grading,3dbfbc11e105,2,APTOS2019,grading,d0079cc188e9,3,APTOS2019/train_images/3dbfbc11e105.jpg,APTOS2019/train_images/d0079cc188e9.jpg
+duplicate,1.0000,APTOS2019,grading,3f44d749cd0b,0,APTOS2019,grading,f9e1c439d4c8,0,APTOS2019/train_images/3f44d749cd0b.jpg,APTOS2019/train_images/f9e1c439d4c8.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_042,2,IDRiD,grading,IDRiD_042,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_042.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_042.jpg
+duplicate,1.0000,APTOS2019,grading,f1a761c68559,2,APTOS2019,grading,ff52392372d3,2,APTOS2019/train_images/f1a761c68559.jpg,APTOS2019/train_images/ff52392372d3.jpg
+duplicate,1.0000,APTOS2019,grading,cd3fd04d72f5,2,APTOS2019,grading,d81b6ed83bc2,2,APTOS2019/train_images/cd3fd04d72f5.jpg,APTOS2019/train_images/d81b6ed83bc2.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_094,2,IDRiD,grading,IDRiD_094,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_094.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_094.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_026,3,IDRiD,grading,IDRiD_026,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_026.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_026.jpg
+duplicate,1.0000,DRIVE,vessels,30,,RITE,av,30,,DRIVE/archive(1)/DRIVE/training/images/30_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/30_training.tif
+duplicate,1.0000,APTOS2019,grading,80feb1f7ca5e,2,APTOS2019,grading,878a3a097436,2,APTOS2019/train_images/80feb1f7ca5e.jpg,APTOS2019/train_images/878a3a097436.jpg
+duplicate,1.0000,DRIVE,vessels,28,,RITE,av,28,,DRIVE/archive(1)/DRIVE/training/images/28_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/28_training.tif
+duplicate,1.0000,APTOS2019,grading,65e51e18242b,1,APTOS2019,grading,cc12453ea915,1,APTOS2019/train_images/65e51e18242b.jpg,APTOS2019/train_images/cc12453ea915.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_098,3,IDRiD,grading,IDRiD_098,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_098.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_098.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_095,3,IDRiD,grading,IDRiD_095,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_095.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_095.jpg
+duplicate,1.0000,APTOS2019,grading,1638404f385c,4,APTOS2019,grading,576e189d23d4,4,APTOS2019/train_images/1638404f385c.jpg,APTOS2019/train_images/576e189d23d4.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_051,2,IDRiD,grading,IDRiD_051,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_051.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_051.jpg
+duplicate,1.0000,DRIVE,vessels,32,,RITE,av,32,,DRIVE/archive(1)/DRIVE/training/images/32_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/32_training.tif
+duplicate,1.0000,APTOS2019,grading,4fecf87184e6,3,APTOS2019,grading,9bf060db8376,3,APTOS2019/train_images/4fecf87184e6.jpg,APTOS2019/train_images/9bf060db8376.jpg
+duplicate,1.0000,APTOS2019,grading,4fecf87184e6,3,APTOS2019,grading,f7edc074f06b,2,APTOS2019/train_images/4fecf87184e6.jpg,APTOS2019/train_images/f7edc074f06b.jpg
+duplicate,1.0000,APTOS2019,grading,9bf060db8376,3,APTOS2019,grading,f7edc074f06b,2,APTOS2019/train_images/9bf060db8376.jpg,APTOS2019/train_images/f7edc074f06b.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_054,4,IDRiD,grading,IDRiD_054,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_054.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_054.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_005,4,IDRiD,grading,IDRiD_005,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_005.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_005.jpg
+duplicate,1.0000,DRIVE,vessels,31,,RITE,av,31,,DRIVE/archive(1)/DRIVE/training/images/31_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/31_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_064,2,IDRiD,grading,IDRiD_118,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_064.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_118.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_064,2,IDRiD,grading,IDRiD_064,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_064.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_064.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_118,0,IDRiD,grading,IDRiD_064,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_118.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_064.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_080,2,IDRiD,grading,IDRiD_080,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_080.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_080.jpg
+duplicate,1.0000,APTOS2019,grading,1cb814ed6332,2,APTOS2019,grading,a7b0d0c51731,2,APTOS2019/train_images/1cb814ed6332.jpg,APTOS2019/train_images/a7b0d0c51731.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_004,3,IDRiD,grading,IDRiD_004,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_004.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_004.jpg
+duplicate,1.0000,APTOS2019,grading,aca88f566228,2,APTOS2019,grading,c05b7b4c22fe,2,APTOS2019/train_images/aca88f566228.jpg,APTOS2019/train_images/c05b7b4c22fe.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_092,2,IDRiD,grading,IDRiD_092,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_092.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_092.jpg
+duplicate,1.0000,APTOS2019,grading,14515b8f19b6,2,APTOS2019,grading,ba2624883599,2,APTOS2019/train_images/14515b8f19b6.jpg,APTOS2019/train_images/ba2624883599.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_067,4,IDRiD,grading,IDRiD_067,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_067.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_067.jpg
+duplicate,1.0000,APTOS2019,grading,ca891d37a43c,2,APTOS2019,grading,dc3c0d8ee20b,2,APTOS2019/train_images/ca891d37a43c.jpg,APTOS2019/train_images/dc3c0d8ee20b.jpg
+duplicate,1.0000,APTOS2019,grading,0ac436400db4,2,APTOS2019,grading,fda39982a810,3,APTOS2019/train_images/0ac436400db4.jpg,APTOS2019/train_images/fda39982a810.jpg
+duplicate,1.0000,APTOS2019,grading,bfefa7344e7d,4,APTOS2019,grading,d85ea1220a03,4,APTOS2019/train_images/bfefa7344e7d.jpg,APTOS2019/train_images/d85ea1220a03.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_048,2,IDRiD,grading,IDRiD_048,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_048.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_048.jpg
+duplicate,1.0000,APTOS2019,grading,4ce74e5eb51d,2,APTOS2019,grading,c68dfa021d62,2,APTOS2019/train_images/4ce74e5eb51d.jpg,APTOS2019/train_images/c68dfa021d62.jpg
+duplicate,1.0000,APTOS2019,grading,05a5183c92d0,1,APTOS2019,grading,63a03880939c,1,APTOS2019/train_images/05a5183c92d0.jpg,APTOS2019/train_images/63a03880939c.jpg
+duplicate,1.0000,APTOS2019,grading,530d78467615,2,APTOS2019,grading,c1c8550508e0,2,APTOS2019/train_images/530d78467615.jpg,APTOS2019/train_images/c1c8550508e0.jpg
+duplicate,1.0000,APTOS2019,grading,04ac765f91a1,1,APTOS2019,grading,3044022c6969,1,APTOS2019/train_images/04ac765f91a1.jpg,APTOS2019/train_images/3044022c6969.jpg
+duplicate,1.0000,APTOS2019,grading,7b691d9ced34,0,APTOS2019,grading,d51c2153d151,0,APTOS2019/train_images/7b691d9ced34.jpg,APTOS2019/train_images/d51c2153d151.jpg
+duplicate,1.0000,APTOS2019,grading,07419eddd6be,2,APTOS2019,grading,81b0a2651c45,2,APTOS2019/train_images/07419eddd6be.jpg,APTOS2019/train_images/81b0a2651c45.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_081,4,IDRiD,grading,IDRiD_081,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_081.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_081.jpg
+duplicate,1.0000,DRIVE,vessels,27,,RITE,av,27,,DRIVE/archive(1)/DRIVE/training/images/27_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/27_training.tif
+duplicate,1.0000,IDRiD,grading,IDRiD_072,2,IDRiD,grading,IDRiD_072,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_072.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_072.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_088,3,IDRiD,grading,IDRiD_088,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_088.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_088.jpg
+duplicate,1.0000,APTOS2019,grading,1c6d119c3d70,2,APTOS2019,grading,a56230242a95,2,APTOS2019/train_images/1c6d119c3d70.jpg,APTOS2019/train_images/a56230242a95.jpg
+duplicate,1.0000,APTOS2019,grading,80d24897669f,1,APTOS2019,grading,fea14b3d44b0,1,APTOS2019/train_images/80d24897669f.jpg,APTOS2019/train_images/fea14b3d44b0.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_038,2,IDRiD,grading,IDRiD_038,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_038.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_038.jpg
+duplicate,1.0000,APTOS2019,grading,48c49f662f7d,2,APTOS2019,grading,6cb98da77e3e,2,APTOS2019/train_images/48c49f662f7d.jpg,APTOS2019/train_images/6cb98da77e3e.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_061,2,IDRiD,grading,IDRiD_061,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_061.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_061.jpg
+duplicate,1.0000,APTOS2019,grading,9f1efb799b7b,2,APTOS2019,grading,cd4e7f9fa1a9,2,APTOS2019/train_images/9f1efb799b7b.jpg,APTOS2019/train_images/cd4e7f9fa1a9.jpg
+duplicate,1.0000,APTOS2019,grading,2cceb07ff706,2,APTOS2019,grading,8a759f94613a,2,APTOS2019/train_images/2cceb07ff706.jpg,APTOS2019/train_images/8a759f94613a.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_029,2,IDRiD,grading,IDRiD_029,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_029.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_029.jpg
+duplicate,1.0000,APTOS2019,grading,8446826853d0,2,APTOS2019,grading,8ef2eb8c51c4,1,APTOS2019/train_images/8446826853d0.jpg,APTOS2019/train_images/8ef2eb8c51c4.jpg
+duplicate,1.0000,APTOS2019,grading,b13d72ceea26,2,APTOS2019,grading,da0a1043abf7,2,APTOS2019/train_images/b13d72ceea26.jpg,APTOS2019/train_images/da0a1043abf7.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_009,3,IDRiD,grading,IDRiD_009,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_009.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_009.jpg
+duplicate,1.0000,APTOS2019,grading,0161338f53cc,2,APTOS2019,grading,cac40227d3b2,2,APTOS2019/train_images/0161338f53cc.jpg,APTOS2019/train_images/cac40227d3b2.jpg
+duplicate,1.0000,APTOS2019,grading,d28bd830c171,2,APTOS2019,grading,f9ecf1795804,2,APTOS2019/train_images/d28bd830c171.jpg,APTOS2019/train_images/f9ecf1795804.jpg
+duplicate,1.0000,APTOS2019,grading,b06dabab4f09,2,APTOS2019,grading,d144144a2f3f,2,APTOS2019/train_images/b06dabab4f09.jpg,APTOS2019/train_images/d144144a2f3f.jpg
+duplicate,1.0000,APTOS2019,grading,36677b70b1ef,1,APTOS2019,grading,7bf981d9c7fe,1,APTOS2019/train_images/36677b70b1ef.jpg,APTOS2019/train_images/7bf981d9c7fe.jpg
+duplicate,1.0000,APTOS2019,grading,6e92b1c5ac8e,3,APTOS2019,grading,9c52b87d01f1,3,APTOS2019/train_images/6e92b1c5ac8e.jpg,APTOS2019/train_images/9c52b87d01f1.jpg
+duplicate,1.0000,APTOS2019,grading,75a7bc945b7d,2,APTOS2019,grading,98104c8c67eb,2,APTOS2019/train_images/75a7bc945b7d.jpg,APTOS2019/train_images/98104c8c67eb.jpg
+duplicate,1.0000,APTOS2019,grading,3b4a5fcbe5e0,4,APTOS2019,grading,3ca637fddd56,4,APTOS2019/train_images/3b4a5fcbe5e0.jpg,APTOS2019/train_images/3ca637fddd56.jpg
+duplicate,1.0000,APTOS2019,grading,38487e1a5b1f,2,APTOS2019,grading,b376def52ccc,2,APTOS2019/train_images/38487e1a5b1f.jpg,APTOS2019/train_images/b376def52ccc.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_102,2,IDRiD,grading,IDRiD_102,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_102.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_102.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_045,2,IDRiD,grading,IDRiD_045,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_045.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_045.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_096,4,IDRiD,grading,IDRiD_096,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_096.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_096.jpg
+duplicate,1.0000,APTOS2019,grading,7877be80901c,2,APTOS2019,grading,ee2c2a5f7d0e,2,APTOS2019/train_images/7877be80901c.jpg,APTOS2019/train_images/ee2c2a5f7d0e.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_084,2,IDRiD,grading,IDRiD_084,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_084.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_084.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_014,4,IDRiD,grading,IDRiD_014,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_014.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_014.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_090,4,IDRiD,grading,IDRiD_090,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_090.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_090.jpg
+duplicate,1.0000,APTOS2019,grading,0c7e82daf5a0,2,APTOS2019,grading,3e86335bc2fd,2,APTOS2019/train_images/0c7e82daf5a0.jpg,APTOS2019/train_images/3e86335bc2fd.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_020,2,IDRiD,grading,IDRiD_020,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_020.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_020.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_366,3,IDRiD,segmentation,IDRiD_02,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_366.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_02.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_101,3,IDRiD,grading,IDRiD_101,1,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_101.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_101.jpg
+duplicate,1.0000,APTOS2019,grading,135575dc57c9,2,APTOS2019,grading,2c2aa057afc5,2,APTOS2019/train_images/135575dc57c9.jpg,APTOS2019/train_images/2c2aa057afc5.jpg
+duplicate,1.0000,APTOS2019,grading,d51b3fe0fa1b,4,APTOS2019,grading,df4913ca3712,4,APTOS2019/train_images/d51b3fe0fa1b.jpg,APTOS2019/train_images/df4913ca3712.jpg
+duplicate,1.0000,APTOS2019,grading,2a3a1ed1c285,2,APTOS2019,grading,2b21d293fdf2,2,APTOS2019/train_images/2a3a1ed1c285.jpg,APTOS2019/train_images/2b21d293fdf2.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_078,2,IDRiD,grading,IDRiD_078,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_078.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_078.jpg
+duplicate,1.0000,APTOS2019,grading,11242a67122d,4,APTOS2019,grading,65c958379680,4,APTOS2019/train_images/11242a67122d.jpg,APTOS2019/train_images/65c958379680.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_016,2,IDRiD,grading,IDRiD_016,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_016.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_016.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_097,2,IDRiD,grading,IDRiD_097,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_097.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_097.jpg
+duplicate,1.0000,APTOS2019,grading,0cb14014117d,3,APTOS2019,grading,4a44cc840ebe,2,APTOS2019/train_images/0cb14014117d.jpg,APTOS2019/train_images/4a44cc840ebe.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_003,2,IDRiD,grading,IDRiD_003,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_003.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_003.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_013,3,IDRiD,grading,IDRiD_013,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_013.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_013.jpg
+duplicate,1.0000,DRIVE,vessels,22,,RITE,av,22,,DRIVE/archive(1)/DRIVE/training/images/22_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/22_training.tif
+duplicate,1.0000,APTOS2019,grading,6c3745a222da,4,APTOS2019,grading,eadc57064154,4,APTOS2019/train_images/6c3745a222da.jpg,APTOS2019/train_images/eadc57064154.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_006,4,IDRiD,grading,IDRiD_006,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_006.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_006.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_066,3,IDRiD,grading,IDRiD_066,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_066.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_066.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_058,2,IDRiD,grading,IDRiD_058,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_058.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_058.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_017,4,IDRiD,grading,IDRiD_017,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_017.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_017.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_040,3,IDRiD,grading,IDRiD_040,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_040.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_040.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_060,2,IDRiD,grading,IDRiD_060,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_060.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_060.jpg
+duplicate,1.0000,APTOS2019,grading,14e3f84445f7,3,APTOS2019,grading,f0f89314e860,4,APTOS2019/train_images/14e3f84445f7.jpg,APTOS2019/train_images/f0f89314e860.jpg
+duplicate,1.0000,APTOS2019,grading,46cdc8b685bd,4,APTOS2019,grading,e4151feb8443,2,APTOS2019/train_images/46cdc8b685bd.jpg,APTOS2019/train_images/e4151feb8443.jpg
+duplicate,1.0000,APTOS2019,grading,9b32e8ef0ca0,2,APTOS2019,grading,a15652b22ab8,2,APTOS2019/train_images/9b32e8ef0ca0.jpg,APTOS2019/train_images/a15652b22ab8.jpg
+duplicate,1.0000,APTOS2019,grading,1dfbede13143,2,APTOS2019,grading,38fe9f854046,2,APTOS2019/train_images/1dfbede13143.jpg,APTOS2019/train_images/38fe9f854046.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_008,4,IDRiD,grading,IDRiD_008,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_008.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_008.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_001,3,IDRiD,grading,IDRiD_001,4,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_001.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_001.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_011,3,IDRiD,grading,IDRiD_011,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_011.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_011.jpg
+duplicate,1.0000,APTOS2019,grading,71c1a3cdbe47,1,APTOS2019,grading,79ce83c07588,1,APTOS2019/train_images/71c1a3cdbe47.jpg,APTOS2019/train_images/79ce83c07588.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_018,2,IDRiD,grading,IDRiD_018,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_018.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_018.jpg
+duplicate,1.0000,APTOS2019,grading,1006345f70b7,2,APTOS2019,grading,435d900fa7b2,2,APTOS2019/train_images/1006345f70b7.jpg,APTOS2019/train_images/435d900fa7b2.jpg
+duplicate,1.0000,APTOS2019,grading,1ee1eb7943db,2,APTOS2019,grading,c2d2b4f536da,2,APTOS2019/train_images/1ee1eb7943db.jpg,APTOS2019/train_images/c2d2b4f536da.jpg
+duplicate,1.0000,APTOS2019,grading,906d02fb822d,0,APTOS2019,grading,a4012932e18d,0,APTOS2019/train_images/906d02fb822d.jpg,APTOS2019/train_images/a4012932e18d.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_082,2,IDRiD,grading,IDRiD_082,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_082.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_082.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_031,4,IDRiD,grading,IDRiD_031,3,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_031.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_031.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_086,4,IDRiD,grading,IDRiD_086,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_086.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_086.jpg
+duplicate,1.0000,APTOS2019,grading,3ee4841936ef,4,APTOS2019,grading,7005be54cab1,1,APTOS2019/train_images/3ee4841936ef.jpg,APTOS2019/train_images/7005be54cab1.jpg
+duplicate,1.0000,APTOS2019,grading,5eb311bcb5f9,2,APTOS2019,grading,a9e984b57556,3,APTOS2019/train_images/5eb311bcb5f9.jpg,APTOS2019/train_images/a9e984b57556.jpg
+duplicate,1.0000,IDRiD,grading,IDRiD_059,2,IDRiD,grading,IDRiD_059,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_059.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_059.jpg
+duplicate,0.9999,APTOS2019,grading,278aa860dffd,1,APTOS2019,grading,f066db7a2efe,0,APTOS2019/train_images/278aa860dffd.jpg,APTOS2019/train_images/f066db7a2efe.jpg
+duplicate,0.9999,APTOS2019,grading,1a1b4b2450ca,2,APTOS2019,grading,92b0d27fc0ec,2,APTOS2019/train_images/1a1b4b2450ca.jpg,APTOS2019/train_images/92b0d27fc0ec.jpg
+duplicate,0.9999,IDRiD,grading,IDRiD_049,3,IDRiD,grading,IDRiD_049,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_049.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_049.jpg
+duplicate,0.9999,APTOS2019,grading,2923971566fe,0,APTOS2019,grading,badb5ff8d3c7,0,APTOS2019/train_images/2923971566fe.jpg,APTOS2019/train_images/badb5ff8d3c7.jpg
+duplicate,0.9999,IDRiD,grading,IDRiD_071,2,IDRiD,grading,IDRiD_071,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_071.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_071.jpg
+duplicate,0.9999,IDRiD,grading,IDRiD_100,4,IDRiD,grading,IDRiD_100,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_100.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_100.jpg
+duplicate,0.9999,IDRiD,grading,IDRiD_076,2,IDRiD,grading,IDRiD_076,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_076.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_076.jpg
+duplicate,0.9999,APTOS2019,grading,40e9b5630438,1,APTOS2019,grading,77a9538b8362,1,APTOS2019/train_images/40e9b5630438.jpg,APTOS2019/train_images/77a9538b8362.jpg
+duplicate,0.9999,APTOS2019,grading,bcdc8db5423b,2,APTOS2019,grading,f920ccd926db,2,APTOS2019/train_images/bcdc8db5423b.jpg,APTOS2019/train_images/f920ccd926db.jpg
+duplicate,0.9999,APTOS2019,grading,9b7b6e4db1d5,2,APTOS2019,grading,9f4132bd6ed6,2,APTOS2019/train_images/9b7b6e4db1d5.jpg,APTOS2019/train_images/9f4132bd6ed6.jpg
+duplicate,0.9999,APTOS2019,grading,80964d8e0863,4,APTOS2019,grading,ab50123abadb,2,APTOS2019/train_images/80964d8e0863.jpg,APTOS2019/train_images/ab50123abadb.jpg
+duplicate,0.9999,APTOS2019,grading,00cb6555d108,1,APTOS2019,grading,ca25745942b0,1,APTOS2019/train_images/00cb6555d108.jpg,APTOS2019/train_images/ca25745942b0.jpg
+duplicate,0.9999,IDRiD,grading,IDRiD_074,2,IDRiD,grading,IDRiD_074,1,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_074.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_074.jpg
+duplicate,0.9999,APTOS2019,grading,1e8a1fdee5b9,1,APTOS2019,grading,a47432cd41e7,1,APTOS2019/train_images/1e8a1fdee5b9.jpg,APTOS2019/train_images/a47432cd41e7.jpg
+duplicate,0.9999,APTOS2019,grading,1e8a1fdee5b9,1,APTOS2019,grading,b8ebedd382de,1,APTOS2019/train_images/1e8a1fdee5b9.jpg,APTOS2019/train_images/b8ebedd382de.jpg
+duplicate,0.9999,APTOS2019,grading,a47432cd41e7,1,APTOS2019,grading,b8ebedd382de,1,APTOS2019/train_images/a47432cd41e7.jpg,APTOS2019/train_images/b8ebedd382de.jpg
+duplicate,0.9999,APTOS2019,grading,0dce95217626,1,APTOS2019,grading,94372043d55b,1,APTOS2019/train_images/0dce95217626.jpg,APTOS2019/train_images/94372043d55b.jpg
+duplicate,0.9999,APTOS2019,grading,60f15dd68d30,4,APTOS2019,grading,fcc6aa6755e6,3,APTOS2019/train_images/60f15dd68d30.jpg,APTOS2019/train_images/fcc6aa6755e6.jpg
+duplicate,0.9999,APTOS2019,grading,12e3f5f2cb17,1,APTOS2019,grading,d567a1a22d33,1,APTOS2019/train_images/12e3f5f2cb17.jpg,APTOS2019/train_images/d567a1a22d33.jpg
+duplicate,0.9999,APTOS2019,grading,19722bff5a09,1,APTOS2019,grading,19e350c7c83c,1,APTOS2019/train_images/19722bff5a09.jpg,APTOS2019/train_images/19e350c7c83c.jpg
+duplicate,0.9999,APTOS2019,grading,43fb6eda9b97,2,APTOS2019,grading,e4e343eaae2a,2,APTOS2019/train_images/43fb6eda9b97.jpg,APTOS2019/train_images/e4e343eaae2a.jpg
+duplicate,0.9999,DRIVE,vessels,29,,RITE,av,29,,DRIVE/archive(1)/DRIVE/training/images/29_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/29_training.tif
+duplicate,0.9999,APTOS2019,grading,5e7db41b3bee,4,APTOS2019,grading,a1b12fdce6c3,2,APTOS2019/train_images/5e7db41b3bee.jpg,APTOS2019/train_images/a1b12fdce6c3.jpg
+duplicate,0.9999,IDRiD,grading,IDRiD_046,4,IDRiD,grading,IDRiD_046,2,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_046.jpg,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_046.jpg
+duplicate,0.9999,APTOS2019,grading,3cd801ffdbf0,2,APTOS2019,grading,7525ebb3434d,3,APTOS2019/train_images/3cd801ffdbf0.jpg,APTOS2019/train_images/7525ebb3434d.jpg
+duplicate,0.9999,DRIVE,vessels,35,,RITE,av,35,,DRIVE/archive(1)/DRIVE/training/images/35_training.tif,RITE/AV_groundTruth/AV_groundTruth/training/images/35_training.tif
+duplicate,0.9999,APTOS2019,grading,9a3c03a5ad0f,2,APTOS2019,grading,f03d3c4ce7fb,4,APTOS2019/train_images/9a3c03a5ad0f.jpg,APTOS2019/train_images/f03d3c4ce7fb.jpg
+duplicate,0.9998,APTOS2019,grading,b019a49787c1,3,APTOS2019,grading,e1fb532f55df,3,APTOS2019/train_images/b019a49787c1.jpg,APTOS2019/train_images/e1fb532f55df.jpg
+duplicate,0.9998,IDRiD,grading,IDRiD_224,4,IDRiD,segmentation,IDRiD_10,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_224.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_10.jpg
+duplicate,0.9997,IDRiD,grading,IDRiD_128,2,IDRiD,segmentation,IDRiD_59,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_128.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_59.jpg
+duplicate,0.9997,IDRiD,grading,IDRiD_309,3,IDRiD,segmentation,IDRiD_79,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_309.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_79.jpg
+duplicate,0.9997,APTOS2019,grading,60f15dd68d30,4,APTOS2019,grading,772af553b8b7,3,APTOS2019/train_images/60f15dd68d30.jpg,APTOS2019/train_images/772af553b8b7.jpg
+duplicate,0.9997,APTOS2019,grading,772af553b8b7,3,APTOS2019,grading,fcc6aa6755e6,3,APTOS2019/train_images/772af553b8b7.jpg,APTOS2019/train_images/fcc6aa6755e6.jpg
+duplicate,0.9997,IDRiD,grading,IDRiD_196,2,IDRiD,segmentation,IDRiD_06,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_196.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_06.jpg
+duplicate,0.9997,IDRiD,grading,IDRiD_308,3,IDRiD,segmentation,IDRiD_49,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_308.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_49.jpg
+duplicate,0.9997,IDRiD,grading,IDRiD_248,2,IDRiD,segmentation,IDRiD_24,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_248.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_24.jpg
+duplicate,0.9997,APTOS2019,grading,3b018e8b7303,3,APTOS2019,grading,3ddb86eb530e,2,APTOS2019/train_images/3b018e8b7303.jpg,APTOS2019/train_images/3ddb86eb530e.jpg
+duplicate,0.9997,IDRiD,grading,IDRiD_311,2,IDRiD,segmentation,IDRiD_52,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_311.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_52.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_245,2,IDRiD,segmentation,IDRiD_20,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_245.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_20.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_231,2,IDRiD,segmentation,IDRiD_13,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_231.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_13.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_246,4,IDRiD,segmentation,IDRiD_21,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_246.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_21.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_272,4,IDRiD,segmentation,IDRiD_33,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_272.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_33.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_310,2,IDRiD,segmentation,IDRiD_51,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_310.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_51.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_261,2,IDRiD,segmentation,IDRiD_28,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_261.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_28.jpg
+duplicate,0.9996,APTOS2019,grading,cd93a472e5cd,4,APTOS2019,grading,d035c2bd9104,3,APTOS2019/train_images/cd93a472e5cd.jpg,APTOS2019/train_images/d035c2bd9104.jpg
+duplicate,0.9996,APTOS2019,grading,0243404e8a00,4,APTOS2019,grading,3b018e8b7303,3,APTOS2019/train_images/0243404e8a00.jpg,APTOS2019/train_images/3b018e8b7303.jpg
+duplicate,0.9996,APTOS2019,grading,33778d136069,3,APTOS2019,grading,4ccfa0b4e96c,4,APTOS2019/train_images/33778d136069.jpg,APTOS2019/train_images/4ccfa0b4e96c.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_313,4,IDRiD,segmentation,IDRiD_76,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_313.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_76.jpg
+duplicate,0.9996,IDRiD,grading,IDRiD_306,3,IDRiD,segmentation,IDRiD_46,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_306.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_46.jpg
+duplicate,0.9995,IDRiD,grading,IDRiD_207,3,IDRiD,segmentation,IDRiD_08,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_207.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_08.jpg
+duplicate,0.9995,APTOS2019,grading,0243404e8a00,4,APTOS2019,grading,3ddb86eb530e,2,APTOS2019/train_images/0243404e8a00.jpg,APTOS2019/train_images/3ddb86eb530e.jpg
+duplicate,0.9995,IDRiD,grading,IDRiD_247,2,IDRiD,segmentation,IDRiD_23,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_247.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_23.jpg
+duplicate,0.9995,IDRiD,grading,IDRiD_239,4,IDRiD,segmentation,IDRiD_17,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_239.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_17.jpg
+duplicate,0.9995,IDRiD,grading,IDRiD_282,2,IDRiD,segmentation,IDRiD_40,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_282.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_40.jpg
+duplicate,0.9995,IDRiD,grading,IDRiD_232,2,IDRiD,segmentation,IDRiD_14,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_232.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_14.jpg
+duplicate,0.9995,IDRiD,grading,IDRiD_281,2,IDRiD,segmentation,IDRiD_37,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_281.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_37.jpg
+duplicate,0.9995,APTOS2019,grading,8688f3d0fcaf,3,APTOS2019,grading,bfefa7344e7d,4,APTOS2019/train_images/8688f3d0fcaf.jpg,APTOS2019/train_images/bfefa7344e7d.jpg
+duplicate,0.9995,APTOS2019,grading,8688f3d0fcaf,3,APTOS2019,grading,d85ea1220a03,4,APTOS2019/train_images/8688f3d0fcaf.jpg,APTOS2019/train_images/d85ea1220a03.jpg
+duplicate,0.9995,IDRiD,grading,IDRiD_254,4,IDRiD,segmentation,IDRiD_27,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_254.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_27.jpg
+duplicate,0.9994,APTOS2019,grading,2b48daf24be0,3,APTOS2019,grading,9a94e0316ee3,3,APTOS2019/train_images/2b48daf24be0.jpg,APTOS2019/train_images/9a94e0316ee3.jpg
+duplicate,0.9994,IDRiD,grading,IDRiD_280,2,IDRiD,segmentation,IDRiD_36,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_280.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_36.jpg
+duplicate,0.9994,IDRiD,grading,IDRiD_088,3,IDRiD,segmentation,IDRiD_22,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_088.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_22.jpg
+duplicate,0.9994,IDRiD,grading,IDRiD_088,2,IDRiD,segmentation,IDRiD_22,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_088.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_22.jpg
+duplicate,0.9994,APTOS2019,grading,3435fd8675a2,3,APTOS2019,grading,c62585bd68fb,4,APTOS2019/train_images/3435fd8675a2.jpg,APTOS2019/train_images/c62585bd68fb.jpg
+duplicate,0.9994,IDRiD,grading,IDRiD_294,2,IDRiD,segmentation,IDRiD_43,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_294.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_43.jpg
+duplicate,0.9994,IDRiD,grading,IDRiD_091,2,IDRiD,segmentation,IDRiD_09,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_091.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_09.jpg
+duplicate,0.9994,IDRiD,grading,IDRiD_091,2,IDRiD,segmentation,IDRiD_09,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_091.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_09.jpg
+duplicate,0.9993,IDRiD,grading,IDRiD_089,4,IDRiD,segmentation,IDRiD_31,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_089.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_31.jpg
+duplicate,0.9993,IDRiD,grading,IDRiD_089,2,IDRiD,segmentation,IDRiD_31,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_089.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_31.jpg
+duplicate,0.9993,IDRiD,grading,IDRiD_263,2,IDRiD,segmentation,IDRiD_29,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_263.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_29.jpg
+duplicate,0.9993,APTOS2019,grading,2f284b6a1940,4,APTOS2019,grading,bb5083fae98f,3,APTOS2019/train_images/2f284b6a1940.jpg,APTOS2019/train_images/bb5083fae98f.jpg
+duplicate,0.9993,IDRiD,grading,IDRiD_283,2,IDRiD,segmentation,IDRiD_41,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_283.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_41.jpg
+duplicate,0.9993,APTOS2019,grading,16ce555748d8,4,APTOS2019,grading,4d9fc85a8259,3,APTOS2019/train_images/16ce555748d8.jpg,APTOS2019/train_images/4d9fc85a8259.jpg
+duplicate,0.9992,IDRiD,grading,IDRiD_314,3,IDRiD,segmentation,IDRiD_54,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_314.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_54.jpg
+duplicate,0.9992,IDRiD,grading,IDRiD_132,2,IDRiD,segmentation,IDRiD_18,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_132.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_18.jpg
+duplicate,0.9992,IDRiD,grading,IDRiD_329,3,IDRiD,segmentation,IDRiD_74,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_329.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_74.jpg
+duplicate,0.9991,IDRiD,grading,IDRiD_284,2,IDRiD,segmentation,IDRiD_42,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_284.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_42.jpg
+duplicate,0.9991,IDRiD,grading,IDRiD_328,2,IDRiD,segmentation,IDRiD_72,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_328.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_72.jpg
+duplicate,0.9990,IDRiD,grading,IDRiD_237,2,IDRiD,segmentation,IDRiD_16,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_237.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_16.jpg
+duplicate,0.9989,IDRiD,grading,IDRiD_300,2,IDRiD,segmentation,IDRiD_44,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_300.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_44.jpg
+duplicate,0.9989,IDRiD,grading,IDRiD_236,2,IDRiD,segmentation,IDRiD_15,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_236.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_15.jpg
+duplicate,0.9988,IDRiD,grading,IDRiD_277,3,IDRiD,segmentation,IDRiD_34,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_277.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_34.jpg
+duplicate,0.9986,IDRiD,grading,IDRiD_186,2,IDRiD,segmentation,IDRiD_81,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_186.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_81.jpg
+duplicate,0.9986,IDRiD,grading,IDRiD_185,2,IDRiD,segmentation,IDRiD_38,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_185.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_38.jpg
+duplicate,0.9984,IDRiD,grading,IDRiD_375,2,IDRiD,segmentation,IDRiD_62,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_375.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_62.jpg
+duplicate,0.9982,IDRiD,grading,IDRiD_278,3,IDRiD,segmentation,IDRiD_35,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_278.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_35.jpg
+duplicate,0.9981,IDRiD,grading,IDRiD_327,3,IDRiD,segmentation,IDRiD_69,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_327.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_69.jpg
+duplicate,0.9972,IDRiD,grading,IDRiD_356,3,IDRiD,segmentation,IDRiD_58,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_356.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/b. Testing Set/IDRiD_58.jpg
+duplicate,0.9940,IDRiD,grading,IDRiD_242,2,IDRiD,segmentation,IDRiD_19,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_242.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_19.jpg
+duplicate,0.9435,IDRiD,grading,IDRiD_299,3,IDRiD,segmentation,IDRiD_26,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_299.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_26.jpg
+duplicate,0.9205,IDRiD,grading,IDRiD_271,3,IDRiD,segmentation,IDRiD_39,,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_271.jpg,IDRiD/A. Segmentation/A. Segmentation/1. Original Images/a. Training Set/IDRiD_39.jpg
+review,0.9118,APTOS2019,grading,2fdfb80ea53c,0,APTOS2019,grading,535682537302,0,APTOS2019/train_images/2fdfb80ea53c.jpg,APTOS2019/train_images/535682537302.jpg
+review,0.8871,APTOS2019,grading,1db18bdd43aa,2,APTOS2019,grading,28a4d00927b7,2,APTOS2019/train_images/1db18bdd43aa.jpg,APTOS2019/train_images/28a4d00927b7.jpg
+review,0.8799,APTOS2019,grading,5cbe88914a72,0,APTOS2019,grading,8bf2d925dc0c,0,APTOS2019/train_images/5cbe88914a72.jpg,APTOS2019/train_images/8bf2d925dc0c.jpg
+review,0.8710,APTOS2019,grading,e1dc02a3dc2a,0,APTOS2019,grading,ed2c52c14493,0,APTOS2019/train_images/e1dc02a3dc2a.jpg,APTOS2019/train_images/ed2c52c14493.jpg
+review,0.8636,APTOS2019,grading,4df6a81b476e,3,APTOS2019,grading,7a6e384a0846,3,APTOS2019/train_images/4df6a81b476e.jpg,APTOS2019/train_images/7a6e384a0846.jpg
+review,0.8610,APTOS2019,grading,61da799bf0aa,0,APTOS2019,grading,e26d8718ca58,1,APTOS2019/train_images/61da799bf0aa.jpg,APTOS2019/train_images/e26d8718ca58.jpg
+review,0.8603,APTOS2019,grading,61d9c88a3a4b,0,APTOS2019,grading,d26bb2ed6e71,0,APTOS2019/train_images/61d9c88a3a4b.jpg,APTOS2019/train_images/d26bb2ed6e71.jpg
+review,0.8545,APTOS2019,grading,10de500cf0c5,0,APTOS2019,grading,a419fcb2dfb5,0,APTOS2019/train_images/10de500cf0c5.jpg,APTOS2019/train_images/a419fcb2dfb5.jpg
+review,0.8504,APTOS2019,grading,ed2c52c14493,0,APTOS2019,grading,ef99c499d665,0,APTOS2019/train_images/ed2c52c14493.jpg,APTOS2019/train_images/ef99c499d665.jpg
+review,0.8486,APTOS2019,grading,5cbe88914a72,0,APTOS2019,grading,991a0b7a8c87,0,APTOS2019/train_images/5cbe88914a72.jpg,APTOS2019/train_images/991a0b7a8c87.jpg
+review,0.8484,APTOS2019,grading,1d0b93317aa8,0,APTOS2019,grading,aec51513cf45,0,APTOS2019/train_images/1d0b93317aa8.jpg,APTOS2019/train_images/aec51513cf45.jpg
+review,0.8463,APTOS2019,grading,76cb010f7aa0,0,APTOS2019,grading,7da558d92100,0,APTOS2019/train_images/76cb010f7aa0.jpg,APTOS2019/train_images/7da558d92100.jpg
+review,0.8434,APTOS2019,grading,67ed8cc78b97,0,APTOS2019,grading,c373b73a80c8,0,APTOS2019/train_images/67ed8cc78b97.jpg,APTOS2019/train_images/c373b73a80c8.jpg
+review,0.8428,APTOS2019,grading,c3d12a23f451,4,APTOS2019,grading,d78b7401096f,0,APTOS2019/train_images/c3d12a23f451.jpg,APTOS2019/train_images/d78b7401096f.jpg
+review,0.8411,APTOS2019,grading,e1dc02a3dc2a,0,APTOS2019,grading,ef99c499d665,0,APTOS2019/train_images/e1dc02a3dc2a.jpg,APTOS2019/train_images/ef99c499d665.jpg
+review,0.8406,APTOS2019,grading,61d9c88a3a4b,0,APTOS2019,grading,d3dfd0a2dee6,0,APTOS2019/train_images/61d9c88a3a4b.jpg,APTOS2019/train_images/d3dfd0a2dee6.jpg
+review,0.8403,APTOS2019,grading,8dafa62f9322,0,APTOS2019,grading,eeaea2c5ff34,0,APTOS2019/train_images/8dafa62f9322.jpg,APTOS2019/train_images/eeaea2c5ff34.jpg
+review,0.8402,IDRiD,grading,IDRiD_098,0,APTOS2019,grading,2b5bb6d33959,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_098.jpg,APTOS2019/train_images/2b5bb6d33959.jpg
+review,0.8402,IDRiD,grading,IDRiD_098,3,APTOS2019,grading,2b5bb6d33959,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/b. Testing Set/IDRiD_098.jpg,APTOS2019/train_images/2b5bb6d33959.jpg
+review,0.8398,APTOS2019,grading,9e2ba2b979f1,0,APTOS2019,grading,a00b4cb250a7,1,APTOS2019/train_images/9e2ba2b979f1.jpg,APTOS2019/train_images/a00b4cb250a7.jpg
+review,0.8398,APTOS2019,grading,0ae2dd2e09ea,0,APTOS2019,grading,5cbe88914a72,0,APTOS2019/train_images/0ae2dd2e09ea.jpg,APTOS2019/train_images/5cbe88914a72.jpg
+review,0.8394,APTOS2019,grading,33b91def2035,0,APTOS2019,grading,cbc23af521f3,0,APTOS2019/train_images/33b91def2035.jpg,APTOS2019/train_images/cbc23af521f3.jpg
+review,0.8393,APTOS2019,grading,50916d67bb51,0,APTOS2019,grading,9d75de31f1b8,0,APTOS2019/train_images/50916d67bb51.jpg,APTOS2019/train_images/9d75de31f1b8.jpg
+review,0.8392,APTOS2019,grading,c56e65f74187,1,APTOS2019,grading,d15ca3469b87,2,APTOS2019/train_images/c56e65f74187.jpg,APTOS2019/train_images/d15ca3469b87.jpg
+review,0.8391,APTOS2019,grading,61da799bf0aa,0,APTOS2019,grading,f583a722434c,2,APTOS2019/train_images/61da799bf0aa.jpg,APTOS2019/train_images/f583a722434c.jpg
+review,0.8382,APTOS2019,grading,12025b34deb8,2,APTOS2019,grading,6f4719c6bb4b,4,APTOS2019/train_images/12025b34deb8.jpg,APTOS2019/train_images/6f4719c6bb4b.jpg
+review,0.8380,APTOS2019,grading,38c7153457e2,0,APTOS2019,grading,7ce671f952be,0,APTOS2019/train_images/38c7153457e2.jpg,APTOS2019/train_images/7ce671f952be.jpg
+review,0.8376,APTOS2019,grading,763ad1236efe,0,APTOS2019,grading,cd941e5bc659,0,APTOS2019/train_images/763ad1236efe.jpg,APTOS2019/train_images/cd941e5bc659.jpg
+review,0.8363,APTOS2019,grading,315c1a0d87fd,0,APTOS2019,grading,99240ee00485,0,APTOS2019/train_images/315c1a0d87fd.jpg,APTOS2019/train_images/99240ee00485.jpg
+review,0.8361,APTOS2019,grading,3325b1fe55d2,0,APTOS2019,grading,874f8c1929f6,0,APTOS2019/train_images/3325b1fe55d2.jpg,APTOS2019/train_images/874f8c1929f6.jpg
+review,0.8358,APTOS2019,grading,33b91def2035,0,APTOS2019,grading,565f3404f9b2,0,APTOS2019/train_images/33b91def2035.jpg,APTOS2019/train_images/565f3404f9b2.jpg
+review,0.8349,APTOS2019,grading,61d9c88a3a4b,0,APTOS2019,grading,71c22da3d6c6,0,APTOS2019/train_images/61d9c88a3a4b.jpg,APTOS2019/train_images/71c22da3d6c6.jpg
+review,0.8349,APTOS2019,grading,73ba798fee25,0,APTOS2019,grading,bd34a0639575,0,APTOS2019/train_images/73ba798fee25.jpg,APTOS2019/train_images/bd34a0639575.jpg
+review,0.8342,APTOS2019,grading,cd941e5bc659,0,APTOS2019,grading,f35d80bb1a22,0,APTOS2019/train_images/cd941e5bc659.jpg,APTOS2019/train_images/f35d80bb1a22.jpg
+review,0.8341,APTOS2019,grading,941d874c8afb,0,APTOS2019,grading,a0adbe677508,0,APTOS2019/train_images/941d874c8afb.jpg,APTOS2019/train_images/a0adbe677508.jpg
+review,0.8336,APTOS2019,grading,7adfb8fc0621,0,APTOS2019,grading,ff1e940105f9,0,APTOS2019/train_images/7adfb8fc0621.jpg,APTOS2019/train_images/ff1e940105f9.jpg
+review,0.8334,APTOS2019,grading,24b943fe725e,1,APTOS2019,grading,b6a0e348a01e,1,APTOS2019/train_images/24b943fe725e.jpg,APTOS2019/train_images/b6a0e348a01e.jpg
+review,0.8331,APTOS2019,grading,c406325360b1,2,APTOS2019,grading,ef99c499d665,0,APTOS2019/train_images/c406325360b1.jpg,APTOS2019/train_images/ef99c499d665.jpg
+review,0.8320,APTOS2019,grading,7526c59c36d3,0,APTOS2019,grading,9a56cfb980ec,0,APTOS2019/train_images/7526c59c36d3.jpg,APTOS2019/train_images/9a56cfb980ec.jpg
+review,0.8318,APTOS2019,grading,4860f7813654,0,APTOS2019,grading,8846b09384a4,0,APTOS2019/train_images/4860f7813654.jpg,APTOS2019/train_images/8846b09384a4.jpg
+review,0.8311,APTOS2019,grading,2b3a4a81d748,0,APTOS2019,grading,315c1a0d87fd,0,APTOS2019/train_images/2b3a4a81d748.jpg,APTOS2019/train_images/315c1a0d87fd.jpg
+review,0.8305,APTOS2019,grading,3b0190bbe615,0,APTOS2019,grading,d0926ed2c8e5,0,APTOS2019/train_images/3b0190bbe615.jpg,APTOS2019/train_images/d0926ed2c8e5.jpg
+review,0.8304,APTOS2019,grading,367c7049929c,2,APTOS2019,grading,64b9206afb3f,0,APTOS2019/train_images/367c7049929c.jpg,APTOS2019/train_images/64b9206afb3f.jpg
+review,0.8291,APTOS2019,grading,65e51e18242b,1,APTOS2019,grading,cac80797770f,2,APTOS2019/train_images/65e51e18242b.jpg,APTOS2019/train_images/cac80797770f.jpg
+review,0.8291,APTOS2019,grading,cac80797770f,2,APTOS2019,grading,cc12453ea915,1,APTOS2019/train_images/cac80797770f.jpg,APTOS2019/train_images/cc12453ea915.jpg
+review,0.8280,APTOS2019,grading,08bef347f40d,0,APTOS2019,grading,d1b279cc02ae,0,APTOS2019/train_images/08bef347f40d.jpg,APTOS2019/train_images/d1b279cc02ae.jpg
+review,0.8271,APTOS2019,grading,ac0a48ccbf70,0,APTOS2019,grading,be521870a0ea,0,APTOS2019/train_images/ac0a48ccbf70.jpg,APTOS2019/train_images/be521870a0ea.jpg
+review,0.8265,APTOS2019,grading,2b4c7b5f1f1e,0,APTOS2019,grading,821789e9053f,1,APTOS2019/train_images/2b4c7b5f1f1e.jpg,APTOS2019/train_images/821789e9053f.jpg
+review,0.8264,APTOS2019,grading,61d9c88a3a4b,0,APTOS2019,grading,a419fcb2dfb5,0,APTOS2019/train_images/61d9c88a3a4b.jpg,APTOS2019/train_images/a419fcb2dfb5.jpg
+review,0.8261,APTOS2019,grading,763ad1236efe,0,APTOS2019,grading,9e2058917304,0,APTOS2019/train_images/763ad1236efe.jpg,APTOS2019/train_images/9e2058917304.jpg
+review,0.8259,APTOS2019,grading,4a96c28f3f07,0,APTOS2019,grading,b553e7909535,0,APTOS2019/train_images/4a96c28f3f07.jpg,APTOS2019/train_images/b553e7909535.jpg
+review,0.8259,APTOS2019,grading,b665041e1633,2,APTOS2019,grading,cb28adab4e8a,0,APTOS2019/train_images/b665041e1633.jpg,APTOS2019/train_images/cb28adab4e8a.jpg
+review,0.8255,APTOS2019,grading,d26bb2ed6e71,0,APTOS2019,grading,d3dfd0a2dee6,0,APTOS2019/train_images/d26bb2ed6e71.jpg,APTOS2019/train_images/d3dfd0a2dee6.jpg
+review,0.8255,APTOS2019,grading,1864d3411143,0,APTOS2019,grading,a06b353e7bed,0,APTOS2019/train_images/1864d3411143.jpg,APTOS2019/train_images/a06b353e7bed.jpg
+review,0.8252,APTOS2019,grading,cd1c98ec48b1,0,APTOS2019,grading,d667af5742f6,0,APTOS2019/train_images/cd1c98ec48b1.jpg,APTOS2019/train_images/d667af5742f6.jpg
+review,0.8249,APTOS2019,grading,628b581aa905,0,APTOS2019,grading,af345c68e836,0,APTOS2019/train_images/628b581aa905.jpg,APTOS2019/train_images/af345c68e836.jpg
+review,0.8249,APTOS2019,grading,0abf0c485f66,0,APTOS2019,grading,b05922e7abd3,0,APTOS2019/train_images/0abf0c485f66.jpg,APTOS2019/train_images/b05922e7abd3.jpg
+review,0.8236,APTOS2019,grading,7eeb191ad06b,0,APTOS2019,grading,c334f8688b77,0,APTOS2019/train_images/7eeb191ad06b.jpg,APTOS2019/train_images/c334f8688b77.jpg
+review,0.8232,APTOS2019,grading,315c1a0d87fd,0,APTOS2019,grading,b0619ca93a5f,0,APTOS2019/train_images/315c1a0d87fd.jpg,APTOS2019/train_images/b0619ca93a5f.jpg
+review,0.8229,APTOS2019,grading,83df53d58f28,0,APTOS2019,grading,e60e4edb3ca9,0,APTOS2019/train_images/83df53d58f28.jpg,APTOS2019/train_images/e60e4edb3ca9.jpg
+review,0.8228,APTOS2019,grading,7b87b0015282,0,APTOS2019,grading,f71aca5a7dc3,0,APTOS2019/train_images/7b87b0015282.jpg,APTOS2019/train_images/f71aca5a7dc3.jpg
+review,0.8225,APTOS2019,grading,7ce671f952be,0,APTOS2019,grading,878e356c8fc9,0,APTOS2019/train_images/7ce671f952be.jpg,APTOS2019/train_images/878e356c8fc9.jpg
+review,0.8222,APTOS2019,grading,64c6c6ee0d98,0,APTOS2019,grading,674057ab250c,2,APTOS2019/train_images/64c6c6ee0d98.jpg,APTOS2019/train_images/674057ab250c.jpg
+review,0.8220,APTOS2019,grading,b92eacd1392a,0,APTOS2019,grading,cb2f3c5d71a7,1,APTOS2019/train_images/b92eacd1392a.jpg,APTOS2019/train_images/cb2f3c5d71a7.jpg
+review,0.8218,APTOS2019,grading,10de500cf0c5,0,APTOS2019,grading,61d9c88a3a4b,0,APTOS2019/train_images/10de500cf0c5.jpg,APTOS2019/train_images/61d9c88a3a4b.jpg
+review,0.8216,APTOS2019,grading,1d0b93317aa8,0,APTOS2019,grading,7569ac24762e,0,APTOS2019/train_images/1d0b93317aa8.jpg,APTOS2019/train_images/7569ac24762e.jpg
+review,0.8215,APTOS2019,grading,8bf2d925dc0c,0,APTOS2019,grading,991a0b7a8c87,0,APTOS2019/train_images/8bf2d925dc0c.jpg,APTOS2019/train_images/991a0b7a8c87.jpg
+review,0.8212,APTOS2019,grading,22d843b2bbd1,0,APTOS2019,grading,7a6e384a0846,3,APTOS2019/train_images/22d843b2bbd1.jpg,APTOS2019/train_images/7a6e384a0846.jpg
+review,0.8208,APTOS2019,grading,681c3c115684,2,APTOS2019,grading,b4e15102cd7a,0,APTOS2019/train_images/681c3c115684.jpg,APTOS2019/train_images/b4e15102cd7a.jpg
+review,0.8207,APTOS2019,grading,aeb6f4fd2eed,0,APTOS2019,grading,e47452069ea1,0,APTOS2019/train_images/aeb6f4fd2eed.jpg,APTOS2019/train_images/e47452069ea1.jpg
+review,0.8207,APTOS2019,grading,0cb6b898389f,0,APTOS2019,grading,9bbb6c455913,0,APTOS2019/train_images/0cb6b898389f.jpg,APTOS2019/train_images/9bbb6c455913.jpg
+review,0.8200,APTOS2019,grading,5cbe88914a72,0,APTOS2019,grading,ff4832d55461,0,APTOS2019/train_images/5cbe88914a72.jpg,APTOS2019/train_images/ff4832d55461.jpg
+review,0.8195,APTOS2019,grading,4350a1b2f3cb,0,APTOS2019,grading,ef7eb85b75fc,0,APTOS2019/train_images/4350a1b2f3cb.jpg,APTOS2019/train_images/ef7eb85b75fc.jpg
+review,0.8194,APTOS2019,grading,09934421c79e,0,APTOS2019,grading,a419fcb2dfb5,0,APTOS2019/train_images/09934421c79e.jpg,APTOS2019/train_images/a419fcb2dfb5.jpg
+review,0.8194,APTOS2019,grading,58eb3809f456,0,APTOS2019,grading,cb2f3c5d71a7,1,APTOS2019/train_images/58eb3809f456.jpg,APTOS2019/train_images/cb2f3c5d71a7.jpg
+review,0.8191,APTOS2019,grading,ee36ca728641,0,APTOS2019,grading,ee3fe7809e6a,0,APTOS2019/train_images/ee36ca728641.jpg,APTOS2019/train_images/ee3fe7809e6a.jpg
+review,0.8189,APTOS2019,grading,7f84284598f5,2,APTOS2019,grading,c56e65f74187,1,APTOS2019/train_images/7f84284598f5.jpg,APTOS2019/train_images/c56e65f74187.jpg
+review,0.8189,APTOS2019,grading,33b91def2035,0,APTOS2019,grading,7c2e852171c0,0,APTOS2019/train_images/33b91def2035.jpg,APTOS2019/train_images/7c2e852171c0.jpg
+review,0.8183,APTOS2019,grading,50f5201fd18a,0,APTOS2019,grading,f994a3b07935,0,APTOS2019/train_images/50f5201fd18a.jpg,APTOS2019/train_images/f994a3b07935.jpg
+review,0.8183,APTOS2019,grading,7e980424868e,0,APTOS2019,grading,bd375ba756b1,0,APTOS2019/train_images/7e980424868e.jpg,APTOS2019/train_images/bd375ba756b1.jpg
+review,0.8182,APTOS2019,grading,788ddb0b70b7,3,APTOS2019,grading,beb00fa6e7c9,0,APTOS2019/train_images/788ddb0b70b7.jpg,APTOS2019/train_images/beb00fa6e7c9.jpg
+review,0.8181,APTOS2019,grading,c406325360b1,2,APTOS2019,grading,ed2c52c14493,0,APTOS2019/train_images/c406325360b1.jpg,APTOS2019/train_images/ed2c52c14493.jpg
+review,0.8175,APTOS2019,grading,c406325360b1,2,APTOS2019,grading,f4d3169b468a,0,APTOS2019/train_images/c406325360b1.jpg,APTOS2019/train_images/f4d3169b468a.jpg
+review,0.8171,APTOS2019,grading,663a923d5398,2,APTOS2019,grading,ad12cde115ab,0,APTOS2019/train_images/663a923d5398.jpg,APTOS2019/train_images/ad12cde115ab.jpg
+review,0.8170,APTOS2019,grading,1db18bdd43aa,2,APTOS2019,grading,3f49f8d100e9,3,APTOS2019/train_images/1db18bdd43aa.jpg,APTOS2019/train_images/3f49f8d100e9.jpg
+review,0.8169,APTOS2019,grading,90a786abe58e,0,APTOS2019,grading,f71aca5a7dc3,0,APTOS2019/train_images/90a786abe58e.jpg,APTOS2019/train_images/f71aca5a7dc3.jpg
+review,0.8169,APTOS2019,grading,8bf2d925dc0c,0,APTOS2019,grading,b92eacd1392a,0,APTOS2019/train_images/8bf2d925dc0c.jpg,APTOS2019/train_images/b92eacd1392a.jpg
+review,0.8165,APTOS2019,grading,0231642cf1c2,0,APTOS2019,grading,c56e65f74187,1,APTOS2019/train_images/0231642cf1c2.jpg,APTOS2019/train_images/c56e65f74187.jpg
+review,0.8161,APTOS2019,grading,28a4d00927b7,2,APTOS2019,grading,9870ce41cac4,0,APTOS2019/train_images/28a4d00927b7.jpg,APTOS2019/train_images/9870ce41cac4.jpg
+review,0.8160,APTOS2019,grading,b759cbef90c5,0,APTOS2019,grading,ff1e940105f9,0,APTOS2019/train_images/b759cbef90c5.jpg,APTOS2019/train_images/ff1e940105f9.jpg
+review,0.8154,APTOS2019,grading,c5a0e84e955d,0,APTOS2019,grading,ff4832d55461,0,APTOS2019/train_images/c5a0e84e955d.jpg,APTOS2019/train_images/ff4832d55461.jpg
+review,0.8151,APTOS2019,grading,a06b353e7bed,0,APTOS2019,grading,f02956bd7c50,0,APTOS2019/train_images/a06b353e7bed.jpg,APTOS2019/train_images/f02956bd7c50.jpg
+review,0.8150,APTOS2019,grading,5ea9e447bb62,0,APTOS2019,grading,f58f0b2fd718,0,APTOS2019/train_images/5ea9e447bb62.jpg,APTOS2019/train_images/f58f0b2fd718.jpg
+review,0.8150,APTOS2019,grading,3c28fd846b43,0,APTOS2019,grading,79cbae28d8b2,0,APTOS2019/train_images/3c28fd846b43.jpg,APTOS2019/train_images/79cbae28d8b2.jpg
+review,0.8150,APTOS2019,grading,1b862fb6f65d,0,APTOS2019,grading,266fbefa58fb,0,APTOS2019/train_images/1b862fb6f65d.jpg,APTOS2019/train_images/266fbefa58fb.jpg
+review,0.8148,APTOS2019,grading,b92eacd1392a,0,APTOS2019,grading,c6d4e4a3bd4c,0,APTOS2019/train_images/b92eacd1392a.jpg,APTOS2019/train_images/c6d4e4a3bd4c.jpg
+review,0.8148,APTOS2019,grading,9bbb6c455913,0,APTOS2019,grading,b665041e1633,2,APTOS2019/train_images/9bbb6c455913.jpg,APTOS2019/train_images/b665041e1633.jpg
+review,0.8147,APTOS2019,grading,02da652c74b8,0,APTOS2019,grading,38e0e28d35d3,1,APTOS2019/train_images/02da652c74b8.jpg,APTOS2019/train_images/38e0e28d35d3.jpg
+review,0.8145,APTOS2019,grading,32ed318235b8,0,APTOS2019,grading,f4ea2a2cfbb9,0,APTOS2019/train_images/32ed318235b8.jpg,APTOS2019/train_images/f4ea2a2cfbb9.jpg
+review,0.8144,APTOS2019,grading,e5f332efcbc7,0,APTOS2019,grading,eeaea2c5ff34,0,APTOS2019/train_images/e5f332efcbc7.jpg,APTOS2019/train_images/eeaea2c5ff34.jpg
+review,0.8142,APTOS2019,grading,720b5f62ce80,0,APTOS2019,grading,a06e5ac695ce,0,APTOS2019/train_images/720b5f62ce80.jpg,APTOS2019/train_images/a06e5ac695ce.jpg
+review,0.8142,APTOS2019,grading,f71aca5a7dc3,0,APTOS2019,grading,ff4832d55461,0,APTOS2019/train_images/f71aca5a7dc3.jpg,APTOS2019/train_images/ff4832d55461.jpg
+review,0.8138,APTOS2019,grading,7d0a871c45db,0,APTOS2019,grading,acf976efd7ce,0,APTOS2019/train_images/7d0a871c45db.jpg,APTOS2019/train_images/acf976efd7ce.jpg
+review,0.8134,APTOS2019,grading,33b91def2035,0,APTOS2019,grading,ff1e940105f9,0,APTOS2019/train_images/33b91def2035.jpg,APTOS2019/train_images/ff1e940105f9.jpg
+review,0.8133,APTOS2019,grading,7f84284598f5,2,APTOS2019,grading,81bc03e2ff2b,2,APTOS2019/train_images/7f84284598f5.jpg,APTOS2019/train_images/81bc03e2ff2b.jpg
+review,0.8130,APTOS2019,grading,5db895d3f1fc,0,APTOS2019,grading,cd314653a4d8,0,APTOS2019/train_images/5db895d3f1fc.jpg,APTOS2019/train_images/cd314653a4d8.jpg
+review,0.8128,APTOS2019,grading,5077cdb88aed,0,APTOS2019,grading,7b87b0015282,0,APTOS2019/train_images/5077cdb88aed.jpg,APTOS2019/train_images/7b87b0015282.jpg
+review,0.8127,APTOS2019,grading,1f9ccda4ddf2,0,APTOS2019,grading,63b71347e95d,0,APTOS2019/train_images/1f9ccda4ddf2.jpg,APTOS2019/train_images/63b71347e95d.jpg
+review,0.8125,APTOS2019,grading,99c626e58464,0,APTOS2019,grading,bdf47b9f10c4,0,APTOS2019/train_images/99c626e58464.jpg,APTOS2019/train_images/bdf47b9f10c4.jpg
+review,0.8125,APTOS2019,grading,7d0a871c45db,0,APTOS2019,grading,8241e43408a8,0,APTOS2019/train_images/7d0a871c45db.jpg,APTOS2019/train_images/8241e43408a8.jpg
+review,0.8123,APTOS2019,grading,0ae2dd2e09ea,0,APTOS2019,grading,8bf2d925dc0c,0,APTOS2019/train_images/0ae2dd2e09ea.jpg,APTOS2019/train_images/8bf2d925dc0c.jpg
+review,0.8119,APTOS2019,grading,1db18bdd43aa,2,APTOS2019,grading,9870ce41cac4,0,APTOS2019/train_images/1db18bdd43aa.jpg,APTOS2019/train_images/9870ce41cac4.jpg
+review,0.8115,APTOS2019,grading,881ec6186e68,0,APTOS2019,grading,ff4832d55461,0,APTOS2019/train_images/881ec6186e68.jpg,APTOS2019/train_images/ff4832d55461.jpg
+review,0.8111,APTOS2019,grading,c57c164bca05,0,APTOS2019,grading,fa0c87bd75ce,0,APTOS2019/train_images/c57c164bca05.jpg,APTOS2019/train_images/fa0c87bd75ce.jpg
+review,0.8109,APTOS2019,grading,3b0190bbe615,0,APTOS2019,grading,ad93d88c87ea,0,APTOS2019/train_images/3b0190bbe615.jpg,APTOS2019/train_images/ad93d88c87ea.jpg
+review,0.8103,APTOS2019,grading,1db18bdd43aa,2,APTOS2019,grading,e5f332efcbc7,0,APTOS2019/train_images/1db18bdd43aa.jpg,APTOS2019/train_images/e5f332efcbc7.jpg
+review,0.8102,APTOS2019,grading,38c7153457e2,0,APTOS2019,grading,878e356c8fc9,0,APTOS2019/train_images/38c7153457e2.jpg,APTOS2019/train_images/878e356c8fc9.jpg
+review,0.8098,APTOS2019,grading,1db18bdd43aa,2,APTOS2019,grading,8dafa62f9322,0,APTOS2019/train_images/1db18bdd43aa.jpg,APTOS2019/train_images/8dafa62f9322.jpg
+review,0.8095,APTOS2019,grading,0182152c50de,0,APTOS2019,grading,7ce671f952be,0,APTOS2019/train_images/0182152c50de.jpg,APTOS2019/train_images/7ce671f952be.jpg
+review,0.8094,APTOS2019,grading,62b4be2799ca,0,APTOS2019,grading,eda1d75cbcf0,0,APTOS2019/train_images/62b4be2799ca.jpg,APTOS2019/train_images/eda1d75cbcf0.jpg
+review,0.8093,IDRiD,grading,IDRiD_127,2,APTOS2019,grading,348598d01e18,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_127.jpg,APTOS2019/train_images/348598d01e18.jpg
+review,0.8093,APTOS2019,grading,9858cc2ae073,0,APTOS2019,grading,db3cd58aa315,0,APTOS2019/train_images/9858cc2ae073.jpg,APTOS2019/train_images/db3cd58aa315.jpg
+review,0.8092,APTOS2019,grading,5cbe88914a72,0,APTOS2019,grading,c6d4e4a3bd4c,0,APTOS2019/train_images/5cbe88914a72.jpg,APTOS2019/train_images/c6d4e4a3bd4c.jpg
+review,0.8087,APTOS2019,grading,1dfe599d12a9,0,APTOS2019,grading,33b91def2035,0,APTOS2019/train_images/1dfe599d12a9.jpg,APTOS2019/train_images/33b91def2035.jpg
+review,0.8087,APTOS2019,grading,1b3647865779,0,APTOS2019,grading,ad12cde115ab,0,APTOS2019/train_images/1b3647865779.jpg,APTOS2019/train_images/ad12cde115ab.jpg
+review,0.8087,APTOS2019,grading,76095c338728,0,APTOS2019,grading,bd34a0639575,0,APTOS2019/train_images/76095c338728.jpg,APTOS2019/train_images/bd34a0639575.jpg
+review,0.8085,APTOS2019,grading,1891698febce,0,APTOS2019,grading,fb767cea406c,0,APTOS2019/train_images/1891698febce.jpg,APTOS2019/train_images/fb767cea406c.jpg
+review,0.8084,APTOS2019,grading,565f3404f9b2,0,APTOS2019,grading,7c2e852171c0,0,APTOS2019/train_images/565f3404f9b2.jpg,APTOS2019/train_images/7c2e852171c0.jpg
+review,0.8081,APTOS2019,grading,237aa50edc34,0,APTOS2019,grading,9b57e43b44e7,0,APTOS2019/train_images/237aa50edc34.jpg,APTOS2019/train_images/9b57e43b44e7.jpg
+review,0.8079,APTOS2019,grading,189cbbc9e5e3,0,APTOS2019,grading,d06ccd0cf4b8,1,APTOS2019/train_images/189cbbc9e5e3.jpg,APTOS2019/train_images/d06ccd0cf4b8.jpg
+review,0.8079,APTOS2019,grading,226c6ceb9185,0,APTOS2019,grading,4e85aa647534,0,APTOS2019/train_images/226c6ceb9185.jpg,APTOS2019/train_images/4e85aa647534.jpg
+review,0.8078,APTOS2019,grading,b8297a2291f5,0,APTOS2019,grading,f71aca5a7dc3,0,APTOS2019/train_images/b8297a2291f5.jpg,APTOS2019/train_images/f71aca5a7dc3.jpg
+review,0.8077,APTOS2019,grading,47536db39f00,0,APTOS2019,grading,f952ad2e4356,0,APTOS2019/train_images/47536db39f00.jpg,APTOS2019/train_images/f952ad2e4356.jpg
+review,0.8076,APTOS2019,grading,c6d4e4a3bd4c,0,APTOS2019,grading,cb2f3c5d71a7,1,APTOS2019/train_images/c6d4e4a3bd4c.jpg,APTOS2019/train_images/cb2f3c5d71a7.jpg
+review,0.8074,APTOS2019,grading,21037f5c7790,0,APTOS2019,grading,7adfb8fc0621,0,APTOS2019/train_images/21037f5c7790.jpg,APTOS2019/train_images/7adfb8fc0621.jpg
+review,0.8071,APTOS2019,grading,12ef75375322,0,APTOS2019,grading,bd34a0639575,0,APTOS2019/train_images/12ef75375322.jpg,APTOS2019/train_images/bd34a0639575.jpg
+review,0.8071,APTOS2019,grading,bd375ba756b1,0,APTOS2019,grading,c56e65f74187,1,APTOS2019/train_images/bd375ba756b1.jpg,APTOS2019/train_images/c56e65f74187.jpg
+review,0.8071,APTOS2019,grading,5cbe88914a72,0,APTOS2019,grading,b6bf847fbcb2,0,APTOS2019/train_images/5cbe88914a72.jpg,APTOS2019/train_images/b6bf847fbcb2.jpg
+review,0.8070,APTOS2019,grading,2209daf71aab,0,APTOS2019,grading,d3dfd0a2dee6,0,APTOS2019/train_images/2209daf71aab.jpg,APTOS2019/train_images/d3dfd0a2dee6.jpg
+review,0.8062,APTOS2019,grading,0125fbd2e791,0,APTOS2019,grading,315c1a0d87fd,0,APTOS2019/train_images/0125fbd2e791.jpg,APTOS2019/train_images/315c1a0d87fd.jpg
+review,0.8062,APTOS2019,grading,09934421c79e,0,APTOS2019,grading,61d9c88a3a4b,0,APTOS2019/train_images/09934421c79e.jpg,APTOS2019/train_images/61d9c88a3a4b.jpg
+review,0.8062,APTOS2019,grading,84b88e8d3bca,0,APTOS2019,grading,d6130f2ec903,0,APTOS2019/train_images/84b88e8d3bca.jpg,APTOS2019/train_images/d6130f2ec903.jpg
+review,0.8061,APTOS2019,grading,495106ae3b68,0,APTOS2019,grading,c70d09370109,2,APTOS2019/train_images/495106ae3b68.jpg,APTOS2019/train_images/c70d09370109.jpg
+review,0.8060,APTOS2019,grading,33b91def2035,0,APTOS2019,grading,ad93d88c87ea,0,APTOS2019/train_images/33b91def2035.jpg,APTOS2019/train_images/ad93d88c87ea.jpg
+review,0.8059,APTOS2019,grading,63363410389a,1,APTOS2019,grading,a2b97d98f130,0,APTOS2019/train_images/63363410389a.jpg,APTOS2019/train_images/a2b97d98f130.jpg
+review,0.8059,APTOS2019,grading,7a6e384a0846,3,APTOS2019,grading,7b691d9ced34,0,APTOS2019/train_images/7a6e384a0846.jpg,APTOS2019/train_images/7b691d9ced34.jpg
+review,0.8059,APTOS2019,grading,7a6e384a0846,3,APTOS2019,grading,d51c2153d151,0,APTOS2019/train_images/7a6e384a0846.jpg,APTOS2019/train_images/d51c2153d151.jpg
+review,0.8058,APTOS2019,grading,2f8d14a7d390,0,APTOS2019,grading,44f7f3ef9d50,0,APTOS2019/train_images/2f8d14a7d390.jpg,APTOS2019/train_images/44f7f3ef9d50.jpg
+review,0.8057,APTOS2019,grading,99c6a123ed6a,0,APTOS2019,grading,e1dc02a3dc2a,0,APTOS2019/train_images/99c6a123ed6a.jpg,APTOS2019/train_images/e1dc02a3dc2a.jpg
+review,0.8055,APTOS2019,grading,76cab26493f1,0,APTOS2019,grading,b05922e7abd3,0,APTOS2019/train_images/76cab26493f1.jpg,APTOS2019/train_images/b05922e7abd3.jpg
+review,0.8054,APTOS2019,grading,360832d84ce0,0,APTOS2019,grading,8906c9ed54a2,0,APTOS2019/train_images/360832d84ce0.jpg,APTOS2019/train_images/8906c9ed54a2.jpg
+review,0.8054,APTOS2019,grading,8906c9ed54a2,0,APTOS2019,grading,f02956bd7c50,0,APTOS2019/train_images/8906c9ed54a2.jpg,APTOS2019/train_images/f02956bd7c50.jpg
+review,0.8053,APTOS2019,grading,7b87b0015282,0,APTOS2019,grading,bc92a61a1f9c,0,APTOS2019/train_images/7b87b0015282.jpg,APTOS2019/train_images/bc92a61a1f9c.jpg
+review,0.8053,APTOS2019,grading,15b21c80cc31,0,APTOS2019,grading,1f3f32efaf20,0,APTOS2019/train_images/15b21c80cc31.jpg,APTOS2019/train_images/1f3f32efaf20.jpg
+review,0.8052,APTOS2019,grading,9f1b14dfa14c,0,APTOS2019,grading,d29b37d110f3,0,APTOS2019/train_images/9f1b14dfa14c.jpg,APTOS2019/train_images/d29b37d110f3.jpg
+review,0.8051,APTOS2019,grading,9cf7c1349673,0,APTOS2019,grading,a0adbe677508,0,APTOS2019/train_images/9cf7c1349673.jpg,APTOS2019/train_images/a0adbe677508.jpg
+review,0.8051,APTOS2019,grading,b6a0e348a01e,1,APTOS2019,grading,cac80797770f,2,APTOS2019/train_images/b6a0e348a01e.jpg,APTOS2019/train_images/cac80797770f.jpg
+review,0.8050,APTOS2019,grading,2f81ee5f2926,0,APTOS2019,grading,f35d80bb1a22,0,APTOS2019/train_images/2f81ee5f2926.jpg,APTOS2019/train_images/f35d80bb1a22.jpg
+review,0.8049,APTOS2019,grading,2b5bb6d33959,0,APTOS2019,grading,e087bd4b88f2,0,APTOS2019/train_images/2b5bb6d33959.jpg,APTOS2019/train_images/e087bd4b88f2.jpg
+review,0.8046,APTOS2019,grading,7bc00e58d419,0,APTOS2019,grading,ec57cc20d776,0,APTOS2019/train_images/7bc00e58d419.jpg,APTOS2019/train_images/ec57cc20d776.jpg
+review,0.8044,APTOS2019,grading,c334f8688b77,0,APTOS2019,grading,d1b279cc02ae,0,APTOS2019/train_images/c334f8688b77.jpg,APTOS2019/train_images/d1b279cc02ae.jpg
+review,0.8043,APTOS2019,grading,4a4cb731f91a,0,APTOS2019,grading,e47452069ea1,0,APTOS2019/train_images/4a4cb731f91a.jpg,APTOS2019/train_images/e47452069ea1.jpg
+review,0.8043,APTOS2019,grading,2ef955d6d9ff,0,APTOS2019,grading,f952ad2e4356,0,APTOS2019/train_images/2ef955d6d9ff.jpg,APTOS2019/train_images/f952ad2e4356.jpg
+review,0.8042,APTOS2019,grading,7831ce1d895e,0,APTOS2019,grading,eebd1e195952,0,APTOS2019/train_images/7831ce1d895e.jpg,APTOS2019/train_images/eebd1e195952.jpg
+review,0.8042,APTOS2019,grading,21d18b022429,4,APTOS2019,grading,e4210e7fe587,3,APTOS2019/train_images/21d18b022429.jpg,APTOS2019/train_images/e4210e7fe587.jpg
+review,0.8038,APTOS2019,grading,d7a01fca9838,0,APTOS2019,grading,fa0c87bd75ce,0,APTOS2019/train_images/d7a01fca9838.jpg,APTOS2019/train_images/fa0c87bd75ce.jpg
+review,0.8035,APTOS2019,grading,7a77c3eb468c,0,APTOS2019,grading,d1b279cc02ae,0,APTOS2019/train_images/7a77c3eb468c.jpg,APTOS2019/train_images/d1b279cc02ae.jpg
+review,0.8035,APTOS2019,grading,540e4973829e,0,APTOS2019,grading,65cf00be6fb4,0,APTOS2019/train_images/540e4973829e.jpg,APTOS2019/train_images/65cf00be6fb4.jpg
+review,0.8034,APTOS2019,grading,0231642cf1c2,0,APTOS2019,grading,bd375ba756b1,0,APTOS2019/train_images/0231642cf1c2.jpg,APTOS2019/train_images/bd375ba756b1.jpg
+review,0.8033,APTOS2019,grading,1f3f32efaf20,0,APTOS2019,grading,8e67f2d7e0ee,0,APTOS2019/train_images/1f3f32efaf20.jpg,APTOS2019/train_images/8e67f2d7e0ee.jpg
+review,0.8031,APTOS2019,grading,aa6242f9e08c,0,APTOS2019,grading,ad12cde115ab,0,APTOS2019/train_images/aa6242f9e08c.jpg,APTOS2019/train_images/ad12cde115ab.jpg
+review,0.8031,APTOS2019,grading,f00ce9b9d6f4,0,APTOS2019,grading,ff1e940105f9,0,APTOS2019/train_images/f00ce9b9d6f4.jpg,APTOS2019/train_images/ff1e940105f9.jpg
+review,0.8030,APTOS2019,grading,1ae8c165fd53,2,APTOS2019,grading,2209daf71aab,0,APTOS2019/train_images/1ae8c165fd53.jpg,APTOS2019/train_images/2209daf71aab.jpg
+review,0.8030,APTOS2019,grading,2209daf71aab,0,APTOS2019,grading,5a36cea278ae,2,APTOS2019/train_images/2209daf71aab.jpg,APTOS2019/train_images/5a36cea278ae.jpg
+review,0.8028,APTOS2019,grading,be7f791a7877,0,APTOS2019,grading,f2f569a64949,0,APTOS2019/train_images/be7f791a7877.jpg,APTOS2019/train_images/f2f569a64949.jpg
+review,0.8028,APTOS2019,grading,763ad1236efe,0,APTOS2019,grading,ae57c8630249,0,APTOS2019/train_images/763ad1236efe.jpg,APTOS2019/train_images/ae57c8630249.jpg
+review,0.8027,APTOS2019,grading,5e97cb2b0888,0,APTOS2019,grading,8ffa608170d3,0,APTOS2019/train_images/5e97cb2b0888.jpg,APTOS2019/train_images/8ffa608170d3.jpg
+review,0.8026,APTOS2019,grading,7af4d8704032,0,APTOS2019,grading,d0926ed2c8e5,0,APTOS2019/train_images/7af4d8704032.jpg,APTOS2019/train_images/d0926ed2c8e5.jpg
+review,0.8026,APTOS2019,grading,3601dac9bed7,0,APTOS2019,grading,db3cd58aa315,0,APTOS2019/train_images/3601dac9bed7.jpg,APTOS2019/train_images/db3cd58aa315.jpg
+review,0.8025,APTOS2019,grading,5077cdb88aed,0,APTOS2019,grading,5d4e5fd34d91,0,APTOS2019/train_images/5077cdb88aed.jpg,APTOS2019/train_images/5d4e5fd34d91.jpg
+review,0.8021,APTOS2019,grading,0da632ca45e0,0,APTOS2019,grading,5a0fe0ee4301,0,APTOS2019/train_images/0da632ca45e0.jpg,APTOS2019/train_images/5a0fe0ee4301.jpg
+review,0.8021,APTOS2019,grading,2f8d14a7d390,0,APTOS2019,grading,57f933d3d7c7,2,APTOS2019/train_images/2f8d14a7d390.jpg,APTOS2019/train_images/57f933d3d7c7.jpg
+review,0.8020,APTOS2019,grading,a86128b601a7,0,APTOS2019,grading,eda1d75cbcf0,0,APTOS2019/train_images/a86128b601a7.jpg,APTOS2019/train_images/eda1d75cbcf0.jpg
+review,0.8019,APTOS2019,grading,4ef16a53d899,0,APTOS2019,grading,fb88783de055,0,APTOS2019/train_images/4ef16a53d899.jpg,APTOS2019/train_images/fb88783de055.jpg
+review,0.8018,APTOS2019,grading,ae61e19fb766,0,APTOS2019,grading,cbc23af521f3,0,APTOS2019/train_images/ae61e19fb766.jpg,APTOS2019/train_images/cbc23af521f3.jpg
+review,0.8017,APTOS2019,grading,540e4973829e,0,APTOS2019,grading,9f1b14dfa14c,0,APTOS2019/train_images/540e4973829e.jpg,APTOS2019/train_images/9f1b14dfa14c.jpg
+review,0.8016,APTOS2019,grading,26fc2358a38d,0,APTOS2019,grading,bed8296c8dfe,0,APTOS2019/train_images/26fc2358a38d.jpg,APTOS2019/train_images/bed8296c8dfe.jpg
+review,0.8014,APTOS2019,grading,96b5474ae604,0,APTOS2019,grading,cd1c98ec48b1,0,APTOS2019/train_images/96b5474ae604.jpg,APTOS2019/train_images/cd1c98ec48b1.jpg
+review,0.8014,APTOS2019,grading,4e1e252317b5,0,APTOS2019,grading,941d874c8afb,0,APTOS2019/train_images/4e1e252317b5.jpg,APTOS2019/train_images/941d874c8afb.jpg
+review,0.8012,IDRiD,grading,IDRiD_269,3,APTOS2019,grading,d160ebef4117,0,IDRiD/B. Disease Grading/B. Disease Grading/1. Original Images/a. Training Set/IDRiD_269.jpg,APTOS2019/train_images/d160ebef4117.jpg
+review,0.8012,APTOS2019,grading,164cd5a3a6cd,0,APTOS2019,grading,4860f7813654,0,APTOS2019/train_images/164cd5a3a6cd.jpg,APTOS2019/train_images/4860f7813654.jpg
+review,0.8010,APTOS2019,grading,35777eb7859d,0,APTOS2019,grading,61f403fdb434,4,APTOS2019/train_images/35777eb7859d.jpg,APTOS2019/train_images/61f403fdb434.jpg
+review,0.8009,APTOS2019,grading,0a9ec1e99ce4,2,APTOS2019,grading,2d552318eb07,2,APTOS2019/train_images/0a9ec1e99ce4.jpg,APTOS2019/train_images/2d552318eb07.jpg
+review,0.8007,APTOS2019,grading,57f933d3d7c7,2,APTOS2019,grading,aa60813e1a8d,0,APTOS2019/train_images/57f933d3d7c7.jpg,APTOS2019/train_images/aa60813e1a8d.jpg
+review,0.8006,APTOS2019,grading,1faf8664816c,0,APTOS2019,grading,6b66b0e86f7e,0,APTOS2019/train_images/1faf8664816c.jpg,APTOS2019/train_images/6b66b0e86f7e.jpg
+review,0.8005,APTOS2019,grading,73ba798fee25,0,APTOS2019,grading,76095c338728,0,APTOS2019/train_images/73ba798fee25.jpg,APTOS2019/train_images/76095c338728.jpg
+review,0.8004,APTOS2019,grading,99c6a123ed6a,0,APTOS2019,grading,bd06028eb7dd,0,APTOS2019/train_images/99c6a123ed6a.jpg,APTOS2019/train_images/bd06028eb7dd.jpg
+review,0.8004,APTOS2019,grading,894a37fc3738,0,APTOS2019,grading,cb28adab4e8a,0,APTOS2019/train_images/894a37fc3738.jpg,APTOS2019/train_images/cb28adab4e8a.jpg
+review,0.8002,APTOS2019,grading,5056fa7d505f,0,APTOS2019,grading,90a9a41eec6d,0,APTOS2019/train_images/5056fa7d505f.jpg,APTOS2019/train_images/90a9a41eec6d.jpg
+review,0.8001,APTOS2019,grading,99c6a123ed6a,0,APTOS2019,grading,ed2c52c14493,0,APTOS2019/train_images/99c6a123ed6a.jpg,APTOS2019/train_images/ed2c52c14493.jpg
+review,0.8001,APTOS2019,grading,8dafa62f9322,0,APTOS2019,grading,e5f332efcbc7,0,APTOS2019/train_images/8dafa62f9322.jpg,APTOS2019/train_images/e5f332efcbc7.jpg
+review,0.8000,APTOS2019,grading,21037f5c7790,0,APTOS2019,grading,d667af5742f6,0,APTOS2019/train_images/21037f5c7790.jpg,APTOS2019/train_images/d667af5742f6.jpg

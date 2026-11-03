@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DR-PINN Research Dashboard</title>
+<style>
+:root {
+  --bg: #f6f7f9; --panel: #ffffff; --ink: #1d232b; --muted: #5d6875; --line: #dfe3e8;
+  --accent: #1f6f8b; --accent-ink: #ffffff; --warn-bg: #fff4d6; --warn-ink: #6b4b00;
+  --bad: #b3261e; --good: #1e7a46; --bar: #1f6f8b; --bar-bg: #e9edf1; --chip: #eef2f5;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161b; --panel: #1a2027; --ink: #e6eaee; --muted: #9aa5b1; --line: #2c343d;
+    --accent: #4fa3c0; --accent-ink: #0d1114; --warn-bg: #3a3014; --warn-ink: #f2d27a;
+    --bad: #f08a80; --good: #6fcf97; --bar: #4fa3c0; --bar-bg: #26303a; --chip: #232b33;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+header { padding: 18px 24px 10px; border-bottom: 1px solid var(--line); background: var(--panel); }
+header h1 { margin: 0; font-size: 20px; letter-spacing: .2px; }
+header p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.banner { background: var(--warn-bg); color: var(--warn-ink); padding: 10px 24px; font-size: 13.5px; border-bottom: 1px solid var(--line); }
+main { max-width: 1180px; margin: 0 auto; padding: 18px 16px 48px; display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; grid-column: span 12; min-width: 0; }
+section.half { grid-column: span 6; }
+@media (max-width: 860px) { section.half { grid-column: span 12; } }
+section h2 { margin: 0 0 10px; font-size: 15px; display: flex; flex-wrap: wrap; gap: 2px 8px; align-items: baseline; }
+section h2 .n { color: var(--muted); font-weight: 500; font-size: 13px; }
+.muted { color: var(--muted); font-size: 13px; }
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+button { background: var(--accent); color: var(--accent-ink); border: 0; border-radius: 7px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+button.secondary { background: var(--chip); color: var(--ink); font-weight: 500; }
+button:disabled { opacity: .5; cursor: default; }
+input[type=number] { width: 90px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); font: inherit; }
+.drop { border: 2px dashed var(--line); border-radius: 10px; padding: 18px; text-align: center; color: var(--muted); cursor: pointer; }
+.drop.over { border-color: var(--accent); }
+.preview { position: relative; display: inline-block; max-width: 100%; margin-top: 12px; cursor: crosshair; }
+.preview img { display: block; max-width: 100%; max-height: 420px; border-radius: 8px; }
+.marker { position: absolute; border: 2px solid #33d17a; border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; }
+.marker.estimated { border-style: dashed; border-color: #f5c211; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+td, th { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 500; }
+.chip { display: inline-block; background: var(--chip); border-radius: 999px; padding: 2px 10px; font-size: 12.5px; margin: 2px 4px 2px 0; }
+.chip.bad { color: var(--bad); } .chip.good { color: var(--good); }
+.bars { display: grid; grid-template-columns: 120px 1fr 52px; gap: 6px 10px; align-items: center; font-size: 13.5px; }
+.bar { height: 12px; background: var(--bar-bg); border-radius: 6px; overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--bar); }
+.big { font-size: 26px; font-weight: 650; }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-size: 13.5px; }
+.kv b { font-weight: 600; }
+.gauge { position: relative; height: 14px; background: var(--bar-bg); border-radius: 7px; margin: 8px 0 4px; }
+.gauge i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--bar); border-radius: 7px; }
+.gauge u { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--ink); }
+figure { margin: 0; }
+figure img { width: 100%; max-width: 560px; border-radius: 8px; display: block; image-rendering: auto; }
+.ramp { display: inline-block; width: 140px; height: 10px; border-radius: 5px; vertical-align: -1px; margin: 0 6px; background: linear-gradient(90deg, #000004, #420a68, #932667, #dd513a, #fca50a, #fcffa4); }
+figcaption { color: var(--muted); font-size: 12.5px; margin-top: 6px; }
+.placeholder { color: var(--muted); font-size: 13.5px; padding: 6px 0; }
+.err { color: var(--bad); font-weight: 600; }
+.spin { display: inline-block; width: 14px; height: 14px; border: 2px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: s 0.8s linear infinite; vertical-align: -2px; }
+@keyframes s { to { transform: rotate(360deg); } }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -2px; margin-right: 4px; }
+ul { margin: 4px 0; padding-left: 20px; } li { margin: 2px 0; font-size: 13.5px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>DR-PINN · retinal triage and hemodynamic risk map</h1>
+  <p>B.Tech research prototype · <span id="ver">loading…</span></p>
+</header>
+<div class="banner" id="disclaimer"><b>Research prototype, not a medical device.</b> Outputs are experimental, rest on stated modelling assumptions, and must not be used for diagnosis, referral or treatment decisions.</div>
+<main>
+
+<section id="s-status">
+  <h2>1 · System status <span class="n">which parts of the pipeline are available</span></h2>
+  <div id="status" class="placeholder">Checking…</div>
+</section>
+
+<section id="s-upload">
+  <h2>2 · Photo <span class="n">upload a colour fundus photo (JPEG, PNG or TIFF)</span></h2>
+  <div class="drop" id="drop">Drop a photo here or click to choose one<input type="file" id="file" accept="image/*,.tif,.tiff" hidden></div>
+  <div class="preview" id="preview" hidden><img id="previewImg" alt="uploaded fundus photo"><div class="marker" id="marker" hidden></div></div>
+  <p class="muted" id="discHint" hidden>Click the centre of the optic disc to set it (recommended). Without a click the disc is estimated.</p>
+  <div class="row" style="margin-top:10px">
+    <label class="muted">Disc diameter (px, optional) <input type="number" id="discD" min="1" placeholder="auto"></label>
+    <label class="muted">Monte Carlo samples <input type="number" id="mc" min="5" max="200" value="50"></label>
+    <button id="go" disabled>Analyse</button>
+    <button class="secondary" id="clearDisc" hidden>Use estimated disc</button>
+    <span id="busy" class="muted"></span>
+  </div>
+</section>
+
+<section class="half" id="s-quality">
+  <h2>3 · Image quality <span class="n">compared with the training photos</span></h2>
+  <div id="quality" class="placeholder">No photo analysed yet.</div>
+</section>
+
+<section class="half" id="s-triage">
+  <h2>4 · DR grade triage <span class="n">calibrated on validation photos</span></h2>
+  <div id="triage" class="placeholder">No photo analysed yet.</div>
+</section>
+
+<section class="half" id="s-gradcam">
+  <h2>5 · Where the evidence came from <span class="n">Grad-CAM for P(referable)</span></h2>
+  <div id="gradcam" class="placeholder">No photo analysed yet.</div>
+</section>
+
+<section class="half" id="s-vessels">
+  <h2>6 · Vessels, arteries and veins <span class="n">U-Net (M5) at working scale</span></h2>
+  <div id="vessels" class="placeholder">No photo analysed yet.</div>
+</section>
+
+<section id="s-shear">
+  <h2>7 · Wall-shear-stress risk map <span class="n">Monte Carlo physics on artery and vein graphs (M7)</span></h2>
+  <div id="shear" class="placeholder">No photo analysed yet.</div>
+</section>
+
+<section class="half" id="s-assume">
+  <h2>8 · Assumptions behind the map <span class="n">what the physics could not measure</span></h2>
+  <div id="assume" class="placeholder">Shown after an analysis with the vessel model.</div>
+</section>
+
+<section class="half" id="s-limits">
+  <h2>9 · How to read this <span class="n">limits of every output</span></h2>
+  <ul>
+    <li><b>Triage</b>: ranks photos for research; the threshold was set for ≥ 90 % sensitivity on APTOS validation photos and may not carry over to other cameras.</li>
+    <li><b>Quality flags</b>: compare the photo with the training photos; they are not a validated gradability check.</li>
+    <li><b>Grad-CAM</b>: a coarse localisation aid, not a lesion detector; it can look convincing for wrong predictions.</li>
+    <li><b>Shear map</b>: a ranking under assumed boundary conditions. Whether high-shear regions relate to lesions is the open research question tested in M7; it is not a prediction of future lesions.</li>
+    <li><b>Optic disc</b>: placing it by click is more reliable than the estimate.</li>
+  </ul>
+</section>
+
+<section id="s-report">
+  <h2>10 · Report <span class="n">everything above as JSON, with timings</span></h2>
+  <div id="report" class="placeholder">No photo analysed yet.</div>
+</section>
+
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const fmt = (x, d = 3) => (x === null || x === undefined || Number.isNaN(x)) ? "–" : Number(x).toFixed(d);
+const pct = (x) => (x === null || x === undefined) ? "–" : (100 * x).toFixed(0) + " %";
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+let file = null, disc = null, natural = null, lastResult = null;
+
+async function loadHealth() {
+  try {
+    const r = await fetch("api/health");
+    renderHealth(await r.json());
+  } catch (e) {
+    $("status").innerHTML = `<span class="err">The backend is not reachable (${esc(e.message)}).</span>`;
+  }
+}
+
+function renderHealth(h) {
+  {
+    $("ver").textContent = `code version ${h.version} · ${h.device}`;
+    $("disclaimer").innerHTML = "<b>" + esc(h.disclaimer) + "</b> Do not use for diagnosis, referral or treatment.";
+    const rows = Object.entries(h.components).map(([k, v]) =>
+      `<tr><td>${esc(k)}</td><td><span class="chip ${v.available ? "good" : "bad"}">${v.available ? "available" : "not available"}</span></td><td>${esc(v.detail || "")}</td></tr>`).join("");
+    $("status").innerHTML = `<table><tr><th>component</th><th>state</th><th>detail</th></tr>${rows}</table>
+      <p class="muted">Radius error used by the physics: σ = ${fmt(h.radius_sigma, 3)} (${esc(h.radius_sigma_source)}).</p>`;
+    $("mc").value = h.default_mc_samples;
+  }
+}
+
+function setFile(f) {
+  if (!f) return;
+  file = f; disc = null; $("go").disabled = false;
+  const url = URL.createObjectURL(f);
+  const img = $("previewImg");
+  img.onload = () => { natural = [img.naturalWidth, img.naturalHeight]; drawMarker(); };
+  img.onerror = () => { $("preview").hidden = true; $("discHint").textContent = "The browser cannot preview this file (e.g. TIFF); it can still be analysed. The disc will be estimated."; $("discHint").hidden = false; };
+  img.src = url; $("preview").hidden = false; $("discHint").hidden = false; $("clearDisc").hidden = true;
+}
+$("drop").onclick = () => $("file").click();
+$("file").onchange = (e) => setFile(e.target.files[0]);
+$("drop").ondragover = (e) => { e.preventDefault(); $("drop").classList.add("over"); };
+$("drop").ondragleave = () => $("drop").classList.remove("over");
+$("drop").ondrop = (e) => { e.preventDefault(); $("drop").classList.remove("over"); setFile(e.dataTransfer.files[0]); };
+
+$("preview").onclick = (e) => {
+  if (!natural) return;
+  const img = $("previewImg"), r = img.getBoundingClientRect();
+  disc = { x: (e.clientX - r.left) * natural[0] / r.width, y: (e.clientY - r.top) * natural[1] / r.height, estimated: false };
+  $("clearDisc").hidden = false; drawMarker();
+};
+$("clearDisc").onclick = () => { disc = null; $("clearDisc").hidden = true; drawMarker(); };
+
+function drawMarker() {
+  const m = $("marker"), img = $("previewImg");
+  if (!disc || !natural) { m.hidden = true; return; }
+  const s = img.clientWidth / natural[0];
+  const d = (disc.d || Number($("discD").value) || 0.16 * Math.min(...natural)) * s;
+  m.style.left = disc.x * s + "px"; m.style.top = disc.y * s + "px";
+  m.style.width = m.style.height = Math.max(10, d) + "px";
+  m.classList.toggle("estimated", !!disc.estimated); m.hidden = false;
+}
+window.addEventListener("resize", drawMarker);
+
+$("go").onclick = async () => {
+  if (!file) return;
+  const fd = new FormData();
+  fd.append("image", file);
+  if (disc && !disc.estimated) { fd.append("disc_x", disc.x); fd.append("disc_y", disc.y); }
+  if ($("discD").value) fd.append("disc_diameter", $("discD").value);
+  fd.append("mc_samples", $("mc").value || 50);
+  $("go").disabled = true;
+  $("busy").innerHTML = '<span class="spin"></span> Analysing… the physics runs many simulations, so this can take a minute on CPU.';
+  try {
+    const r = await fetch("api/analyse", { method: "POST", body: fd });
+    const j = await r.json();
+    if (!r.ok) throw new Error(typeof j.detail === "string" ? j.detail : JSON.stringify(j.detail));
+    lastResult = j; render(j);
+    $("busy").textContent = `Done in ${fmt(j.seconds.total, 1)} s.`;
+  } catch (e) {
+    $("busy").innerHTML = `<span class="err">${esc(e.message)}</span>`;
+  } finally { $("go").disabled = false; }
+};
+
+function unavailable(x) { return `<p class="placeholder">Not available: ${esc(x.detail || "unknown reason")}</p>`; }
+
+function render(j) {
+  // 3 quality
+  const q = j.quality, names = { fov_fraction: "field of view (share of photo)", brightness: "brightness", contrast: "contrast", clipped: "clipped pixels", sharpness: "sharpness" };
+  $("quality").innerHTML = `<table>${Object.entries(q.metrics).map(([k, v]) => `<tr><td>${names[k] || k}</td><td>${fmt(v, 3)}</td></tr>`).join("")}</table>
+    <p>${q.flags.length ? q.flags.map((f) => `<span class="chip bad">${esc(f)}</span>`).join("") : '<span class="chip good">within the training range</span>'}</p>
+    <p class="muted">Reference: ${esc(q.reference)}.</p>`;
+  // 4 triage
+  const t = j.triage;
+  if (!t.available) { $("triage").innerHTML = unavailable(t); $("gradcam").innerHTML = unavailable(t); }
+  else {
+    const gn = ["0 · No DR", "1 · Mild", "2 · Moderate", "3 · Severe", "4 · Proliferative"];
+    const thr = t.operating_point.referral_threshold;
+    $("triage").innerHTML = `<div class="row"><div><div class="muted">most likely grade</div><div class="big">${esc(t.grade_name)}</div></div>
+      <div><div class="muted">research priority</div><div class="big" style="font-size:20px">${esc(t.priority)}</div></div></div>
+      <div class="bars" style="margin-top:10px">${t.grade_probabilities.map((p, i) => `<span>${gn[i]}</span><span class="bar"><i style="width:${100 * p}%"></i></span><span>${pct(p)}</span>`).join("")}</div>
+      <div style="margin-top:12px" class="muted">P(referable, grade ≥ 2) = <b>${fmt(t.p_referable, 2)}</b> · threshold ${fmt(thr, 2)} (set for ≥ ${pct(t.operating_point.target_sensitivity)} sensitivity on validation)</div>
+      <div class="gauge"><i style="width:${100 * t.p_referable}%"></i><u style="left:${100 * thr}%"></u></div>
+      <div class="muted">Uncertainty (normalised entropy) ${fmt(t.uncertainty, 2)} · limit ${fmt(t.operating_point.uncertainty_limit, 2)}</div>
+      ${t.notes.length ? `<ul>${t.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}`;
+    $("gradcam").innerHTML = t.gradcam_png ? `<div class="row"><figure style="flex:1"><img src="data:image/png;base64,${t.input_png}" alt="model input"><figcaption>Model input (field of view, ${esc(t.model)})</figcaption></figure>
+      <figure style="flex:1"><img src="data:image/png;base64,${t.gradcam_png}" alt="Grad-CAM"><figcaption>Brighter = raised P(referable) more</figcaption></figure></div>` : '<p class="placeholder">Images not requested.</p>';
+  }
+  // disc marker from the response
+  if (j.disc && j.disc.available) {
+    disc = { x: j.disc.x, y: j.disc.y, d: j.disc.diameter, estimated: j.disc.source.startsWith("estimated") };
+    $("clearDisc").hidden = disc.estimated; drawMarker();
+  }
+  // 6 vessels
+  const v = j.vessels;
+  if (!v.available) $("vessels").innerHTML = unavailable(v);
+  else {
+    const g = v.graphs || {};
+    $("vessels").innerHTML = `${v.overlay_png ? `<figure><img src="data:image/png;base64,${v.overlay_png}" alt="vessel overlay"><figcaption>
+      <span class="legend"><span><span class="sw" style="background:#dc2828"></span>artery</span><span><span class="sw" style="background:#285ae6"></span>vein</span><span><span class="sw" style="background:#e6e6e6"></span>vessel, type unsure</span><span><span class="sw" style="background:#00ff00"></span>optic disc used</span></span></figcaption></figure>` : ""}
+      <div class="kv" style="margin-top:10px"><b>vessel share of field of view</b><span>${pct(v.vessel_fraction_of_fov)}</span>
+      ${["artery", "vein", "combined"].map((k) => g[k + "_segments"] !== undefined ? `<b>${k} graph</b><span>${g[k + "_segments"]} segments in ${g[k + "_components"]} pieces, ${(g[k + "_crossings_split"] || 0) + (g[k + "_possible_crossings"] || 0)} crossings</span>` : "").join("")}
+      <b>optic disc</b><span>${esc(j.disc.source || "")}</span></div>`;
+  }
+  // 7 shear + 8 assumptions
+  const s = j.shear;
+  if (!s.available) { $("shear").innerHTML = unavailable(s); $("assume").innerHTML = unavailable(s); }
+  else {
+    const tr = Object.entries(s.trees).map(([k, x]) => `<tr><td>${k}</td><td>${x.solved} of ${x.segments}</td><td>${fmt(x.rank_stability, 2)}</td></tr>`).join("");
+    const top = s.top_patches.map((p, i) => `<tr><td>${i + 1}</td><td>(${fmt(p.x, 0)}, ${fmt(p.y, 0)})</td><td>${pct(p.p_top10)}</td><td>${fmt(p.dist_disc_dd, 1)}</td></tr>`).join("");
+    $("shear").innerHTML = `<div class="row" style="align-items:flex-start">
+      ${s.overlay_png ? `<figure style="flex:1 1 380px"><img src="data:image/png;base64,${s.overlay_png}" alt="shear risk map"><figcaption>0 %<span class="ramp"></span>100 % of samples in the tree's top 10 % of wall shear stress · ${s.patches_analysed} vessel patches of ${fmt(s.patch_px_original, 0)} px · green ring = optic disc used</figcaption></figure>` : ""}
+      <div style="flex:1 1 300px"><p class="muted">${esc(s.meaning)}</p>
+      <table><tr><th>tree</th><th>segments solved</th><th>rank stability</th></tr>${tr}</table>
+      <p class="muted">Rank stability = mean Spearman correlation of each sample with the no-uncertainty ranking (1 = the unknowns barely matter).</p>
+      <table><tr><th>#</th><th>patch centre (x, y) px</th><th>P(top 10 %)</th><th>disc diameters from disc</th></tr>${top}</table></div></div>`;
+    $("assume").innerHTML = `<ul>${s.assumptions.map((a) => `<li>${esc(a)}</li>`).join("")}</ul>`;
+  }
+  // 10 report
+  const slim = JSON.parse(JSON.stringify(j, (k, val) => k.endsWith("_png") ? undefined : val));
+  $("report").innerHTML = `<div class="kv">${Object.entries(j.seconds).map(([k, x]) => `<b>${k}</b><span>${fmt(x, 2)} s</span>`).join("")}</div>
+    <div class="row" style="margin-top:10px"><button class="secondary" id="dl">Download JSON (without images)</button><button class="secondary" id="dlAll">Download JSON (with images)</button></div>`;
+  const save = (obj, name) => { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(obj, null, 1)], { type: "application/json" })); a.download = name; a.click(); };
+  $("dl").onclick = () => save(slim, "drpinn_report.json");
+  $("dlAll").onclick = () => save(j, "drpinn_report_with_images.json");
+}
+if (window.DRPINN_STATIC) {
+  // saved report (no server): show one analysed photo exactly as the live dashboard would
+  const S = window.DRPINN_STATIC;
+  renderHealth(S.health);
+  $("drop").hidden = true; $("go").hidden = true; $("discD").parentElement.hidden = true; $("mc").parentElement.hidden = true;
+  $("discHint").hidden = false;
+  document.querySelector("#s-upload h2 .n").textContent = "the analysed photo (dashed ring = estimated disc)";
+  $("discHint").textContent = `Saved report for ${S.name}. To analyse another photo or set the disc by hand, use notebook step 16c (DISC_X, DISC_Y).`;
+  $("busy").textContent = `Analysed ${S.when}.`;
+  const img = $("previewImg");
+  img.onload = () => { natural = [S.result.image.width, S.result.image.height]; drawMarker(); };
+  $("preview").style.cursor = "default"; $("preview").onclick = null;
+  img.src = "data:image/jpeg;base64," + S.photo_jpg; $("preview").hidden = false;
+  render(S.result);
+} else {
+  loadHealth();
+}
+</script>
+</body>
+</html>
